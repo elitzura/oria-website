@@ -1,4 +1,5 @@
 import './globals.css';
+import CookieConsent from '../components/CookieConsent';
 
 export const metadata = {
   title: 'ORIA AI - המוח השני שלכם לניהול קליניקה',
@@ -48,6 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

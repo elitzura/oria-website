@@ -1,0 +1,76 @@
+'use client';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+export default function StaticPageLayout({ children, activeNav }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [navbarScrolled, setNavbarScrolled] = useState(true); // always scrolled on inner pages
+
+  useEffect(() => {
+    document.body.classList.remove('loading');
+    const handleScroll = () => setNavbarScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <>
+      <nav className={`navbar${navbarScrolled ? ' scrolled' : ''}`}>
+        <div className="container nav-container">
+          <Link href="/" className="logo">
+            <img src="/logos/3.png" alt="ORIA AI" className="logo-img" />
+          </Link>
+          <ul className={`nav-links${mobileMenuOpen ? ' active' : ''}`}>
+            <li><Link href="/#solution" style={activeNav === 'solution' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>הפתרון</Link></li>
+            <li><Link href="/features" style={activeNav === 'features' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>מה חדש</Link></li>
+            <li><Link href="/#pricing">מחירים</Link></li>
+            <li><Link href="/security" style={activeNav === 'security' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>אבטחה</Link></li>
+          </ul>
+          <button className={`mobile-menu-btn${mobileMenuOpen ? ' active' : ''}`} aria-label="תפריט" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+
+      {children}
+
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-brand">
+              <Link href="/" className="logo"><img src="/logos/3.png" alt="ORIA AI" className="logo-img" /></Link>
+              <p>חוזרים ללב הטיפול. את השאר תשאירו ל-ORIA</p>
+            </div>
+            <div className="footer-links">
+              <div className="footer-col">
+                <h4>המוצר</h4>
+                <ul>
+                  <li><Link href="/#solution">תכונות</Link></li>
+                  <li><Link href="/features">מה חדש</Link></li>
+                  <li><Link href="/#pricing">מחירים</Link></li>
+                </ul>
+              </div>
+              <div className="footer-col">
+                <h4>החברה</h4>
+                <ul>
+                  <li><Link href="/about">אודות</Link></li>
+                  <li><a href="https://wa.me/972524824210" target="_blank" rel="noreferrer">צור קשר</a></li>
+                </ul>
+              </div>
+              <div className="footer-col">
+                <h4>משפטי</h4>
+                <ul>
+                  <li><Link href="/privacy">מדיניות פרטיות</Link></li>
+                  <li><Link href="/security">אבטחת מידע</Link></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>© 2025 <span className="brand-name">ORIA</span> AI. כל הזכויות שמורות.</p>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
