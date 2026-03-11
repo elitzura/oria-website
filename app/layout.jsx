@@ -1,5 +1,20 @@
 import './globals.css';
 import CookieConsent from '../components/CookieConsent';
+import { Heebo, Montserrat } from 'next/font/google';
+
+const heebo = Heebo({
+  subsets: ['hebrew'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-heebo',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
 
 export const metadata = {
   title: 'ORIA AI - המוח השני שלכם לניהול קליניקה',
@@ -10,7 +25,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="he" dir="rtl">
+    <html lang="he" dir="rtl" className={`${heebo.variable} ${montserrat.variable}`}>
       <head>
         {/* Google Tag Manager */}
         <script
@@ -22,21 +37,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MK6TWF7X');`,
           }}
         />
-        {/* Non-blocking Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Montserrat:wght@700;800&display=fallback"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800&family=Montserrat:wght@700;800&display=fallback"
-          />
-        </noscript>
       </head>
       <body className="loading">
         {/* Google Tag Manager (noscript) */}

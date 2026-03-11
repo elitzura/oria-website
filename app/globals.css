@@ -81,7 +81,7 @@ body:not(.loading) .navbar {
 }
 
 body {
-    font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-heebo), 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     color: var(--gray-700);
@@ -141,7 +141,7 @@ strong {
 
 /* Brand name - ORIA in Montserrat */
 .brand-name {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-montserrat), 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: 0.02em;
 }
