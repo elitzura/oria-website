@@ -39,6 +39,16 @@ const PLANS = {
   },
 };
 
+function Field({ id, label, required, errors, children }) {
+  return (
+    <div className={`form-group${errors[id] ? ' has-error' : ''}`}>
+      <label htmlFor={id}>{label} {required && <span className="req">*</span>}</label>
+      {children}
+      {errors[id] && <div className="err-msg">{errors[id]}</div>}
+    </div>
+  );
+}
+
 function CheckoutForm() {
   const searchParams = useSearchParams();
   const planKey = searchParams.get('plan') || 'mind-premium';
@@ -92,14 +102,6 @@ function CheckoutForm() {
       setGlobalError(err.message || 'משהו השתבש. אנא נסו שוב או צרו קשר עם התמיכה.');
     }
   };
-
-  const Field = ({ id, label, required, children }) => (
-    <div className={`form-group${errors[id] ? ' has-error' : ''}`}>
-      <label htmlFor={id}>{label} {required && <span className="req">*</span>}</label>
-      {children}
-      {errors[id] && <div className="err-msg">{errors[id]}</div>}
-    </div>
-  );
 
   return (
     <>
@@ -183,17 +185,17 @@ function CheckoutForm() {
 
             <form onSubmit={handleSubmit} noValidate>
               <div className="form-row">
-                <Field id="firstName" label="שם פרטי" required>
+                <Field id="firstName" label="שם פרטי" required errors={errors}>
                   <input type="text" id="firstName" value={fields.firstName} onChange={(e) => { setFields({ ...fields, firstName: e.target.value }); setErrors({ ...errors, firstName: '' }); setGlobalError(''); }} placeholder="ישראל" autoComplete="given-name" />
                 </Field>
-                <Field id="lastName" label="שם משפחה" required>
+                <Field id="lastName" label="שם משפחה" required errors={errors}>
                   <input type="text" id="lastName" value={fields.lastName} onChange={(e) => { setFields({ ...fields, lastName: e.target.value }); setErrors({ ...errors, lastName: '' }); setGlobalError(''); }} placeholder="ישראלי" autoComplete="family-name" />
                 </Field>
               </div>
-              <Field id="email" label='כתובת דוא"ל' required>
+              <Field id="email" label='כתובת דוא"ל' required errors={errors}>
                 <input type="email" id="email" value={fields.email} onChange={(e) => { setFields({ ...fields, email: e.target.value }); setErrors({ ...errors, email: '' }); setGlobalError(''); }} placeholder="name@example.com" autoComplete="email" dir="ltr" />
               </Field>
-              <Field id="phone" label="מספר טלפון" required>
+              <Field id="phone" label="מספר טלפון" required errors={errors}>
                 <input type="tel" id="phone" value={fields.phone} onChange={(e) => { setFields({ ...fields, phone: e.target.value }); setErrors({ ...errors, phone: '' }); setGlobalError(''); }} placeholder="050-0000000" autoComplete="tel" />
               </Field>
               <div className="form-group">
