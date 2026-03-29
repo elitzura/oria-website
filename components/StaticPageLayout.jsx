@@ -55,6 +55,7 @@ export default function StaticPageLayout({ children, activeNav }) {
                 <ul>
                   <li><Link href="/about">אודות</Link></li>
                   <li><a href="https://wa.me/972524824210" target="_blank" rel="noreferrer">צור קשר</a></li>
+                  <li><a href="tel:+972524824210">📞 052-4824210</a></li>
                 </ul>
               </div>
               <div className="footer-col">
@@ -62,6 +63,8 @@ export default function StaticPageLayout({ children, activeNav }) {
                 <ul>
                   <li><Link href="/privacy">מדיניות פרטיות</Link></li>
                   <li><Link href="/security">אבטחת מידע</Link></li>
+                  <li><Link href="/terms">תנאי שימוש</Link></li>
+                  <li><Link href="/regulations">תקנון</Link></li>
                 </ul>
               </div>
             </div>

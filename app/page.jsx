@@ -230,7 +230,7 @@ export default function HomePage() {
       <div className={`form-modal ${showFormModal ? 'active' : ''}`} onClick={(e) => e.target === e.currentTarget && closeFormModal()}>
         <div className="form-modal-content">
           <button className="form-modal-close" onClick={closeFormModal}>&times;</button>
-          <iframe ref={iframeRef} src="" frameBorder="0" allowFullScreen />
+          <iframe ref={iframeRef} src={undefined} frameBorder="0" allowFullScreen />
         </div>
       </div>
 
@@ -595,6 +595,8 @@ export default function HomePage() {
                 <ul>
                   <li><Link href="/privacy">מדיניות פרטיות</Link></li>
                   <li><Link href="/security">אבטחת מידע</Link></li>
+                  <li><Link href="/terms">תנאי שימוש</Link></li>
+                  <li><Link href="/regulations">תקנון</Link></li>
                 </ul>
               </div>
             </div>

@@ -206,7 +206,7 @@ function CheckoutForm() {
                 <div className="terms-row">
                   <input type="checkbox" id="termsAccept" checked={termsAccepted} onChange={(e) => { setTermsAccepted(e.target.checked); setErrors({ ...errors, terms: '' }); }} />
                   <label htmlFor="termsAccept">
-                    קראתי ואני מסכים/ה ל<Link href="/privacy" target="_blank">מדיניות הפרטיות</Link> של ORIA AI. אני מאשר/ת שאני בן/בת 18 ומעלה.
+                    קראתי ואני מסכים/ה ל<Link href="/terms" target="_blank">תנאי השימוש</Link> ול<Link href="/privacy" target="_blank">מדיניות הפרטיות</Link> של ORIA AI. אני מאשר/ת שאני בן/בת 18 ומעלה.
                   </label>
                 </div>
                 {errors.terms && <div className="err-msg" style={{ marginTop: '0.4rem' }}>{errors.terms}</div>}
