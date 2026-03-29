@@ -23,10 +23,10 @@ const PLANS = {
   'mind-premium': {
     id: 'mind-premium',
     apiPlan: 'premium',
-    name: 'MIND PREMIUM ⚡',
-    badge: 'הכי פופולרי — חוסכים ₪90/חודש ⭐',
-    desc: 'כשרוצים שהקליניקה תנהל את עצמה',
-    price: 199,
+    name: 'MIND PREMIUM 👑',
+    badge: 'עסקת השקה — חוסכים ₪160/חודש ⭐',
+    desc: 'הניהול המלא — במחיר MIND, לזמן מוגבל בלבד',
+    price: 129,
     originalPrice: 289,
     features: [
       'כל מה שב-MIND',
@@ -224,7 +224,7 @@ function CheckoutForm() {
             <div className="plan-badge">{plan.badge}</div>
             <div className="plan-name">{plan.name}</div>
             <p className="plan-desc">{plan.desc}</p>
-            <div className="trial-tag">🎁 <span>14 ימי ניסיון חינם — ללא כרטיס אשראי</span></div>
+            <div className="trial-tag">🔒 <span>תשלום מאובטח — ניתן לבטל בכל עת</span></div>
             <div className="price-box">
               {plan.originalPrice && <span className="p-orig">₪{plan.originalPrice}/חודש</span>}
               <span className="p-cur">₪</span>

@@ -4,13 +4,10 @@ import Link from 'next/link';
 
 export default function HomePage() {
   const [showAnnouncement, setShowAnnouncement] = useState(true);
-  const [showFormModal, setShowFormModal] = useState(false);
-  const [formContext, setFormContext] = useState('pilot');
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarScrolled, setNavbarScrolled] = useState(false);
   const [paymentError, setPaymentError] = useState(false);
-  const iframeRef = useRef(null);
   const exitIntentShownRef = useRef(false);
   const pageLoadTimeRef = useRef(Date.now());
 
@@ -131,22 +128,9 @@ export default function HomePage() {
     };
     window.addEventListener('scroll', handleScrollExit, { passive: true });
 
-    // JotForm submission → redirect
-    const handleMessage = (e) => {
-      try {
-        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-        const isSubmit = data && (data.action === 'submission-completed' || data.type === 'form-submitted' || data.event === 'formSubmit');
-        if (isSubmit) {
-          setShowFormModal(false);
-          window.location.href = formContext === 'waitlist' ? '/thank-you-waitlist' : '/thank-you';
-        }
-      } catch {}
-    };
-    window.addEventListener('message', handleMessage);
-
     // Escape key
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') { setShowFormModal(false); setShowExitIntent(false); }
+      if (e.key === 'Escape') setShowExitIntent(false);
     };
     document.addEventListener('keydown', handleKeyDown);
 
@@ -155,10 +139,9 @@ export default function HomePage() {
       window.removeEventListener('scroll', handleParallax);
       window.removeEventListener('scroll', handleScrollExit);
       document.removeEventListener('mouseleave', handleMouseLeave);
-      window.removeEventListener('message', handleMessage);
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [formContext]);
+  }, []);
 
   const triggerExitIntent = () => {
     if (exitIntentShownRef.current) return;
@@ -167,19 +150,6 @@ export default function HomePage() {
     exitIntentShownRef.current = true;
     sessionStorage.setItem('exitIntentShown', 'true');
     setShowExitIntent(true);
-  };
-
-  const openFormModal = (context) => {
-    setFormContext(context || 'pilot');
-    setShowFormModal(true);
-    document.body.style.overflow = 'hidden';
-    if (iframeRef.current) iframeRef.current.src = 'https://form.jotform.com/260271674188059';
-  };
-
-  const closeFormModal = () => {
-    setShowFormModal(false);
-    document.body.style.overflow = '';
-    if (iframeRef.current) iframeRef.current.src = '';
   };
 
   const closeExitIntent = () => {
@@ -202,7 +172,7 @@ export default function HomePage() {
         <div id="announcementBar" className="announcement-bar">
           <div className="announcement-inner">
             <span className="announcement-dot"></span>
-            <span>ORIA AI יוצאת לכולם בקרוב — חודש ראשון חינם רק לנרשמים לפני ההשקה</span>
+            <span>ORIA AI זמינה עכשיו — בחרו מסלול והתחילו היום</span>
             <button className="announcement-cta" onClick={() => { setShowAnnouncement(false); document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' }); }}>הצטרפו עכשיו ←</button>
             <button className="announcement-close" onClick={() => setShowAnnouncement(false)} aria-label="סגור">✕</button>
           </div>
@@ -216,23 +186,15 @@ export default function HomePage() {
             <button className="exit-intent-close" onClick={closeExitIntent} aria-label="סגור">&times;</button>
             <div className="exit-intent-emoji">🚀</div>
             <h2 className="exit-intent-title">רגע לפני שאתם הולכים...</h2>
-            <p className="exit-intent-subtitle"><span className="brand-name">ORIA AI</span> יוצאת לציבור הרחב בקרוב!</p>
-            <p className="exit-intent-body">רוצים לקבל הודעה ברגע שהאפליקציה זמינה לכולם?<br />השאירו פרטים ונעדכן אתכם ראשונים.</p>
+            <p className="exit-intent-subtitle"><span className="brand-name">ORIA AI</span> — התחילו לנהל את הקליניקה בחכמה!</p>
+            <p className="exit-intent-body">בחרו מסלול עכשיו — FREEMIUM חינם לגמרי, ללא כרטיס אשראי.</p>
             <div className="exit-intent-actions">
-              <button className="btn btn-primary" onClick={() => { closeExitIntent(); openFormModal('waitlist'); }}>כן, עדכנו אותי!</button>
+              <Link href="/pricing" className="btn btn-primary" onClick={closeExitIntent}>ראו את המסלולים ←</Link>
               <button className="exit-intent-dismiss" onClick={closeExitIntent}>לא תודה</button>
             </div>
           </div>
         </div>
       )}
-
-      {/* Form modal */}
-      <div className={`form-modal ${showFormModal ? 'active' : ''}`} onClick={(e) => e.target === e.currentTarget && closeFormModal()}>
-        <div className="form-modal-content">
-          <button className="form-modal-close" onClick={closeFormModal}>&times;</button>
-          <iframe ref={iframeRef} src={undefined} frameBorder="0" allowFullScreen />
-        </div>
-      </div>
 
       {/* Navigation */}
       <nav className={`navbar${navbarScrolled ? ' scrolled' : ''}`}>
@@ -249,7 +211,7 @@ export default function HomePage() {
             <li><a href="#pricing">מחירים</a></li>
             <li><Link href="/security">אבטחה</Link></li>
             <li>
-              <button onClick={() => openFormModal('waitlist')} className="btn btn-outline">הצטרפו לרשימת המתנה</button>
+              <Link href="/pricing" className="btn btn-outline">התחילו עכשיו</Link>
             </li>
           </ul>
           <button className={`mobile-menu-btn${mobileMenuOpen ? ' active' : ''}`} aria-label="תפריט" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -266,11 +228,11 @@ export default function HomePage() {
               <h1>הטיפול שלכם.<br /><span className="highlight">הבינה של <span className="brand-name">ORIA</span>.</span></h1>
               <p className="hero-subtitle">אנחנו בונים עבורכם זיכרון מקצועי חכם: המערכת שזוכרת, מסכמת ומארגנת עבורכם את כל מה שקורה בטיפול.</p>
               <p className="hero-subtitle">בואו לעצב יחד איתנו נבחרת של סוכני AI שמבינים לעומק את השפה הטיפולית, משחררים אתכם משעות של תיעוד ושומרים עבורכם על כל תובנה ורצף טיפולי.</p>
-              <p className="hero-subtitle"><strong>ORIA AI יוצאת בקרוב לכולם.</strong> כולם יוכלו להשתמש בה - אבל חודש ראשון חינם הוא הטבת השקה בלעדית לנרשמים לפני ההשקה.</p>
+              <p className="hero-subtitle"><strong>ORIA AI זמינה עכשיו.</strong> בחרו מסלול והתחילו לנהל את הקליניקה בחכמה — FREEMIUM חינם לגמרי.</p>
               <div className="hero-cta">
-                <button onClick={() => openFormModal('waitlist')} className="btn btn-primary btn-large">הצטרפו לרשימת ההמתנה - חינם</button>
+                <Link href="/pricing" className="btn btn-primary btn-large">בחרו מסלול עכשיו ←</Link>
               </div>
-              <p className="hero-disclaimer">ההצטרפות חינמית לחלוטין. אין כרטיס אשראי, אין התחייבות.</p>
+              <p className="hero-disclaimer">FREEMIUM חינם לתמיד. ביטול מסלול בתשלום בכל עת, ללא התחייבות.</p>
             </div>
             <div className="hero-visual">
               <div className="hero-image">
@@ -356,7 +318,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="section-cta fade-in">
-              <a href="#pricing" className="btn btn-primary">הצטרפו לרשימת ההמתנה</a>
+              <Link href="/pricing" className="btn btn-primary">ראו את המסלולים ←</Link>
             </div>
           </div>
         </section>
@@ -392,7 +354,7 @@ export default function HomePage() {
             </div>
             <div className="section-cta fade-in">
               <Link href="/features" className="btn btn-outline" style={{ marginLeft: '1rem' }}>ראו את כל הפיצ'רים</Link>
-              <a href="#pricing" className="btn btn-primary">הצטרפו לרשימת ההמתנה</a>
+              <Link href="/pricing" className="btn btn-primary">ראו את המסלולים ←</Link>
             </div>
           </div>
         </section>
@@ -459,20 +421,23 @@ export default function HomePage() {
                 <span className="plan-icon">🌱</span>
                 <div className="pricing-header">
                   <h3 style={{ fontSize: '1.3rem' }}>FREEMIUM</h3>
-                  <p className="pricing-desc">להתחיל לסדר את עצמכם — בלי לשלם שקל</p>
+                  <p className="pricing-desc">להרגיש את ORIA לפני שמחליטים — בלי לשלם שקל</p>
                 </div>
                 <div className="pricing-price">
                   <span className="amount" style={{ fontSize: '2rem', letterSpacing: '-1px' }}>חינם</span>
                   <span className="period" style={{ display: 'block', fontSize: '0.78rem', color: '#aaa', marginTop: '2px' }}>לתמיד, ללא כרטיס אשראי</span>
                 </div>
+                <div style={{ background: '#f0fdf4', border: '1.5px solid #86efac', borderRadius: '10px', padding: '0.6rem 0.9rem', marginBottom: '1rem', fontSize: '0.82rem', color: '#166534', lineHeight: 1.45 }}>
+                  🔓 כל הפיצ'רים של PREMIUM — מוגבל ל-3 מטופלים פעילים. שדרוג בקליק בכל רגע.
+                </div>
                 <ul className="pricing-features">
                   <li><span className="check">✓</span> יומן פגישות דיגיטלי</li>
-                  <li><span className="check">✓</span> כרטיס מטופל + היסטוריית פגישות</li>
-                  <li><span className="check">✓</span> תיעוד ידני בטקסט חופשי</li>
-                  <li><span className="check">✓</span> עד 5 מטופלים פעילים</li>
-                  <li style={{ color: '#bbb', fontSize: '0.8rem', paddingTop: '0.4rem', listStyle: 'none' }}>ללא כלי AI · ללא חיבור ליומן גוגל</li>
+                  <li><span className="check">✓</span> ניהול תשלומים וגבייה</li>
+                  <li><span className="check">✓</span> תזכורות בוואטסאפ ובמייל</li>
+                  <li><span className="check">✓</span> סוכני AI — סיכום פגישות וניתוח תובנות</li>
+                  <li><span className="check">✓</span> עד 3 מטופלים פעילים</li>
                 </ul>
-                <button onClick={() => openFormModal('waitlist')} className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>הצטרפו חינם</button>
+                <Link href="/checkout" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>התחילו חינם</Link>
               </div>
               {/* MIND */}
               <div className="pricing-card featured">
@@ -487,36 +452,40 @@ export default function HomePage() {
                 <div className="pricing-price">
                   <span className="currency">₪</span><span className="amount">129</span><span className="period">/חודש</span>
                 </div>
+                <div style={{ background: '#fef3c7', border: '1.5px solid #f59e0b', borderRadius: '10px', padding: '0.65rem 0.9rem', marginBottom: '1rem', fontSize: '0.82rem', color: '#92400e', lineHeight: 1.45 }}>
+                  🎁 <strong>הטבת השקה:</strong> כל פיצ'רי PREMIUM פתוחים לחברי MIND — לזמן מוגבל בלבד.
+                </div>
                 <ul className="pricing-features">
                   <li><span className="check">✓</span> מטופלים ללא הגבלה</li>
                   <li><span className="check">✓</span> ניהול תשלומים וגבייה</li>
                   <li><span className="check">✓</span> תזכורות פגישות אוטומטיות במייל</li>
-                  <li><span className="check">✓</span> סוכן AI אחד: סיכום פגישות ומעקב מטופל</li>
+                  <li><span className="check">✓</span> סוכן AI: סיכום פגישות ומעקב מטופל</li>
                   <li><span className="check">✓</span> תמיכה במייל</li>
                 </ul>
-                <Link href="/checkout?plan=mind" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>התחילו ניסיון חינם</Link>
+                <Link href="/checkout?plan=mind" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>רכישה ←</Link>
               </div>
               {/* MIND PREMIUM */}
-              <div className="pricing-card">
-                <span className="plan-icon">⚡</span>
+              <div className="pricing-card" style={{ border: '2px solid #625DE5', boxShadow: '0 8px 40px rgba(98,93,229,.18)' }}>
+                <div style={{ background: 'linear-gradient(90deg,#f59e0b,#f97316)', color: '#fff', fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.04em', padding: '0.3rem 0.9rem', borderRadius: '20px', display: 'inline-block', marginBottom: '0.6rem' }}>⚡ עסקת השקה</div>
+                <span className="plan-icon">👑</span>
                 <div className="pricing-header">
                   <h3 style={{ fontSize: '1.3rem' }}>MIND PREMIUM</h3>
-                  <p className="pricing-desc">כשרוצים שהקליניקה תנהל את עצמה</p>
+                  <p className="pricing-desc">הניהול המלא — במחיר MIND, לזמן מוגבל בלבד</p>
                 </div>
                 <span className="original-price">₪289/חודש</span>
-                <span className="save-badge">מחיר השקה — חוסכים ₪90/חודש</span>
+                <span className="save-badge">במחיר MIND — חוסכים ₪160/חודש ⭐</span>
                 <div className="pricing-price">
-                  <span className="currency">₪</span><span className="amount">199</span><span className="period">/חודש</span>
+                  <span className="currency">₪</span><span className="amount">129</span><span className="period">/חודש</span>
                 </div>
                 <ul className="pricing-features">
-                  <li><span className="check">✓</span> כל מה שב-MIND</li>
+                  <li><span className="check">✓</span> מטופלים ללא הגבלה</li>
                   <li><span className="check">✓</span> סוכני AI מרובים — ניהול קליניקה מלא</li>
                   <li><span className="check">✓</span> תזכורות ועדכונים בוואטסאפ למטופלים</li>
                   <li><span className="check">✓</span> ניתוח תובנות ודפוסים קליניים</li>
                   <li><span className="check">✓</span> דוחות התקדמות אוטומטיים</li>
                   <li><span className="check">✓</span> תמיכה בצ'אט ובטלפון</li>
                 </ul>
-                <Link href="/checkout?plan=mind-premium" className="btn btn-primary btn-block" style={{ textAlign: 'center' }}>התחילו ניסיון חינם</Link>
+                <Link href="/checkout?plan=mind-premium" className="btn btn-primary btn-block" style={{ textAlign: 'center' }}>רכישה ←</Link>
               </div>
               {/* Clinic */}
               <div className="pricing-card clinic-card">
@@ -541,7 +510,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="pricing-trust">
-              <span>14 ימי ניסיון חינם — ללא כרטיס אשראי</span>
+              <span>FREEMIUM חינם לתמיד — ללא כרטיס אשראי</span>
               <span>ביטול מיידי בכל עת דרך האפליקציה</span>
               <span>תמיכה בעברית — צוות ישראלי</span>
               <span>מחיר השקה — יעלה בקרוב</span>
@@ -553,8 +522,8 @@ export default function HomePage() {
         <section className="final-cta">
           <div className="container">
             <div className="cta-content">
-              <h2>ORIA AI יוצאת בקרוב לכולם.<br /><span style={{ fontSize: '0.75em', fontWeight: 600, opacity: 0.9 }}>כולם יוכלו להשתמש בה - אבל חודש ראשון חינם הוא רק לנרשמים לפני ההשקה.</span></h2>
-              <button onClick={() => openFormModal('waitlist')} className="btn btn-primary btn-large">הצטרפו עכשיו - לפני שיהיה מאוחר</button>
+              <h2>מוכנים לנהל את הקליניקה בחכמה?<br /><span style={{ fontSize: '0.75em', fontWeight: 600, opacity: 0.9 }}>FREEMIUM חינם לתמיד — ביטול מסלול בתשלום בכל עת.</span></h2>
+              <Link href="/pricing" className="btn btn-primary btn-large">בחרו מסלול עכשיו ←</Link>
             </div>
           </div>
         </section>

@@ -23,7 +23,7 @@ export default function FeaturePageLayout({ children }) {
             <li><Link href="/features" style={{ color: 'var(--primary)', fontWeight: 600 }}>מה חדש</Link></li>
             <li><Link href="/#pricing">מחירים</Link></li>
             <li><Link href="/security">אבטחה</Link></li>
-            <li><Link href="/#pricing" className="btn btn-outline">רשימת המתנה</Link></li>
+            <li><Link href="/pricing" className="btn btn-outline">התחילו עכשיו</Link></li>
           </ul>
           <button className="mobile-menu-btn" aria-label="תפריט"><span></span><span></span><span></span></button>
         </div>

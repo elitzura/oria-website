@@ -25,6 +25,7 @@ export default function StaticPageLayout({ children, activeNav }) {
             <li><Link href="/features" style={activeNav === 'features' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>מה חדש</Link></li>
             <li><Link href="/#pricing">מחירים</Link></li>
             <li><Link href="/security" style={activeNav === 'security' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>אבטחה</Link></li>
+            <li><Link href="/pricing" className="btn btn-outline">התחילו עכשיו</Link></li>
           </ul>
           <button className={`mobile-menu-btn${mobileMenuOpen ? ' active' : ''}`} aria-label="תפריט" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <span></span><span></span><span></span>
