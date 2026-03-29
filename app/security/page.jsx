@@ -146,24 +146,14 @@ export default function SecurityPage() {
                 <p>הקבצים נשמרים על שרתי גוגל – אותה תשתית המשרתת את Gmail ו-Drive.</p>
               </div>
               <div className="provider-card">
-                <div className="provider-icon">🇪🇺</div>
-                <h4>רגולציה אירופאית</h4>
-                <p><strong>GDPR Compliant</strong></p>
-                <p>כלל הנתונים מאוחסנים במרכזי נתונים מאובטחים תחת חוקי הפרטיות המחמירים של האיחוד האירופי.</p>
+                <div className="provider-icon">🇮🇱</div>
+                <h4>תאימות לחוק הישראלי</h4>
+                <p><strong>חוק הגנת הפרטיות</strong></p>
+                <p>כלל הנתונים מאוחסנים ומנוהלים בהתאם לדרישות חוק הגנת הפרטיות הישראלי ותיקון 13 לחוק.</p>
               </div>
             </div>
           </div>
 
-          <div className="divider"></div>
-
-          <div className="security-section">
-            <h2><span className="icon">⚖️</span> תאימות ותקנות</h2>
-            <ul>
-              <li><strong>שמירה לפי חוק:</strong> המערכת תומכת בדרישות החוק הישראלי לשמירת רשומות רפואיות ופיננסיות (למשך 7 שנים).</li>
-              <li><strong>תקני ISO:</strong> בנינו את <span className="brand-name">ORIA</span> בהתאם לעקרונות תקן אבטחת המידע הבינלאומי ISO 27001.</li>
-              <li><strong>Audit Log:</strong> כל גישה לכל תיק נרשמת אוטומטית — בהתאם לדרישות תיקון 13 לחוק הגנת הפרטיות ולחוק זכויות החולה.</li>
-            </ul>
-          </div>
         </section>
 
         <section className="tips-section">
@@ -175,7 +165,6 @@ export default function SecurityPage() {
                 { title: '🔐 הפעילו אימות דו-שלבי', text: 'זהו המחסום היעיל ביותר נגד גניבת זהות.' },
                 { title: '🔑 בחרו סיסמה חזקה', text: 'לפחות 12 תווים, המשלבים אותיות, מספרים וסימנים.' },
                 { title: '🚪 זכרו להתנתק', text: 'בסיום העבודה, במיוחד אם אתם משתמשים במחשב שאינו אישי.' },
-                { title: '👁️ ערנות', text: 'אם נתקלתם בפעילות חשודה, פנו אלינו מיד. אנחנו כאן בשבילכם.' },
               ].map((t, i) => (
                 <div className="tip-card" key={i}><h4>{t.title}</h4><p>{t.text}</p></div>
               ))}

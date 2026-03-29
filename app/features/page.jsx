@@ -12,6 +12,7 @@ export default function FeaturesPage() {
   }, []);
 
   const entries = [
+    { href: '/features/whatsapp-reminders', icon: '💬', iconClass: 'icon-green', date: 'מרץ 2026', tags: [['tag-new', 'חדש'], ['tag-manage', 'ניהול']], title: 'תזכורות חכמות — וואצאפ, אימייל ואישור הגעה', text: 'ORIA שולחת תזכורות אוטומטיות לפגישה בוואצאפ ובאימייל, עם כפתורי אישור הגעה אמיתיים. המטופל לוחץ — הסטטוס מתעדכן. אתם לא צריכים לגעת בזה.', delay: 0 },
     { href: '/features/audit-logs', icon: '📋', iconClass: 'icon-purple', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה'], ['tag-new', 'חדש']], title: 'Audit Log — מי פתח את התיק הזה?', text: 'כל גישה לכל תיק מתועדת אוטומטית: מי נכנס, מתי, מאיזה מכשיר, מה שונה. חובה חוקית לפי תיקון 13 — ועכשיו מוכנה עבורכם ברקע.', delay: 0 },
     { href: '/features/brain-dump', icon: '🎙️', iconClass: 'icon-blue', date: 'פברואר 2026', tags: [['tag-core', 'ליבה'], ['tag-new', 'חדש']], title: 'Brain Dump — סיכום קליני ב-30 שניות', text: 'מקליטים דקה-שתיים אחרי הפגישה, ו-ORIA מחזירה סיכום מסודר בסגנון שלכם. לא עוד כתיבה ידנית בסוף יום עייף.', delay: 0 },
     { href: '/features/second-brain', icon: '🧠', iconClass: 'icon-purple', date: 'ינואר 2026', tags: [['tag-core', 'ליבה']], title: 'המוח השני — הכנה לפגישה תוך 30 שניות', text: 'ORIA זוכרת מה נאמר לפני 3 פגישות, מזהה דפוסים חוזרים, ומציגה לכם תקציר חכם לפני כל מפגש. מגיעים ממוקדים.', delay: 100 },
