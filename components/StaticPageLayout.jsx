@@ -18,7 +18,10 @@ export default function StaticPageLayout({ children, activeNav }) {
       <nav className={`navbar${navbarScrolled ? ' scrolled' : ''}`}>
         <div className="container nav-container">
           <Link href="/" className="logo">
-            <img src="/logos/3.png" alt="ORIA AI" className="logo-img" />
+            <picture>
+              <source srcSet="/logos/3.webp" type="image/webp" />
+              <img src="/logos/3.png" alt="ORIA AI" className="logo-img" width="240" height="240" decoding="async" />
+            </picture>
           </Link>
           <ul className={`nav-links${mobileMenuOpen ? ' active' : ''}`}>
             <li><Link href="/#solution" style={activeNav === 'solution' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>הפתרון</Link></li>
@@ -39,7 +42,12 @@ export default function StaticPageLayout({ children, activeNav }) {
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <Link href="/" className="logo"><img src="/logos/3.png" alt="ORIA AI" className="logo-img" /></Link>
+              <Link href="/" className="logo">
+                <picture>
+                  <source srcSet="/logos/3.webp" type="image/webp" />
+                  <img src="/logos/3.png" alt="ORIA AI" className="logo-img" width="240" height="240" loading="lazy" decoding="async" />
+                </picture>
+              </Link>
               <p>חוזרים ללב הטיפול. את השאר תשאירו ל-ORIA</p>
             </div>
             <div className="footer-links">
@@ -56,7 +64,7 @@ export default function StaticPageLayout({ children, activeNav }) {
                 <ul>
                   <li><Link href="/about">אודות</Link></li>
                   <li><a href="https://wa.me/972524824210" target="_blank" rel="noreferrer">צור קשר</a></li>
-                  <li><a href="tel:+972524824210">📞 052-4824210</a></li>
+                  <li><a href="tel:+972524824210">052-4824210</a></li>
                 </ul>
               </div>
               <div className="footer-col">

@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function CheckoutPage() {
+export default function PaymentResultPage() {
   useEffect(() => {
     window.location.replace('https://clinic.therawiseai.com');
   }, []);

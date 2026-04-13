@@ -46,14 +46,16 @@ export default function SecurityPage() {
       <style>{`
         .security-hero{background:linear-gradient(135deg,#171938 0%,#2a2d5a 50%,#171938 100%);padding:140px 0 80px;text-align:center;position:relative;overflow:hidden}
         .security-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23625DE5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
-        .security-hero h1{color:white;font-size:2.8rem;margin-bottom:1rem;position:relative}
+        .security-hero h1{color:white;font-size:2.8rem;margin-bottom:1rem;position:relative;letter-spacing:-0.03em}
         .security-hero .subtitle{color:rgba(255,255,255,.85);font-size:1.25rem;max-width:700px;margin:0 auto;line-height:1.8;position:relative}
-        .security-hero .shield-icon{font-size:4rem;margin-bottom:1.5rem;display:block;position:relative}
+        .security-hero .shield-icon{width:80px;height:80px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;box-shadow:0 8px 32px rgba(98,93,229,.4);position:relative}
+        .security-hero .shield-icon svg{width:40px;height:40px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
         .security-content{padding:80px 0;background:#fff}
         .security-section{max-width:900px;margin:0 auto 60px;padding:0 20px}
         .security-section:last-child{margin-bottom:0}
-        .security-section h2{color:#171938;font-size:1.8rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px}
-        .security-section h2 .icon{font-size:2rem}
+        .security-section h2{color:#171938;font-size:1.8rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;letter-spacing:-0.025em}
+        .security-section h2 .sec-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .security-section h2 .sec-icon svg{stroke:white;width:22px;height:22px}
         .security-section h3{color:#625DE5;font-size:1.3rem;margin:2rem 0 1rem}
         .security-section p{color:#4a4a6a;line-height:1.9;margin-bottom:1rem;font-size:1.05rem}
         .security-section ul{list-style:none;padding:0;margin:1.5rem 0}
@@ -68,7 +70,8 @@ export default function SecurityPage() {
         .providers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:2rem 0}
         .provider-card{background:#F2F2FC;border-radius:12px;padding:25px;text-align:center;transition:transform .3s,box-shadow .3s}
         .provider-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(98,93,229,.15)}
-        .provider-card .provider-icon{font-size:2.5rem;margin-bottom:1rem}
+        .provider-card .provider-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;box-shadow:0 4px 16px rgba(98,93,229,.25)}
+        .provider-card .provider-icon svg{width:26px;height:26px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
         .provider-card h4{color:#171938;margin-bottom:.5rem}
         .provider-card p{font-size:.95rem;margin:0}
         .tips-section{background:linear-gradient(135deg,#171938 0%,#2a2d5a 100%);padding:60px 0;margin-top:60px}
@@ -88,7 +91,9 @@ export default function SecurityPage() {
       <StaticPageLayout activeNav="security">
         <section className="security-hero">
           <div className="container">
-            <span className="shield-icon">🛡️</span>
+            <div className="shield-icon">
+            <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
             <h1>האבטחה של <span className="brand-name">ORIA</span></h1>
             <p className="subtitle">השקט הנפשי שלך, הביטחון של המטופלים</p>
           </div>
@@ -102,7 +107,7 @@ export default function SecurityPage() {
           </div>
 
           <div className="security-section">
-            <h2><span className="icon">🔒</span> הנתונים שלך - רק שלך</h2>
+            <h2><span className="icon sec-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> הנתונים שלך - רק שלך</h2>
             <h3>הפרדה מוחלטת בלב המערכת</h3>
             <p>בניגוד למערכות רגילות, ב-<span className="brand-name">ORIA</span> כל מטפל או מטפלת נמצאים ב"אי" דיגיטלי נפרד. ההפרדה הזו מוטמעת בשכבה העמוקה ביותר של בסיס הנתונים (טכנולוגיית Row-Level Security של Neon).</p>
             <div className="highlight-box">
@@ -114,7 +119,7 @@ export default function SecurityPage() {
           <div className="divider"></div>
 
           <div className="security-section">
-            <h2><span className="icon">🛡️</span> הגנה בשכבות: כיפת הברזל של המידע שלך</h2>
+            <h2><span className="icon sec-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> הגנה בשכבות: כיפת הברזל של המידע שלך</h2>
             <p>אנחנו מפעילים מספר שכבות הגנה עצמאיות הפועלות במקביל:</p>
             {[
               { title: 'הצפנה מלאה (End-to-End)', text: 'כל התקשורת בין המחשב שלך לשרתים שלנו מוצפנת בתקנים המחמירים ביותר (HTTPS/TLS).' },
@@ -130,23 +135,29 @@ export default function SecurityPage() {
           <div className="divider"></div>
 
           <div className="security-section">
-            <h2><span className="icon">☁️</span> איפה המידע נשמר? תשתיות הענן המובילות בעולם</h2>
+            <h2><span className="icon sec-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span> איפה המידע נשמר? תשתיות הענן המובילות בעולם</h2>
             <p>המידע שלך מוגן באמצעות טכנולוגיות הענן המתקדמות ביותר, תוך הפרדה חכמה בין סוגי הנתונים:</p>
             <div className="providers-grid">
               <div className="provider-card">
-                <div className="provider-icon">🗄️</div>
+                <div className="provider-icon">
+                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                </div>
                 <h4>בסיס הנתונים</h4>
                 <p><strong>Neon & AWS</strong></p>
                 <p>המידע הטקסטואלי מנוהל על גבי תשתית Neon (PostgreSQL) המאובטחת, המופעלת על שרתי AWS באירופה.</p>
               </div>
               <div className="provider-card">
-                <div className="provider-icon">📁</div>
+                <div className="provider-icon">
+                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
                 <h4>אחסון קבצים</h4>
                 <p><strong>Google Cloud Platform</strong></p>
                 <p>הקבצים נשמרים על שרתי גוגל – אותה תשתית המשרתת את Gmail ו-Drive.</p>
               </div>
               <div className="provider-card">
-                <div className="provider-icon">🇮🇱</div>
+                <div className="provider-icon">
+                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
                 <h4>תאימות לחוק הישראלי</h4>
                 <p><strong>חוק הגנת הפרטיות</strong></p>
                 <p>כלל הנתונים מאוחסנים ומנוהלים בהתאם לדרישות חוק הגנת הפרטיות הישראלי ותיקון 13 לחוק.</p>
@@ -158,13 +169,13 @@ export default function SecurityPage() {
 
         <section className="tips-section">
           <div className="container">
-            <h2>💡 כמה טיפים בשבילך</h2>
+            <h2>כמה טיפים בשבילך</h2>
             <p style={{ color: 'rgba(255,255,255,0.8)', textAlign: 'center', marginBottom: '2rem' }}>אבטחה היא מאמץ משותף. הנה מה שאפשר לעשות כדי להגביר את ההגנה:</p>
             <div className="tips-grid">
               {[
-                { title: '🔐 הפעילו אימות דו-שלבי', text: 'זהו המחסום היעיל ביותר נגד גניבת זהות.' },
-                { title: '🔑 בחרו סיסמה חזקה', text: 'לפחות 12 תווים, המשלבים אותיות, מספרים וסימנים.' },
-                { title: '🚪 זכרו להתנתק', text: 'בסיום העבודה, במיוחד אם אתם משתמשים במחשב שאינו אישי.' },
+                { title: 'הפעילו אימות דו-שלבי', text: 'זהו המחסום היעיל ביותר נגד גניבת זהות.' },
+                { title: 'בחרו סיסמה חזקה', text: 'לפחות 12 תווים, המשלבים אותיות, מספרים וסימנים.' },
+                { title: 'זכרו להתנתק', text: 'בסיום העבודה, במיוחד אם אתם משתמשים במחשב שאינו אישי.' },
               ].map((t, i) => (
                 <div className="tip-card" key={i}><h4>{t.title}</h4><p>{t.text}</p></div>
               ))}

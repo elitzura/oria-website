@@ -1,0 +1,2140 @@
+{
+  "collection": {
+    "info": {
+      "name": "Morning by Green Invoice API",
+      "_postman_id": "c7772117-a59b-4032-a87b-06b024f64025",
+      "description": "API collection for morning by Green Invoice. Production: https://api.greeninvoice.co.il/api/v1/",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "https://api.greeninvoice.co.il/api/v1",
+        "type": "string"
+      },
+      {
+        "key": "token",
+        "value": "",
+        "type": "string"
+      }
+    ],
+    "item": [
+      {
+        "name": "Authentication",
+        "item": [
+          {
+            "name": "Obtain Access Token",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/account/token",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "account",
+                  "token"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"id\": \"{{apiId}}\",\n  \"secret\": \"{{apiSecret}}\"\n}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Businesses",
+        "item": [
+          {
+            "name": "Get All User Businesses",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Business",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"title\": \"כותרת לעסק\",\n  \"titleEn\": \"Just a title\",\n  \"category\": 1,\n  \"subCategory\": 101,\n  \"address\": \"רחוב סוקולוב 15\",\n  \"addressEn\": \"15 Sokolov St.\",\n  \"city\": \"תל אביב-יפו\",\n  \"cityEn\": \"Tel Aviv\",\n  \"cityId\": 5000,\n  \"zip\": \"6291790\",\n  \"phone\": \"054-1234567\",\n  \"fax\": \"054-1234567\",\n  \"mobile\": \"054-1234567\",\n  \"website\": \"https://www.greeninvoice.co.il\",\n  \"email\": \"john@gmail.com\",\n  \"templateId\": 1,\n  \"skinId\": 1,\n  \"bankDisplay\": false,\n  \"bankDisplayEn\": false,\n  \"bankName\": \"לאומי\",\n  \"bankBranch\": \"44\",\n  \"bankAccount\": \"565656565656\",\n  \"bankSwift\": \"FIRBILIT\",\n  \"bankAba\": \"04064927\",\n  \"bankIban\": \"IL170108000000012612345\",\n  \"bankBeneficiary\": \"יעקב כהן\",\n  \"bankNameEn\": \"Leumi\",\n  \"bankBranchEn\": \"44\",\n  \"bankAccountEn\": \"565656565656\",\n  \"bankSwiftEn\": \"FIRBILIT\",\n  \"bankAbaEn\": \"04064927\",\n  \"bankIbanEn\": \"IL170108000000012612345\",\n  \"bankBeneficiaryEn\": \"John Doe\",\n  \"deductionDoc\": \"https://anyurl.com/file.pdf\",\n  \"bookkeepingDoc\": \"https://anyurl.com/file.pdf\",\n  \"accountantEmails\": [],\n  \"accountantDocsEmailSettings\": 0,\n  \"accountantReportEmailSettings\": 0,\n  \"senderEmailSettings\": \"1\",\n  \"documentsEmailSettings\": 1,\n  \"incomeReportEmailSettings\": 0,\n  \"incomeReportFormatType\": 1,\n  \"emailSubjectType\": 1,\n  \"accountingType\": \"0\",\n  \"deductionId\": 0,\n  \"deductionRate\": 0,\n  \"active\": true,\n  \"accountEmail\": \"example@email.com\",\n  \"documentCount\": 54,\n  \"settings\": {\n    \"documentCurrency\": \"ILS\",\n    \"documentLang\": \"he\",\n    \"documentRounding\": false,\n    \"documentVatType\": 0,\n    \"rowVatType\": 0,\n    \"mixedVatEnabled\": false,\n    \"unsignedEnabled\": false,\n    \"attachmentEnabled\": false,\n    \"depositDocumentsEnabled\": false,\n    \"encoding\": \"auto\",\n    \"showForeignAddress\": true,\n    \"foundationDate\": \"2015-01-13\"\n  },\n  \"footerTextHe\": \"This is the Hebrew footer that will show\",\n  \"footerTextEn\": \"This is the English footer that will show\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Get Current Business",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/me",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "me"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Business By ID",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Upload Business Related Files",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/file",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "file"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"type\": \"logo\",\n  \"file\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAWCAYAAAArdgcFAAAE30lEQVQ4y5WUy29dRx3HPzNnzuOe+/Lj2vWNrxM7xUncoiiEqMACdYFgwwI2iEpFyoouu+ui/AUoG4SybBegdgULhEAVsKsUHqFJWYSoNHZJXW6c2LEd38d5zpkZFr6Ok1bl8ZO+mnNmpM989Zvf7ycu/4SnwjnwPZ9aVEMXJfulYarpMz8j+eBmwfYdTXvB48zX6qH0ghdFFX4vCOxaunH/64xxQh2zFP8lhBBY6xgcpKhAqrUXOt8+eab+nbjtf6vM9KKlYvn0KrcG9uWddPftKA7+B7gAAQxHJXEU1nq93qtfOBO9ogLvdKU1D7dGjMYpS8tdpprTLKzO/2A3efh21BC4/wQXAqxxDEY5qysz3z97tntFGnFyMBwzfpBgHXgefOnSWeK4SZ5ntOqNS0ONNx5WxpOfAxcCjHGkumDt/NJPl3qdV3ceHLC/P6TeqtGeblBqzfJyl+mZDoODBCEhCqPZqBGcLrVdF+qQroR4Gm4tpEXF+fOnf/bMQuvyxvoWQkBrKiYIfKTyWOl1mJ2bYzTIUb6HKR2e8jjZqS+YqlqXngeAdMCREJAksHxq7rXOXPPyR+tbKF/SaNWoxSF5njE/16a7+AxZpvFDhcMh5KFTI4Sn8aiQVEhUenDsWhfQaKulxaXZK/3NHZSS1OKQKArJi4xmK6bXWyBJSwQOayzWGJRUFJWm0pXDiCOrqKnp6Kg4GB4YFhc7P8rzkiLXxA0fpRQqUNjMcO7sGkVhGA1zlPJw1mG0JQglWZaznyWPpJJ4bpLz93/vJs0j8AIh1y743y2ynCBSKKUwxpBmCedWV/H9iP69HeJaDYGgMhokOOsYZ0mqhd1QSuKwh/D6THmYL+OoN/1T1pgFg8P3FUEYMB4PWFw8Qa+3yMf9T4jiCD/0KAuNcxZrHHlVMBgOb9d0kIYiPEwDoC6c9w/hlSWIVdNUlspY5hda6FKjdcWzp1bY298nGZeEoSDRGmscVWXBQZ4l7KaDP4xiR+GVxx167cv68UwJKtv/5tBZSiOtcRQ648zKOZrNJn++cRPfizHaTUrWIYRAOI9B+ghXpW9M+wJPuOMOnduUjx+0Sux+Guv3m+3w0vb9PeZPzPD8c6t8cr8P1qfeDhBCoEsDzmKtIM/GbN59+GaSVJu+kugnekatPrBkY0c+Aq1hZ2l4JWp2fjFOEi50nqMSOf1796lFLYyxaG0wxoIVVCZjf7y98euro1d2PxYIjl0DqPfeE5xY9eh+0SM7cGTj6pd7W8O/TnWaL8x369y5c5ftfkaj6ZBSIKXEkxJjK3b3dj80KnkxH3guG5rH9X0U8vqvLO9ctdz4raPwJAMtufm35KW5uU4SxJZ/buyAFdjSYK2hMiV7+wf0t/tvOTW82Gz720EkPm+wHkd9UfLDH68QhoKLF2e38iLpXr92d9xsh74Xi7HN6Rd5cV3Wqrf+tV5de/SRYPMWbNzUWPNZ+FNTMbln+eCdEa+9sfyNUPndd383fP3Wu8nV5lziPUgZpR9KZ0sLQtK/7UiHjv87fv6PtRt/d191z3+l0fqUkRYwP9Es0AbqQAT4gPy0czE5jCfK/vKb0e7tPyV/vH19vAycmkBDwAMMUAI5kD6hBBhP1hTIxATuTW4OJt/DyX53sieeeB8B2IkMUD2hEtBH//8GuBxdlPz72rMAAAAASUVORK5CYII=\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Delete Business Related Files",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/file",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "file"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"type\": \"logo\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Get All Documents Numbering",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/numbering",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "numbering"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Modify Initial Documents Numbering",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/numbering",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "numbering"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"10\": 1,\n  \"100\": 10001,\n  \"200\": 20001,\n  \"210\": 30001,\n  \"300\": 40001,\n  \"305\": 50001,\n  \"320\": 60001,\n  \"330\": 70001,\n  \"400\": 80001,\n  \"405\": 1,\n  \"500\": 90001,\n  \"600\": 1,\n  \"610\": 1\n}"
+              }
+            }
+          },
+          {
+            "name": "Get Business Documents Footer",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/footer",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "footer"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Business Types",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/types",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "types"
+                ],
+                "query": [
+                  {
+                    "key": "lang",
+                    "value": "",
+                    "disabled": true
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Clients",
+        "item": [
+          {
+            "name": "Add Client",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/clients",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "clients"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"לקוח אפ3\",\n  \"active\": true,\n  \"department\": \"Sales\",\n  \"taxId\": \"0123456789\",\n  \"accountingKey\": \"10202\",\n  \"paymentTerms\": 0,\n  \"bankName\": \"לאומי\",\n  \"bankBranch\": \"44\",\n  \"bankAccount\": \"565656565656\",\n  \"address\": \"רחוב סוקולוב 15\",\n  \"city\": \"תל אביב-יפו\",\n  \"zip\": \"6291790\",\n  \"country\": \"IL\",\n  \"category\": 16,\n  \"subCategory\": 1602,\n  \"phone\": \"565656565656\",\n  \"fax\": \"565656565656\",\n  \"mobile\": \"565656565656\",\n  \"remarks\": \"Customer approved 2016 sales\",\n  \"contactPerson\": \"Ido\",\n  \"emails\": [],\n  \"labels\": []\n}"
+              }
+            }
+          },
+          {
+            "name": "Get Client",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/clients/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "clients",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Client",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/clients/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "clients",
+                  "{id}"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"לקוח אפ3\",\n  \"active\": true,\n  \"department\": \"Sales\",\n  \"taxId\": \"0123456789\",\n  \"accountingKey\": \"10202\",\n  \"paymentTerms\": 0,\n  \"bankName\": \"לאומי\",\n  \"bankBranch\": \"44\",\n  \"bankAccount\": \"565656565656\",\n  \"send\": false,\n  \"address\": \"רחוב סוקולוב 15\",\n  \"city\": \"תל אביב-יפו\",\n  \"zip\": \"6291790\",\n  \"country\": \"IL\",\n  \"category\": 16,\n  \"subCategory\": 1602,\n  \"phone\": \"565656565656\",\n  \"fax\": \"565656565656\",\n  \"mobile\": \"565656565656\",\n  \"remarks\": \"Customer approved 2016 sales\",\n  \"contactPerson\": \"Ido\",\n  \"emails\": [],\n  \"labels\": []\n}"
+              }
+            }
+          },
+          {
+            "name": "Delete Client",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/clients/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "clients",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Search Clients",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/clients/search",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "clients",
+                  "search"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"Jacob\",\n  \"active\": true,\n  \"email\": \"example@email.com\",\n  \"contactPerson\": \"Shlomi\",\n  \"labels\": [],\n  \"taxId\": \"0123456789\",\n  \"page\": 1,\n  \"pageSize\": 20\n}"
+              }
+            }
+          },
+          {
+            "name": "Associate Existing Documents to a Client",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/clients/{id}/assoc",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "clients",
+                  "{id}",
+                  "assoc"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"ids\": []\n}"
+              }
+            }
+          },
+          {
+            "name": "Merge Clients",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/clients/{id}/merge",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "clients",
+                  "{id}",
+                  "merge"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"mergeId\": \"6f9g7a6d-095e-46d4-b2c6-331747508759\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Update Client Balance",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/clients/{id}/balance",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "clients",
+                  "{id}",
+                  "balance"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"balance\": 4\n}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Suppliers",
+        "item": [
+          {
+            "name": "Add Supplier",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/suppliers",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suppliers"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"לקוח אפ3\",\n  \"active\": true,\n  \"department\": \"Sales\",\n  \"taxId\": \"0123456789\",\n  \"accountingKey\": \"10202\",\n  \"paymentTerms\": 0,\n  \"bankName\": \"לאומי\",\n  \"bankBranch\": \"44\",\n  \"bankAccount\": \"565656565656\",\n  \"address\": \"רחוב סוקולוב 15\",\n  \"city\": \"תל אביב-יפו\",\n  \"zip\": \"6291790\",\n  \"country\": \"IL\",\n  \"phone\": \"565656565656\",\n  \"fax\": \"565656565656\",\n  \"mobile\": \"565656565656\",\n  \"remarks\": \"Customer approved 2016 sales\",\n  \"contactPerson\": \"Ido\",\n  \"emails\": [],\n  \"labels\": []\n}"
+              }
+            }
+          },
+          {
+            "name": "Get Supplier",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/suppliers/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suppliers",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Supplier",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/suppliers/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suppliers",
+                  "{id}"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"לקוח אפ3\",\n  \"active\": true,\n  \"department\": \"Sales\",\n  \"taxId\": \"0123456789\",\n  \"accountingKey\": \"10202\",\n  \"paymentTerms\": 0,\n  \"bankName\": \"לאומי\",\n  \"bankBranch\": \"44\",\n  \"bankAccount\": \"565656565656\",\n  \"address\": \"רחוב סוקולוב 15\",\n  \"city\": \"תל אביב-יפו\",\n  \"zip\": \"6291790\",\n  \"country\": \"IL\",\n  \"phone\": \"565656565656\",\n  \"fax\": \"565656565656\",\n  \"mobile\": \"565656565656\",\n  \"remarks\": \"Customer approved 2016 sales\",\n  \"contactPerson\": \"Ido\",\n  \"emails\": [],\n  \"labels\": []\n}"
+              }
+            }
+          },
+          {
+            "name": "Delete Supplier",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/suppliers/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suppliers",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Search Suppliers",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/suppliers/search",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suppliers",
+                  "search"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"Jacob\",\n  \"active\": true,\n  \"email\": \"example@email.com\",\n  \"contactPerson\": \"example@email.com\",\n  \"labels\": [],\n  \"page\": 1,\n  \"pageSize\": 20\n}"
+              }
+            }
+          },
+          {
+            "name": "Merge Suppliers",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/suppliers/{id}/merge",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "suppliers",
+                  "{id}",
+                  "merge"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"mergeId\": \"6f9g7a6d-095e-46d4-b2c6-331747508759\"\n}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Items",
+        "item": [
+          {
+            "name": "Add Item",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/items",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "items"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"IKS00032\",\n  \"description\": \"פריט לדוגמה\",\n  \"price\": 20.12,\n  \"currency\": \"ILS\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Get Item",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/items/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "items",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Item",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/items/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "items",
+                  "{id}"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"IKS00032\",\n  \"description\": \"פריט לדוגמה\",\n  \"price\": 20.12,\n  \"currency\": \"ILS\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Delete Item",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/items/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "items",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Search Items",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/items/search",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "items",
+                  "search"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"name\": \"IKS00032\",\n  \"description\": \"programmer hour\",\n  \"currency\": \"ILS\",\n  \"page\": 1,\n  \"pageSize\": 20\n}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Documents",
+        "item": [
+          {
+            "name": "Add Document",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"description\": \"Just an order\",\n  \"remarks\": \"Some remarks\",\n  \"footer\": \"Texts in footer\",\n  \"emailContent\": \"Email content\",\n  \"type\": 300,\n  \"date\": \"2016-04-12\",\n  \"dueDate\": \"2016-04-30\",\n  \"lang\": \"he\",\n  \"currency\": \"ILS\",\n  \"vatType\": 0,\n  \"discount\": {\n    \"amount\": 1,\n    \"type\": \"sum\"\n  },\n  \"rounding\": true,\n  \"signed\": true,\n  \"attachment\": true,\n  \"maxPayments\": 1,\n  \"paymentRequestData\": {\n    \"plugins\": [\n      {\n        \"id\": \"031e827a-c664-c1e4-d231-a80027271123\",\n        \"group\": 100,\n        \"type\": 12010\n      }\n    ],\n    \"maxPayments\": 1\n  },\n  \"client\": {\n    \"id\": \"7944827a-c664-11e4-8231-080027271114\",\n    \"name\": \"name\",\n    \"emails\": [\n      \"email1@example.com\",\n      \"email2@example.com\"\n    ],\n    \"taxId\": \"0123456789\",\n    \"address\": \"1 Luria st\",\n    \"city\": \"Tel Aviv\",\n    \"zip\": \"1234567\",\n    \"country\": \"IL\",\n    \"phone\": \"+972-54-1234567\",\n    \"fax\": \"+972-54-1234567\",\n    \"mobile\": \"+972-54-1234567\",\n    \"add\": true,\n    \"self\": false\n  },\n  \"income\": [\n    {\n      \"catalogNum\": \"MXDFSDD\",\n      \"description\": \"Item description\",\n      \"quantity\": 1,\n      \"price\": 300.00,\n      \"currency\": \"ILS\",\n      \"currencyRate\": 1,\n      \"itemId\": \"8b338c95-095e-46d4-b2c6-331747508759\",\n      \"vatType\": 1\n    }\n  ],\n  \"payment\": [\n    {\n      \"date\": \"2016-03-21\",\n      \"type\": 0,\n      \"price\": 300.00,\n      \"currency\": \"ILS\",\n      \"currencyRate\": 1,\n      \"bankName\": \"My Bank\",\n      \"bankBranch\": \"198\",\n      \"bankAccount\": \"212435\",\n      \"chequeNum\": \"10002\",\n      \"accountId\": \"TFGFFGSYYE\",\n      \"transactionId\": \"TGBBBXNLKS75SKJS\",\n      \"appType\": 1,\n      \"subType\": 1,\n      \"cardType\": 0,\n      \"cardNum\": \"8765\",\n      \"dealType\": 1,\n      \"numPayments\": 1,\n      \"firstPayment\": 10\n    }\n  ],\n  \"linkedDocumentIds\": [\n    \"031e827a-c664-c1e4-d231-a80027271123\"\n  ],\n  \"linkedPaymentId\": \"031e827a-c664-c1e4-d231-a80027271123\",\n  \"linkType\": \"link\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Get a Preview Document",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/preview",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "preview"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"description\": \"Just an order\",\n  \"remarks\": \"Some remarks\",\n  \"footer\": \"Texts in footer\",\n  \"type\": 300,\n  \"date\": \"2016-04-12\",\n  \"dueDate\": \"2016-04-30\",\n  \"lang\": \"he\",\n  \"currency\": \"ILS\",\n  \"vatType\": 0,\n  \"discount\": {\n    \"amount\": 1,\n    \"type\": \"sum\"\n  },\n  \"rounding\": true,\n  \"signed\": true,\n  \"maxPayments\": 1,\n  \"client\": {\n    \"id\": \"7944827a-c664-11e4-8231-080027271114\",\n    \"name\": \"name\",\n    \"emails\": [\n      \"email1@example.com\",\n      \"email2@example.com\"\n    ],\n    \"taxId\": \"0123456789\",\n    \"address\": \"1 Luria st\",\n    \"city\": \"Tel Aviv\",\n    \"zip\": \"1234567\",\n    \"country\": \"IL\",\n    \"phone\": \"+972-54-1234567\",\n    \"fax\": \"+972-54-1234567\",\n    \"mobile\": \"+972-54-1234567\",\n    \"add\": true,\n    \"self\": false\n  },\n  \"income\": [\n    {\n      \"catalogNum\": \"MXDFSDD\",\n      \"description\": \"Item description\",\n      \"quantity\": 1,\n      \"price\": 300.00,\n      \"currency\": \"ILS\",\n      \"currencyRate\": 1,\n      \"itemId\": \"8b338c95-095e-46d4-b2c6-331747508759\",\n      \"vatType\": 1\n    }\n  ],\n  \"payment\": [\n    {\n      \"date\": \"2016-03-21\",\n      \"type\": 0,\n      \"price\": 300.00,\n      \"currency\": \"ILS\",\n      \"currencyRate\": 1,\n      \"bankName\": \"My Bank\",\n      \"bankBranch\": \"198\",\n      \"bankAccount\": \"212435\",\n      \"chequeNum\": \"10002\",\n      \"accountId\": \"TFGFFGSYYE\",\n      \"transactionId\": \"TGBBBXNLKS75SKJS\",\n      \"appType\": 1,\n      \"subType\": 1,\n      \"cardType\": 0,\n      \"cardNum\": \"8765\",\n      \"dealType\": 1,\n      \"numPayments\": 1,\n      \"firstPayment\": 10\n    }\n  ],\n  \"linkedDocumentIds\": [\n    \"031e827a-c664-c1e4-d231-a80027271123\"\n  ],\n  \"linkedPaymentId\": \"031e827a-c664-c1e4-d231-a80027271123\",\n  \"linkType\": \"link\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Get Document",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Search Documents",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/search",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "search"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"page\": 1,\n  \"pageSize\": 20,\n  \"number\": 12001,\n  \"type\": [\n    10\n  ],\n  \"status\": [\n    0\n  ],\n  \"paymentTypes\": [\n    0\n  ],\n  \"fromDate\": \"2016-01-01\",\n  \"toDate\": \"2016-01-31\",\n  \"clientId\": \"28fa4c1d-a29b-11e4-963c-18002725111e\",\n  \"clientName\": \"John\",\n  \"description\": \"Any text\",\n  \"download\": true,\n  \"sort\": \"documentDate\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Search Payments in Documents",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/payments/search",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "payments",
+                  "search"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"page\": 1,\n  \"pageSize\": 20,\n  \"type\": [\n    320\n  ],\n  \"paymentTypes\": [\n    0\n  ],\n  \"fromDate\": \"2016-01-01\",\n  \"toDate\": \"2016-01-31\",\n  \"paymentId\": \"427547\",\n  \"sort\": \"date:desc\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Close Document",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/{id}/close",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "{id}",
+                  "close"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Open Document",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/{id}/open",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "{id}",
+                  "open"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Linked Documents",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/{id}/linked",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "{id}",
+                  "linked"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Document Download Links",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/{id}/download/links",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "{id}",
+                  "download",
+                  "links"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Document Information",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/info",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "info"
+                ],
+                "query": [
+                  {
+                    "key": "type",
+                    "value": "",
+                    "disabled": true
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Document Templates",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/templates",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "templates"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Document Types",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/types",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "types"
+                ],
+                "query": [
+                  {
+                    "key": "lang",
+                    "value": "",
+                    "disabled": true
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Document Statuses",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/documents/statuses",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "documents",
+                  "statuses"
+                ],
+                "query": [
+                  {
+                    "key": "lang",
+                    "value": "",
+                    "disabled": true
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Expenses",
+        "item": [
+          {
+            "name": "Add Expense",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"paymentType\": 2,\n  \"currency\": \"ILS\",\n  \"currencyRate\": 1,\n  \"vat\": 24.1,\n  \"amount\": 24.1,\n  \"date\": \"2018-03-09\",\n  \"dueDate\": \"2018-03-09\",\n  \"reportingDate\": \"2018-03-01\",\n  \"documentType\": 20,\n  \"number\": \"979424\",\n  \"description\": \"תקשורת\",\n  \"remarks\": \"This is a summerizing expense\",\n  \"supplier\": {\n    \"id\": \"8b338c95-095e-46d4-b2c6-331747508759\",\n    \"name\": \"לקוח אפ3\",\n    \"active\": true,\n    \"taxId\": \"0123456789\",\n    \"paymentTerms\": 0,\n    \"bankName\": \"לאומי\",\n    \"bankBranch\": \"44\",\n    \"bankAccount\": \"565656565656\",\n    \"country\": \"IL\",\n    \"phone\": \"565656565656\",\n    \"mobile\": \"565656565656\",\n    \"contactPerson\": \"Ido\",\n    \"emails\": [],\n    \"labels\": [],\n    \"creationDate\": 1503563534,\n    \"lastUpdateDate\": 1503563534,\n    \"department\": \"Sales\",\n    \"accountingKey\": \"10202\",\n    \"address\": \"רחוב סוקולוב 15\",\n    \"city\": \"תל אביב-יפו\",\n    \"zip\": \"6291790\",\n    \"fax\": \"565656565656\",\n    \"remarks\": \"Customer approved 2016 sales\",\n    \"incomeAmount\": 0,\n    \"paymentAmount\": 0,\n    \"balanceAmount\": 0\n  },\n  \"accountingClassification\": {\n    \"id\": \"44ad38d5-631b-498e-a3d7-0a4b0ff94c42\",\n    \"key\": \"3055\",\n    \"code\": \"3000\",\n    \"title\": \"הוצאות מחקר ופיתוח\",\n    \"irsCode\": 3055,\n    \"income\": 100,\n    \"type\": 20,\n    \"vat\": 100\n  },\n  \"active\": true,\n  \"addRecipient\": true,\n  \"addAccountingClassification\": true\n}"
+              }
+            }
+          },
+          {
+            "name": "Get Expense",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Expense",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "{id}"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"paymentType\": \"-1\",\n  \"currency\": \"ILS\",\n  \"currencyRate\": 1,\n  \"vat\": 24.1,\n  \"amount\": 24.1,\n  \"amountExcludeVat\": 26,\n  \"date\": \"2018-03-09\",\n  \"dueDate\": \"2018-03-09\",\n  \"reportingDate\": \"2018-03-01\",\n  \"documentType\": 20,\n  \"number\": \"979424\",\n  \"description\": \"תקשורת\",\n  \"remarks\": \"This is a summerizing expense\",\n  \"labels\": [],\n  \"supplier\": {\n    \"id\": \"8b338c95-095e-46d4-b2c6-331747508759\",\n    \"name\": \"לקוח אפ3\",\n    \"active\": true,\n    \"taxId\": \"0123456789\",\n    \"paymentTerms\": 0,\n    \"bankName\": \"לאומי\",\n    \"bankBranch\": \"44\",\n    \"bankAccount\": \"565656565656\",\n    \"country\": \"IL\",\n    \"phone\": \"565656565656\",\n    \"mobile\": \"565656565656\",\n    \"contactPerson\": \"Ido\",\n    \"emails\": [],\n    \"labels\": [],\n    \"creationDate\": 1503563534,\n    \"lastUpdateDate\": 1503563534,\n    \"department\": \"Sales\",\n    \"accountingKey\": \"10202\",\n    \"address\": \"רחוב סוקולוב 15\",\n    \"city\": \"תל אביב-יפו\",\n    \"zip\": \"6291790\",\n    \"fax\": \"565656565656\",\n    \"remarks\": \"Customer approved 2016 sales\",\n    \"incomeAmount\": 0,\n    \"paymentAmount\": 0,\n    \"balanceAmount\": 0\n  },\n  \"accountingClassification\": {\n    \"id\": \"44ad38d5-631b-498e-a3d7-0a4b0ff94c42\",\n    \"key\": \"3055\",\n    \"code\": \"3000\",\n    \"title\": \"הוצאות מחקר ופיתוח\",\n    \"irsCode\": 3055,\n    \"income\": 100,\n    \"type\": 20,\n    \"vat\": 100\n  },\n  \"active\": true\n}"
+              }
+            }
+          },
+          {
+            "name": "Delete Expense",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/{id}",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "{id}"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Search Expenses",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/search",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "search"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"fromDate\": \"2016-01-01\",\n  \"toDate\": \"2016-01-31\",\n  \"dueDate\": \"2016-01-31\",\n  \"description\": \"Any text\",\n  \"supplierId\": \"Jacob\",\n  \"supplierName\": \"Jacob\",\n  \"number\": \"12345\",\n  \"paid\": true,\n  \"reported\": true,\n  \"sort\": \"example@email.com\",\n  \"minAmount\": 10.4,\n  \"maxAmount\": 50.7,\n  \"page\": 1,\n  \"pageSize\": 20,\n  \"accountingClassificationId\": \"0efabcdd-477d-4fc1-a926-85228e5bda13\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Open Expense",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/{id}/open",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "{id}",
+                  "open"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Close Expense",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/{id}/close",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "{id}",
+                  "close"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Allowed Expenses Statuses",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/statuses",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "statuses"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Accounting Classifications",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/accounting/classifications/map",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "accounting",
+                  "classifications",
+                  "map"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Step 1: Get File Upload URL",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/file",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "file"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Step 2.A: Create Expense Draft via File",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/example",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "example"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Step 2.B: Update Expense File",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/example",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "example"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Search Expense Drafts",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/expenses/drafts/search",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "expenses",
+                  "drafts",
+                  "search"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"fromDate\": \"2016-01-01\",\n  \"toDate\": \"2016-01-31\",\n  \"description\": \"Any text\",\n  \"supplierId\": \"Jacob\",\n  \"supplierName\": \"Jacob\",\n  \"page\": 1,\n  \"pageSize\": 20\n}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Payments",
+        "item": [
+          {
+            "name": "Get Payment Form",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/payments/form",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "payments",
+                  "form"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"description\": \"תיאור מסמך\",\n  \"type\": 320,\n  \"lang\": \"he\",\n  \"currency\": \"ILS\",\n  \"vatType\": 0,\n  \"amount\": 20,\n  \"maxPayments\": 1,\n  \"pluginId\": \"7944827a-c664-11e4-8231-080027271115\",\n  \"group\": 100,\n  \"client\": {\n    \"id\": \"7944827a-c664-11e4-8231-080027271114\",\n    \"name\": \"name\",\n    \"emails\": [\n      \"email1@example.com\",\n      \"email2@example.com\"\n    ],\n    \"taxId\": \"0123456789\",\n    \"address\": \"1 Luria st\",\n    \"city\": \"Tel Aviv\",\n    \"zip\": \"1234567\",\n    \"country\": \"IL\",\n    \"phone\": \"+972-54-1234567\",\n    \"fax\": \"+972-54-1234567\",\n    \"mobile\": \"+972-54-1234567\",\n    \"add\": true\n  },\n  \"income\": [\n    {\n      \"catalogNum\": \"MXDFSDD\",\n      \"description\": \"Item description\",\n      \"quantity\": 1,\n      \"price\": 20.00,\n      \"currency\": \"ILS\",\n      \"vatType\": 1\n    }\n  ],\n  \"remarks\": \"Some remarks\",\n  \"successUrl\": \"https://www.your-site-here.com/successful-payment-redirection-page-here\",\n  \"failureUrl\": \"https://www.your-site-here.com/failed-payment-redirection-page-here\",\n  \"notifyUrl\": \"https://www.your-site-here.com/notification-endpoint-here\",\n  \"custom\": \"Some custom data comes here\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Search Credit Card Tokens",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/payments/tokens/search",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "payments",
+                  "tokens",
+                  "search"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"paymentNumber\": \"Payment number\",\n  \"cardHolder\": \"Card holder name\",\n  \"externalKey\": \"Client ID\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Charge Credit Card Token",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/payments/tokens/{id}/charge",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "payments",
+                  "tokens",
+                  "{id}",
+                  "charge"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"description\": \"Transaction description\",\n  \"type\": 320,\n  \"lang\": \"he\",\n  \"currency\": \"ILS\",\n  \"vatType\": 0,\n  \"amount\": 20,\n  \"maxPayments\": 1,\n  \"income\": [\n    {\n      \"catalogNum\": \"MXDFSDD\",\n      \"description\": \"Item description\",\n      \"quantity\": 1,\n      \"price\": 20.00,\n      \"currency\": \"ILS\",\n      \"vatType\": 1\n    }\n  ],\n  \"remarks\": \"Some remarks\",\n  \"notifyUrl\": \"https://www.your-site-here.com/notification-endpoint-here\"\n}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Partners",
+        "item": [
+          {
+            "name": "Get All Connected Users",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/partners/users",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "partners",
+                  "users"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Request User Approval",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/partners/users/connection",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "partners",
+                  "users",
+                  "connection"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                },
+                "raw": "{\n  \"email\": \"email@example.com\",\n  \"url\": \"https://example.com/callback\"\n}"
+              }
+            }
+          },
+          {
+            "name": "Get Connected User",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/partners/users",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "partners",
+                  "users"
+                ],
+                "query": [
+                  {
+                    "key": "email",
+                    "value": "",
+                    "disabled": true
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Disconnect Partner User",
+            "request": {
+              "method": "DELETE",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/partners/users/connection",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "partners",
+                  "users",
+                  "connection"
+                ],
+                "query": [
+                  {
+                    "key": "email",
+                    "value": "",
+                    "disabled": true
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Tools",
+        "item": [
+          {
+            "name": "Get Supported Business Categories",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/businesses/v1/occupations",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "businesses",
+                  "v1",
+                  "occupations"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Supported Countries",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/geo-location/v1/countries",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "geo-location",
+                  "v1",
+                  "countries"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Supported Cities",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/geo-location/v1/cities",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "geo-location",
+                  "v1",
+                  "cities"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Get Supported Currencies",
+            "request": {
+              "method": "GET",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "url": {
+                "raw": "{{baseUrl}}/currency-exchange/v1/latest",
+                "host": [
+                  "{{baseUrl}}"
+                ],
+                "path": [
+                  "currency-exchange",
+                  "v1",
+                  "latest"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

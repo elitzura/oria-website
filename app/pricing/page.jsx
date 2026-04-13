@@ -89,7 +89,7 @@ export default function PricingPage() {
                 <li><span className="check">✓</span> סוכני AI — סיכום פגישות וניתוח תובנות</li>
                 <li><span className="check">✓</span> עד 3 מטופלים פעילים</li>
               </ul>
-              <Link href="/checkout" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>התחילו חינם</Link>
+              <a href="https://clinic.therawiseai.com" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>התחילו חינם</a>
             </div>
 
             {/* MIND */}
@@ -116,7 +116,7 @@ export default function PricingPage() {
                 <li><span className="check">✓</span> סוכן AI: סיכום פגישות ומעקב מטופל</li>
                 <li><span className="check">✓</span> תמיכה במייל</li>
               </ul>
-              <Link href="/checkout?plan=mind" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>רכישה ←</Link>
+              <a href="https://clinic.therawiseai.com" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>רכישה ←</a>
             </div>
 
             {/* MIND PREMIUM */}
@@ -140,7 +140,7 @@ export default function PricingPage() {
                 <li><span className="check">✓</span> דוחות התקדמות אוטומטיים</li>
                 <li><span className="check">✓</span> תמיכה בצ'אט ובטלפון</li>
               </ul>
-              <Link href="/checkout?plan=mind-premium" className="btn btn-primary btn-block" style={{ textAlign: 'center' }}>רכישה ←</Link>
+              <a href="https://clinic.therawiseai.com" className="btn btn-primary btn-block" style={{ textAlign: 'center' }}>רכישה ←</a>
             </div>
 
             {/* Clinic */}

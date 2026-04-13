@@ -11,13 +11,32 @@ export default function FeaturesPage() {
     document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
   }, []);
 
+  const IconMessage = () => (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  );
+  const IconClipboard = () => (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+  );
+  const IconMic = () => (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+  );
+  const IconBrain = () => (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-1.14Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-1.14Z"/></svg>
+  );
+  const IconBarChart = () => (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+  );
+  const IconShieldLock = () => (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect x="9" y="11" width="6" height="5" rx="1"/><path d="M12 11V9a2 2 0 1 1 4 0"/></svg>
+  );
+
   const entries = [
-    { href: '/features/whatsapp-reminders', icon: '💬', iconClass: 'icon-green', date: 'מרץ 2026', tags: [['tag-new', 'חדש'], ['tag-manage', 'ניהול']], title: 'תזכורות חכמות — וואצאפ, אימייל ואישור הגעה', text: 'ORIA שולחת תזכורות אוטומטיות לפגישה בוואצאפ ובאימייל, עם כפתורי אישור הגעה אמיתיים. המטופל לוחץ — הסטטוס מתעדכן. אתם לא צריכים לגעת בזה.', delay: 0 },
-    { href: '/features/audit-logs', icon: '📋', iconClass: 'icon-purple', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה'], ['tag-new', 'חדש']], title: 'Audit Log — מי פתח את התיק הזה?', text: 'כל גישה לכל תיק מתועדת אוטומטית: מי נכנס, מתי, מאיזה מכשיר, מה שונה. חובה חוקית לפי תיקון 13 — ועכשיו מוכנה עבורכם ברקע.', delay: 0 },
-    { href: '/features/brain-dump', icon: '🎙️', iconClass: 'icon-blue', date: 'פברואר 2026', tags: [['tag-core', 'ליבה'], ['tag-new', 'חדש']], title: 'Brain Dump — סיכום קליני ב-30 שניות', text: 'מקליטים דקה-שתיים אחרי הפגישה, ו-ORIA מחזירה סיכום מסודר בסגנון שלכם. לא עוד כתיבה ידנית בסוף יום עייף.', delay: 0 },
-    { href: '/features/second-brain', icon: '🧠', iconClass: 'icon-purple', date: 'ינואר 2026', tags: [['tag-core', 'ליבה']], title: 'המוח השני — הכנה לפגישה תוך 30 שניות', text: 'ORIA זוכרת מה נאמר לפני 3 פגישות, מזהה דפוסים חוזרים, ומציגה לכם תקציר חכם לפני כל מפגש. מגיעים ממוקדים.', delay: 100 },
-    { href: '/features/reports', icon: '📊', iconClass: 'icon-coral', date: 'פברואר 2026', tags: [['tag-manage', 'ניהול'], ['tag-new', 'חדש']], title: 'דוחות פיננסיים — שאלו בעברית, קבלו אקסל', text: 'שאלו "כמה הרווחתי בינואר?" ו-ORIA תיצור דוח עם גרפים וטבלאות. כל הנתונים ניתנים לייצוא לאקסל בלחיצה אחת.', delay: 200 },
-    { href: '/features/security-2fa', icon: '🔐', iconClass: 'icon-green', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה']], title: 'אימות דו-שלבי — כניסה מאובטחת לקליניקה שלכם', text: 'קוד חד-פעמי מהנייד בכל כניסה. גם אם מישהו גנב את הסיסמה — המידע של המטופלים שלכם מוגן. ISO 27001, תיקון 13.', delay: 300 },
+    { href: '/features/whatsapp-reminders', icon: <IconMessage />, iconClass: 'icon-green', date: 'מרץ 2026', tags: [['tag-new', 'חדש'], ['tag-manage', 'ניהול']], title: 'תזכורות חכמות — וואצאפ, אימייל ואישור הגעה', text: 'ORIA שולחת תזכורות אוטומטיות לפגישה בוואצאפ ובאימייל, עם כפתורי אישור הגעה אמיתיים. המטופל לוחץ — הסטטוס מתעדכן. אתם לא צריכים לגעת בזה.', delay: 0 },
+    { href: '/features/audit-logs', icon: <IconClipboard />, iconClass: 'icon-purple', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה'], ['tag-new', 'חדש']], title: 'Audit Log — מי פתח את התיק הזה?', text: 'כל גישה לכל תיק מתועדת אוטומטית: מי נכנס, מתי, מאיזה מכשיר, מה שונה. חובה חוקית לפי תיקון 13 — ועכשיו מוכנה עבורכם ברקע.', delay: 0 },
+    { href: '/features/brain-dump', icon: <IconMic />, iconClass: 'icon-blue', date: 'פברואר 2026', tags: [['tag-core', 'ליבה'], ['tag-new', 'חדש']], title: 'Brain Dump — סיכום קליני ב-30 שניות', text: 'מקליטים דקה-שתיים אחרי הפגישה, ו-ORIA מחזירה סיכום מסודר בסגנון שלכם. לא עוד כתיבה ידנית בסוף יום עייף.', delay: 0 },
+    { href: '/features/second-brain', icon: <IconBrain />, iconClass: 'icon-purple', date: 'ינואר 2026', tags: [['tag-core', 'ליבה']], title: 'המוח השני — הכנה לפגישה תוך 30 שניות', text: 'ORIA זוכרת מה נאמר לפני 3 פגישות, מזהה דפוסים חוזרים, ומציגה לכם תקציר חכם לפני כל מפגש. מגיעים ממוקדים.', delay: 100 },
+    { href: '/features/reports', icon: <IconBarChart />, iconClass: 'icon-coral', date: 'פברואר 2026', tags: [['tag-manage', 'ניהול'], ['tag-new', 'חדש']], title: 'דוחות פיננסיים — שאלו בעברית, קבלו אקסל', text: 'שאלו "כמה הרווחתי בינואר?" ו-ORIA תיצור דוח עם גרפים וטבלאות. כל הנתונים ניתנים לייצוא לאקסל בלחיצה אחת.', delay: 200 },
+    { href: '/features/security-2fa', icon: <IconShieldLock />, iconClass: 'icon-green', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה']], title: 'אימות דו-שלבי — כניסה מאובטחת לקליניקה שלכם', text: 'קוד חד-פעמי מהנייד בכל כניסה. גם אם מישהו גנב את הסיסמה — המידע של המטופלים שלכם מוגן. ISO 27001, תיקון 13.', delay: 300 },
   ];
 
   return (
@@ -33,8 +52,12 @@ export default function FeaturesPage() {
         .feed-label{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:2.5rem}
         .feature-entry{background:white;border-radius:var(--radius-xl);padding:2rem 2rem 1.75rem;margin-bottom:1.5rem;display:flex;gap:1.5rem;align-items:flex-start;box-shadow:var(--shadow-sm);border:1px solid var(--gray-200);text-decoration:none;color:inherit;transition:transform var(--transition),box-shadow var(--transition);position:relative}
         .feature-entry:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-        .feature-entry-icon{width:56px;height:56px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.75rem;flex-shrink:0}
-        .icon-blue{background:rgba(72,183,255,.12)}.icon-purple{background:rgba(98,93,229,.12)}.icon-coral{background:rgba(229,144,122,.12)}.icon-green{background:rgba(34,197,94,.1)}
+        .feature-entry-icon{width:52px;height:52px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .feature-entry-icon svg{width:24px;height:24px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
+        .icon-blue{background:rgba(72,183,255,.12)}.icon-blue svg{stroke:#0284c7}
+        .icon-purple{background:rgba(98,93,229,.12)}.icon-purple svg{stroke:var(--primary)}
+        .icon-coral{background:rgba(229,144,122,.15)}.icon-coral svg{stroke:#c2410c}
+        .icon-green{background:rgba(34,197,94,.1)}.icon-green svg{stroke:#16a34a}
         .feature-entry-body{flex:1}
         .feature-entry-meta{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;flex-wrap:wrap}
         .feature-date{font-size:.8rem;color:var(--gray-400);font-weight:500}
@@ -47,13 +70,15 @@ export default function FeaturesPage() {
         .feature-entry:hover .feature-read-more::after{transform:translateX(-4px)}
         .feature-entry-arrow{color:var(--gray-300);font-size:1.2rem;align-self:center;flex-shrink:0}
         .features-cta{background:white;padding:72px 1.5rem;text-align:center;border-top:1px solid var(--gray-200)}
-        .features-cta h2{font-size:1.75rem;font-weight:800;color:var(--dark);margin-bottom:.75rem}
+        .features-cta h2{font-size:1.75rem;font-weight:800;color:var(--dark);margin-bottom:.75rem;letter-spacing:-0.025em}
         .features-cta p{color:var(--gray-600);margin-bottom:2rem}
+        .features-hero .dark-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;mask-image:radial-gradient(ellipse 80% 100% at 50% 0%,black 0%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 80% 100% at 50% 0%,black 0%,transparent 80%)}
         @media(max-width:600px){.feature-entry{flex-direction:column;gap:1rem}.feature-entry-arrow{display:none}}
       `}</style>
 
       <FeaturePageLayout>
         <section className="features-hero">
+          <div className="dark-hero-grid" aria-hidden="true"></div>
           <div style={{ position: 'relative', zIndex: 2 }}>
             <p className="section-eyebrow" style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>מה בנינו לכם</p>
             <h1>הפיצ'רים של <span className="highlight">ORIA</span></h1>
