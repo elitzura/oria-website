@@ -21,7 +21,7 @@
     --primary-dark: #4a45b8;
     --secondary: #48B7FF;
     --dark: #171938;
-    --light: #F2F2FC;
+    --light: #FAF9F7;
     --coral: #E5907A;
     --white: #ffffff;
     --gray-50: #fafafa;
@@ -330,7 +330,7 @@ strong {
     right: -20%;
     width: 80%;
     height: 150%;
-    background: radial-gradient(ellipse at center, rgba(98, 93, 229, 0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(229, 144, 122, 0.10) 0%, transparent 65%);
     pointer-events: none;
 }
 
@@ -746,7 +746,7 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--secondary);
+    color: var(--coral);
     margin-bottom: 20px;
     position: relative;
     padding-right: 50px;
@@ -924,7 +924,7 @@ section {
 .feature-card {
     position: relative;
     background: var(--white);
-    padding: 36px 28px;
+    padding: 0;
     border-radius: var(--radius-xl);
     border: 1px solid var(--gray-200);
     transition: var(--transition);
@@ -935,64 +935,246 @@ section {
 .feature-card:hover {
     border-color: transparent;
     box-shadow: var(--shadow-lg), 0 0 0 1.5px var(--primary);
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
 
-/* Colored top accent on hover */
-.feature-card::after {
-    content: '';
+/* Gradient top visual area */
+.feature-card-visual {
+    position: relative;
+    background: linear-gradient(145deg, rgba(98,93,229,0.07) 0%, rgba(72,183,255,0.04) 100%);
+    padding: 36px 28px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background var(--transition);
+}
+
+.feature-card:hover .feature-card-visual {
+    background: linear-gradient(145deg, rgba(98,93,229,0.12) 0%, rgba(72,183,255,0.07) 100%);
+}
+
+/* Large decorative step number */
+.feature-card-step-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    bottom: -12px;
+    left: 12px;
+    font-size: 5.5rem;
+    font-weight: 900;
+    font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+    color: rgba(98,93,229,0.07);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    user-select: none;
+    pointer-events: none;
+    transition: color var(--transition);
 }
 
-.feature-card:hover::after {
-    opacity: 1;
+.feature-card:hover .feature-card-step-bg {
+    color: rgba(98,93,229,0.12);
 }
 
 .feature-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 20px;
+    width: 72px;
+    height: 72px;
     background: var(--gradient-primary);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 24px rgba(98,93,229,0.22);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow var(--transition);
+    will-change: transform;
+}
+
+.feature-card:hover .feature-icon {
+    transform: translateY(-6px) scale(1.06);
+    box-shadow: 0 16px 36px rgba(98,93,229,0.32);
 }
 
 .feature-icon svg {
-    width: 28px;
-    height: 28px;
-    color: var(--white);
-}
-
-.feature-icon.emoji-icon {
-    font-size: 2rem;
-    background: var(--gradient-primary);
-}
-
-.feature-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     stroke: white;
     fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Card body */
+.feature-card-body {
+    padding: 24px 28px 28px;
 }
 
 .feature-card h3 {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
 }
 
 .feature-card p {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.7;
+    color: var(--gray-500);
+}
+
+/* Benefit tag */
+.feature-benefit {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 16px;
+    padding: 5px 14px;
+    background: rgba(98,93,229,0.08);
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 0.01em;
+}
+
+/* Feature Carousel */
+.feature-carousel-steps {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+}
+
+.feature-step-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-full);
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.feature-step-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow-primary-sm);
+}
+
+.feature-step-btn:hover:not(.active) {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.feature-step-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    opacity: 0.55;
+    letter-spacing: 0.02em;
+}
+
+.feature-carousel-outer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.feature-carousel-window {
+    flex: 1;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    /* extra padding so card hover shadows aren't clipped */
+    padding: 6px;
+    margin: -6px;
+}
+
+.feature-carousel-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.feature-carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 6px;
+}
+
+.feature-carousel-arrow {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gray-200);
+    background: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-xs);
+    color: var(--gray-600);
+}
+
+.feature-carousel-arrow:hover:not(:disabled) {
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: var(--shadow-primary-sm);
+    transform: scale(1.08);
+}
+
+.feature-carousel-arrow:disabled {
+    opacity: 0.25;
+    cursor: default;
+}
+
+.feature-carousel-arrow svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.feature-carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 36px;
+}
+
+.feature-dot {
+    height: 8px;
+    border-radius: 4px;
+    border: none;
+    background: var(--gray-300);
+    cursor: pointer;
+    padding: 0;
+    transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease;
+    width: 8px;
+}
+
+.feature-dot.active {
+    width: 28px;
+    background: var(--primary);
+}
+
+@media (max-width: 640px) {
+    .feature-carousel-arrow { display: none; }
+    .feature-carousel-window { padding: 4px; margin: -4px; }
 }
 
 /* Comparison Section - Clean Table */

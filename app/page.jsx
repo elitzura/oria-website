@@ -7,6 +7,8 @@ export default function HomePage() {
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarScrolled, setNavbarScrolled] = useState(false);
+  const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
+  const featureTouchStartX = useRef(null);
 
   const exitIntentShownRef = useRef(false);
   const pageLoadTimeRef = useRef(Date.now());
@@ -157,8 +159,8 @@ export default function HomePage() {
         <div id="announcementBar" className="announcement-bar">
           <div className="announcement-inner">
             <span className="announcement-dot"></span>
-            <span>ORIA AI זמינה עכשיו — בחרו מסלול והתחילו היום</span>
-            <button className="announcement-cta" onClick={() => { setShowAnnouncement(false); document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' }); }}>הצטרפו עכשיו ←</button>
+            <span>✨ FREEMIUM חינם לתמיד - התחילו לנהל את הקליניקה בחכמה</span>
+            <button className="announcement-cta" onClick={() => { setShowAnnouncement(false); document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' }); }}>הצטרפו →</button>
             <button className="announcement-close" onClick={() => setShowAnnouncement(false)} aria-label="סגור">✕</button>
           </div>
         </div>
@@ -173,8 +175,8 @@ export default function HomePage() {
               <svg viewBox="0 0 24 24" width="48" height="48" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" stroke="#625DE5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
             </div>
             <h2 className="exit-intent-title">רגע לפני שאתם הולכים...</h2>
-            <p className="exit-intent-subtitle"><span className="brand-name">ORIA AI</span> — התחילו לנהל את הקליניקה בחכמה!</p>
-            <p className="exit-intent-body">בחרו מסלול עכשיו — FREEMIUM חינם לגמרי, ללא כרטיס אשראי.</p>
+            <p className="exit-intent-subtitle"><span className="brand-name">ORIA AI</span> - התחילו לנהל את הקליניקה בחכמה!</p>
+            <p className="exit-intent-body">בחרו מסלול עכשיו - FREEMIUM חינם לגמרי, ללא כרטיס אשראי.</p>
             <div className="exit-intent-actions">
               <Link href="/pricing" className="btn btn-primary" onClick={closeExitIntent}>ראו את המסלולים ←</Link>
               <button className="exit-intent-dismiss" onClick={closeExitIntent}>לא תודה</button>
@@ -214,11 +216,9 @@ export default function HomePage() {
           <div className="container hero-container">
             <div className="hero-content">
               <h1>הטיפול שלכם.<br /><span className="highlight">הבינה של <span className="brand-name">ORIA</span>.</span></h1>
-              <p className="hero-subtitle">אנחנו בונים עבורכם זיכרון מקצועי חכם: המערכת שזוכרת, מסכמת ומארגנת עבורכם את כל מה שקורה בטיפול.</p>
-              <p className="hero-subtitle">בואו לעצב יחד איתנו נבחרת של סוכני AI שמבינים לעומק את השפה הטיפולית, משחררים אתכם משעות של תיעוד ושומרים עבורכם על כל תובנה ורצף טיפולי.</p>
-              <p className="hero-subtitle"><strong>ORIA AI זמינה עכשיו.</strong> בחרו מסלול והתחילו לנהל את הקליניקה בחכמה — FREEMIUM חינם לגמרי.</p>
+              <p className="hero-subtitle">המוח השני שמזכיר, מסכם ומארגן - כדי שתוכלו להיות נוכחים לגמרי בחדר.</p>
               <div className="hero-cta">
-                <Link href="/pricing" className="btn btn-primary btn-large">בחרו מסלול עכשיו ←</Link>
+                <Link href="/pricing" className="btn btn-primary btn-large">התחילו בחינם - ללא כרטיס אשראי ←</Link>
               </div>
               <p className="hero-disclaimer">FREEMIUM חינם לתמיד. ביטול מסלול בתשלום בכל עת, ללא התחייבות.</p>
             </div>
@@ -289,7 +289,7 @@ export default function HomePage() {
                 </div>
                 <div className="trust-bar-text">
                   <strong>30 שניות</strong>
-                  <span>הכנה לפגישה — מהיר ומדויק</span>
+                  <span>הכנה לפגישה - מהיר ומדויק</span>
                 </div>
               </div>
               <div className="trust-bar-divider"></div>
@@ -299,7 +299,7 @@ export default function HomePage() {
                 </div>
                 <div className="trust-bar-text">
                   <strong>FREEMIUM חינם</strong>
-                  <span>ללא כרטיס אשראי — לתמיד</span>
+                  <span>ללא כרטיס אשראי - לתמיד</span>
                 </div>
               </div>
             </div>
@@ -380,35 +380,137 @@ export default function HomePage() {
               <h2>מה בנינו ב-<span className="brand-name">ORIA</span>?</h2>
               <p className="section-subtitle">פיצ'רים שנולדו מהקשבה למטפלים - כל אחד פותר כאב אמיתי שקורה כל יום בקליניקה.</p>
             </div>
-            <div className="features-grid">
-              <div className="feature-card">
-                <div className="feature-icon">
-                  <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            {/* Step pills */}
+            <div className="feature-carousel-steps">
+              {[
+                { label: 'לפני הפגישה', num: '01' },
+                { label: 'במהלך הפגישה', num: '02' },
+                { label: 'אחרי הפגישה', num: '03' },
+              ].map(({ label, num }, i) => (
+                <button
+                  key={i}
+                  className={`feature-step-btn${activeFeatureIndex === i ? ' active' : ''}`}
+                  onClick={() => setActiveFeatureIndex(i)}
+                >
+                  <span className="feature-step-num">{num}</span>
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            {/* Carousel */}
+            <div className="feature-carousel-outer" dir="ltr">
+              <button
+                className="feature-carousel-arrow"
+                onClick={() => setActiveFeatureIndex(i => Math.min(i + 1, 2))}
+                disabled={activeFeatureIndex === 2}
+                aria-label="שלב הבא"
+              >
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+              </button>
+
+              <div
+                className="feature-carousel-window"
+                onTouchStart={e => { featureTouchStartX.current = e.touches[0].clientX; }}
+                onTouchEnd={e => {
+                  if (featureTouchStartX.current === null) return;
+                  const diff = featureTouchStartX.current - e.changedTouches[0].clientX;
+                  if (Math.abs(diff) > 50) {
+                    setActiveFeatureIndex(i => diff > 0 ? Math.min(i + 1, 2) : Math.max(i - 1, 0));
+                  }
+                  featureTouchStartX.current = null;
+                }}
+              >
+                <div
+                  className="feature-carousel-track"
+                  style={{ transform: `translateX(${-activeFeatureIndex * 100}%)` }}
+                >
+                  {/* Slide 0 — לפני הפגישה */}
+                  <div className="feature-carousel-slide" dir="rtl">
+                    <div className="feature-card">
+                      <div className="feature-card-visual">
+                        <span className="feature-card-step-bg">01</span>
+                        <div className="feature-icon">
+                          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                      </div>
+                      <div className="feature-card-body">
+                        <h3>מוכנות לפגישה ב-30 שניות</h3>
+                        <p>ריענון זיכרון מהיר ומדויק על ציר זמן חכם: איפה עצרתם בפעם הקודמת ומה דורש מעקב. מגיעים לכל פגישה ממוקדים ונוכחים, בלי לנבור בדפים.</p>
+                        <span className="feature-benefit">⚡ חוסך לכם זמן יקר</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Slide 1 — במהלך הפגישה */}
+                  <div className="feature-carousel-slide" dir="rtl">
+                    <div className="feature-card">
+                      <div className="feature-card-visual">
+                        <span className="feature-card-step-bg">02</span>
+                        <div className="feature-icon">
+                          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        </div>
+                      </div>
+                      <div className="feature-card-body">
+                        <h3>תיעוד אוטומטי (בלי לאבד את הקול שלכם)</h3>
+                        <p>הופכים הקלטה או ראשי פרקים לסיכום פגישה מסודר ומקצועי תוך שניות. אתם מספקים את התוכן הקליני – המערכת דואגת לארגון ולניסוח.</p>
+                        <span className="feature-benefit">✓ ללא הקלדה ידנית</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Slide 2 — אחרי הפגישה */}
+                  <div className="feature-carousel-slide" dir="rtl">
+                    <div className="feature-card">
+                      <div className="feature-card-visual">
+                        <span className="feature-card-step-bg">03</span>
+                        <div className="feature-icon">
+                          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                        </div>
+                      </div>
+                      <div className="feature-card-body">
+                        <h3>סוכני AI בבנייה אישית</h3>
+                        <p>בואו לעצב את "סוכני העבודה" שלכם. אתם מגדירים איך המערכת תסכם עבורכם, מה היא תדגיש ואיך היא תארגן את המידע כדי שיתאים בדיוק לשיטת העבודה שלכם.</p>
+                        <span className="feature-benefit">✦ מותאם לשיטתכם</span>
+                      </div>
+                    </div>
+                    <div className="feature-card">
+                      <div className="feature-card-visual">
+                        <span className="feature-card-step-bg">04</span>
+                        <div className="feature-icon">
+                          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                      </div>
+                      <div className="feature-card-body">
+                        <h3>ניהול קליני מלא (All-in-One)</h3>
+                        <p>שקט נפשי בזרימה אחת: תיעוד טיפולי, יומן, גבייה וחשבוניות – הכל מחובר במקום אחד. שום דבר לא נופל בין הכיסאות.</p>
+                        <span className="feature-benefit">◎ הכל במקום אחד</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3>תיעוד אוטומטי (בלי לאבד את הקול שלכם)</h3>
-                <p>הופכים הקלטה או ראשי פרקים לסיכום פגישה מסודר ומקצועי תוך שניות. אתם מספקים את התוכן הקליני – המערכת דואגת לארגון ולניסוח.</p>
               </div>
-              <div className="feature-card">
-                <div className="feature-icon">
-                  <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                </div>
-                <h3>סוכני AI בבנייה אישית</h3>
-                <p>בואו לעצב את "סוכני העבודה" שלכם. אתם מגדירים איך המערכת תסכם עבורכם, מה היא תדגיש ואיך היא תארגן את המידע כדי שיתאים בדיוק לשיטת העבודה שלכם.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon">
-                  <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <h3>מוכנות לפגישה ב-30 שניות</h3>
-                <p>ריענון זיכרון מהיר ומדויק על ציר זמן חכם: איפה עצרתם בפעם הקודמת ומה דורש מעקב. מגיעים לכל פגישה ממוקדים ונוכחים, בלי לנבור בדפים.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon">
-                  <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <h3>ניהול קליני מלא (All-in-One)</h3>
-                <p>שקט נפשי בזרימה אחת: תיעוד טיפולי, יומן, גבייה וחשבוניות – הכל מחובר במקום אחד. שום דבר לא נופל בין הכיסאות.</p>
-              </div>
+
+              <button
+                className="feature-carousel-arrow"
+                onClick={() => setActiveFeatureIndex(i => Math.max(i - 1, 0))}
+                disabled={activeFeatureIndex === 0}
+                aria-label="שלב קודם"
+              >
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
+              </button>
+            </div>
+
+            {/* Dot indicators */}
+            <div className="feature-carousel-dots">
+              {[0, 1, 2].map(i => (
+                <button
+                  key={i}
+                  className={`feature-dot${activeFeatureIndex === i ? ' active' : ''}`}
+                  onClick={() => setActiveFeatureIndex(i)}
+                  aria-label={`שלב ${i + 1}`}
+                />
+              ))}
             </div>
             <div className="section-cta fade-in">
               <Link href="/features" className="btn btn-outline" style={{ marginLeft: '1rem' }}>ראו את כל הפיצ'רים</Link>
@@ -426,8 +528,8 @@ export default function HomePage() {
             <div className="comparison-table">
               <p className="section-subtitle" style={{ textAlign: 'center', marginBottom: '2rem', fontWeight: 500 }}>בזמן שחברות גדולות נותנות לכם מוצר 'מדף' קשיח, ב-ORIA אתם הקול שקובע איך המערכת תיראה מחר.</p>
               <div className="comparison-header">
-                <div className="comparison-col old">הניהול הישן</div>
-                <div className="comparison-col new">הניהול של <span className="brand-name">ORIA</span> AI</div>
+                <div className="comparison-col old">בלי ORIA</div>
+                <div className="comparison-col new">עם <span className="brand-name">ORIA</span> AI</div>
               </div>
               {[
                 { old: { title: 'התיעוד הוא נטל:', text: '"חייבים" לכתוב סיכום בסוף היום.' }, new: { title: 'התיעוד הוא נכס:', text: 'המידע עובד בשבילכם ונגיש לכם תמיד.' } },
@@ -435,7 +537,7 @@ export default function HomePage() {
                 { old: { title: 'פיזור וסרבול:', text: 'המידע נמצא ביומן, במחברת ובקבצים.' }, new: { title: 'סדר הוליסטי:', text: 'מקום אחד שמרכז את הטיפול ואת המנהלה.' } },
               ].map((row, i) => (
                 <div className="comparison-row" key={i}>
-                  <div className="comparison-col old"><span className="icon-old">✗</span><div><strong>{row.old.title}</strong><p>{row.old.text}</p></div></div>
+                  <div className="comparison-col old"><span className="icon-old">-</span><div><strong>{row.old.title}</strong><p>{row.old.text}</p></div></div>
                   <div className="comparison-col new"><span className="icon-new">✓</span><div><strong>{row.new.title}</strong><p>{row.new.text}</p></div></div>
                 </div>
               ))}
@@ -498,20 +600,20 @@ export default function HomePage() {
                 </div>
                 <div className="pricing-header">
                   <h3 style={{ fontSize: '1.3rem' }}>FREEMIUM</h3>
-                  <p className="pricing-desc">להרגיש את ORIA לפני שמחליטים — בלי לשלם שקל</p>
+                  <p className="pricing-desc">להרגיש את ORIA לפני שמחליטים - בלי לשלם שקל</p>
                 </div>
                 <div className="pricing-price">
                   <span className="amount" style={{ fontSize: '2rem', letterSpacing: '-1px' }}>חינם</span>
                   <span className="period" style={{ display: 'block', fontSize: '0.78rem', color: '#aaa', marginTop: '2px' }}>לתמיד, ללא כרטיס אשראי</span>
                 </div>
                 <div style={{ background: '#f0fdf4', border: '1.5px solid #86efac', borderRadius: '10px', padding: '0.6rem 0.9rem', marginBottom: '1rem', fontSize: '0.82rem', color: '#166534', lineHeight: 1.45 }}>
-                  🔓 כל הפיצ'רים של PREMIUM — מוגבל ל-3 מטופלים פעילים. שדרוג בקליק בכל רגע.
+                  🔓 כל הפיצ'רים של PREMIUM - מוגבל ל-3 מטופלים פעילים. שדרוג בקליק בכל רגע.
                 </div>
                 <ul className="pricing-features">
                   <li><span className="check">✓</span> יומן פגישות דיגיטלי</li>
                   <li><span className="check">✓</span> ניהול תשלומים וגבייה</li>
                   <li><span className="check">✓</span> תזכורות בוואטסאפ ובמייל</li>
-                  <li><span className="check">✓</span> סוכני AI — סיכום פגישות וניתוח תובנות</li>
+                  <li><span className="check">✓</span> סוכני AI - סיכום פגישות וניתוח תובנות</li>
                   <li><span className="check">✓</span> עד 3 מטופלים פעילים</li>
                 </ul>
                 <a href="https://clinic.therawiseai.com" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>התחילו חינם</a>
@@ -527,12 +629,12 @@ export default function HomePage() {
                   <p className="pricing-desc">כשרוצים שהמערכת תתחיל לעבוד בשבילכם</p>
                 </div>
                 <span className="original-price">₪189/חודש</span>
-                <span className="save-badge">מחיר השקה — חוסכים ₪60/חודש</span>
+                <span className="save-badge">מחיר השקה - חוסכים ₪60/חודש</span>
                 <div className="pricing-price">
                   <span className="currency">₪</span><span className="amount">129</span><span className="period">/חודש</span>
                 </div>
                 <div style={{ background: '#fef3c7', border: '1.5px solid #f59e0b', borderRadius: '10px', padding: '0.65rem 0.9rem', marginBottom: '1rem', fontSize: '0.82rem', color: '#92400e', lineHeight: 1.45 }}>
-                  🎁 <strong>הטבת השקה:</strong> כל פיצ'רי PREMIUM פתוחים לחברי MIND — לזמן מוגבל בלבד.
+                  🎁 <strong>הטבת השקה:</strong> כל פיצ'רי PREMIUM פתוחים לחברי MIND - לזמן מוגבל בלבד.
                 </div>
                 <ul className="pricing-features">
                   <li><span className="check">✓</span> מטופלים ללא הגבלה</li>
@@ -551,16 +653,16 @@ export default function HomePage() {
                 </div>
                 <div className="pricing-header">
                   <h3 style={{ fontSize: '1.3rem' }}>MIND PREMIUM</h3>
-                  <p className="pricing-desc">הניהול המלא — במחיר MIND, לזמן מוגבל בלבד</p>
+                  <p className="pricing-desc">הניהול המלא - במחיר MIND, לזמן מוגבל בלבד</p>
                 </div>
                 <span className="original-price">₪289/חודש</span>
-                <span className="save-badge">במחיר MIND — חוסכים ₪160/חודש ⭐</span>
+                <span className="save-badge">במחיר MIND - חוסכים ₪160/חודש ⭐</span>
                 <div className="pricing-price">
                   <span className="currency">₪</span><span className="amount">129</span><span className="period">/חודש</span>
                 </div>
                 <ul className="pricing-features">
                   <li><span className="check">✓</span> מטופלים ללא הגבלה</li>
-                  <li><span className="check">✓</span> סוכני AI מרובים — ניהול קליניקה מלא</li>
+                  <li><span className="check">✓</span> סוכני AI מרובים - ניהול קליניקה מלא</li>
                   <li><span className="check">✓</span> תזכורות ועדכונים בוואטסאפ למטופלים</li>
                   <li><span className="check">✓</span> ניתוח תובנות ודפוסים קליניים</li>
                   <li><span className="check">✓</span> דוחות התקדמות אוטומטיים</li>
@@ -593,10 +695,10 @@ export default function HomePage() {
               </div>
             </div>
             <div className="pricing-trust">
-              <span>FREEMIUM חינם לתמיד — ללא כרטיס אשראי</span>
+              <span>FREEMIUM חינם לתמיד - ללא כרטיס אשראי</span>
               <span>ביטול מיידי בכל עת דרך האפליקציה</span>
-              <span>תמיכה בעברית — צוות ישראלי</span>
-              <span>מחיר השקה — יעלה בקרוב</span>
+              <span>תמיכה בעברית - צוות ישראלי</span>
+              <span>מחיר השקה - יעלה בקרוב</span>
             </div>
           </div>
         </section>
@@ -605,7 +707,7 @@ export default function HomePage() {
         <section className="final-cta">
           <div className="container">
             <div className="cta-content">
-              <h2>מוכנים לנהל את הקליניקה בחכמה?<br /><span style={{ fontSize: '0.75em', fontWeight: 600, opacity: 0.9 }}>FREEMIUM חינם לתמיד — ביטול מסלול בתשלום בכל עת.</span></h2>
+              <h2>מוכנים לנהל את הקליניקה בחכמה?<br /><span style={{ fontSize: '0.75em', fontWeight: 600, opacity: 0.9 }}>FREEMIUM חינם לתמיד - ביטול מסלול בתשלום בכל עת.</span></h2>
               <Link href="/pricing" className="btn btn-primary btn-large">בחרו מסלול עכשיו ←</Link>
             </div>
           </div>

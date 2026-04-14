@@ -16,6 +16,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
+
 export const metadata = {
   title: 'ORIA AI - המוח השני שלכם לניהול קליניקה',
   description:
