@@ -302,6 +302,16 @@ export default function HomePage() {
                   <span>ללא כרטיס אשראי - לתמיד</span>
                 </div>
               </div>
+              <div className="trust-bar-divider"></div>
+              <div className="trust-bar-item">
+                <div className="trust-bar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </div>
+                <div className="trust-bar-text">
+                  <strong>עובד מהפלאפון</strong>
+                  <span>ניהול מכל מקום, בכל עת</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -535,6 +545,7 @@ export default function HomePage() {
                 { old: { title: 'התיעוד הוא נטל:', text: '"חייבים" לכתוב סיכום בסוף היום.' }, new: { title: 'התיעוד הוא נכס:', text: 'המידע עובד בשבילכם ונגיש לכם תמיד.' } },
                 { old: { title: 'הראש תמיד עמוס:', text: 'דאגה שמא פרט חשוב יישכח.' }, new: { title: 'שקט קוגניטיבי:', text: 'המוח השני זוכר הכל, הראש פנוי לטיפול.' } },
                 { old: { title: 'פיזור וסרבול:', text: 'המידע נמצא ביומן, במחברת ובקבצים.' }, new: { title: 'סדר הוליסטי:', text: 'מקום אחד שמרכז את הטיפול ואת המנהלה.' } },
+                { old: { title: 'צמוד למחשב:', text: 'כדי לנהל את הקליניקה צריך לשבת מול מחשב.' }, new: { title: 'מנהלים מכל מקום:', text: 'פלאפון, טאבלט, מחשב — ORIA עובדת בכל מכשיר.' } },
               ].map((row, i) => (
                 <div className="comparison-row" key={i}>
                   <div className="comparison-col old"><span className="icon-old">-</span><div><strong>{row.old.title}</strong><p>{row.old.text}</p></div></div>

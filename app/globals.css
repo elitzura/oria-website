@@ -1,7 +1,7 @@
 /* ============================================
    ORIA AI Landing Page - Clean & Sharp Design
    Brand Colors:
-   - Primary Purple: #625DE5
+   - Primary Blue: #3B82F6
    - Light Blue: #48B7FF
    - Dark Navy: #171938
    - Light Gray: #F2F2FC
@@ -16,9 +16,9 @@
 }
 
 :root {
-    --primary: #625DE5;
-    --primary-light: #7b77ea;
-    --primary-dark: #4a45b8;
+    --primary: #3B82F6;
+    --primary-light: #60a5fa;
+    --primary-dark: #2563eb;
     --secondary: #48B7FF;
     --dark: #171938;
     --light: #FAF9F7;

@@ -11,6 +11,9 @@ export default function FeaturesPage() {
     document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
   }, []);
 
+  const IconMobile = () => (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+  );
   const IconMessage = () => (
     <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
   );
@@ -31,12 +34,13 @@ export default function FeaturesPage() {
   );
 
   const entries = [
-    { href: '/features/whatsapp-reminders', icon: <IconMessage />, iconClass: 'icon-green', date: 'מרץ 2026', tags: [['tag-new', 'חדש'], ['tag-manage', 'ניהול']], title: 'תזכורות חכמות — וואצאפ, אימייל ואישור הגעה', text: 'ORIA שולחת תזכורות אוטומטיות לפגישה בוואצאפ ובאימייל, עם כפתורי אישור הגעה אמיתיים. המטופל לוחץ — הסטטוס מתעדכן. אתם לא צריכים לגעת בזה.', delay: 0 },
-    { href: '/features/audit-logs', icon: <IconClipboard />, iconClass: 'icon-purple', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה'], ['tag-new', 'חדש']], title: 'Audit Log — מי פתח את התיק הזה?', text: 'כל גישה לכל תיק מתועדת אוטומטית: מי נכנס, מתי, מאיזה מכשיר, מה שונה. חובה חוקית לפי תיקון 13 — ועכשיו מוכנה עבורכם ברקע.', delay: 0 },
-    { href: '/features/brain-dump', icon: <IconMic />, iconClass: 'icon-blue', date: 'פברואר 2026', tags: [['tag-core', 'ליבה'], ['tag-new', 'חדש']], title: 'Brain Dump — סיכום קליני ב-30 שניות', text: 'מקליטים דקה-שתיים אחרי הפגישה, ו-ORIA מחזירה סיכום מסודר בסגנון שלכם. לא עוד כתיבה ידנית בסוף יום עייף.', delay: 0 },
-    { href: '/features/second-brain', icon: <IconBrain />, iconClass: 'icon-purple', date: 'ינואר 2026', tags: [['tag-core', 'ליבה']], title: 'המוח השני — הכנה לפגישה תוך 30 שניות', text: 'ORIA זוכרת מה נאמר לפני 3 פגישות, מזהה דפוסים חוזרים, ומציגה לכם תקציר חכם לפני כל מפגש. מגיעים ממוקדים.', delay: 100 },
-    { href: '/features/reports', icon: <IconBarChart />, iconClass: 'icon-coral', date: 'פברואר 2026', tags: [['tag-manage', 'ניהול'], ['tag-new', 'חדש']], title: 'דוחות פיננסיים — שאלו בעברית, קבלו אקסל', text: 'שאלו "כמה הרווחתי בינואר?" ו-ORIA תיצור דוח עם גרפים וטבלאות. כל הנתונים ניתנים לייצוא לאקסל בלחיצה אחת.', delay: 200 },
-    { href: '/features/security-2fa', icon: <IconShieldLock />, iconClass: 'icon-green', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה']], title: 'אימות דו-שלבי — כניסה מאובטחת לקליניקה שלכם', text: 'קוד חד-פעמי מהנייד בכל כניסה. גם אם מישהו גנב את הסיסמה — המידע של המטופלים שלכם מוגן. ISO 27001, תיקון 13.', delay: 300 },
+    { href: '/features/mobile', icon: <IconMobile />, iconClass: 'icon-blue', date: 'אפריל 2026', tags: [['tag-new', 'חדש'], ['tag-core', 'ליבה']], title: 'ORIA בפלאפון - ניהול הקליניקה מכל מקום', text: 'לא תמיד ליד המחשב? ORIA עובדת בדפדפן על כל מכשיר - פלאפון, טאבלט או מחשב. Brain Dump קולי, יומן, תיקי מטופלים ותזכורות - הכל נגיש מהנייד, ללא הורדת אפליקציה.', delay: 0 },
+    { href: '/features/whatsapp-reminders', icon: <IconMessage />, iconClass: 'icon-green', date: 'מרץ 2026', tags: [['tag-new', 'חדש'], ['tag-manage', 'ניהול']], title: 'תזכורות חכמות - וואצאפ, אימייל ואישור הגעה', text: 'ORIA שולחת תזכורות אוטומטיות לפגישה בוואצאפ ובאימייל, עם כפתורי אישור הגעה אמיתיים. המטופל לוחץ - הסטטוס מתעדכן. אתם לא צריכים לגעת בזה.', delay: 0 },
+    { href: '/features/audit-logs', icon: <IconClipboard />, iconClass: 'icon-purple', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה'], ['tag-new', 'חדש']], title: 'Audit Log - מי פתח את התיק הזה?', text: 'כל גישה לכל תיק מתועדת אוטומטית: מי נכנס, מתי, מאיזה מכשיר, מה שונה. חובה חוקית לפי תיקון 13 - ועכשיו מוכנה עבורכם ברקע.', delay: 0 },
+    { href: '/features/brain-dump', icon: <IconMic />, iconClass: 'icon-blue', date: 'פברואר 2026', tags: [['tag-core', 'ליבה'], ['tag-new', 'חדש']], title: 'Brain Dump - סיכום קליני ב-30 שניות', text: 'מקליטים דקה-שתיים אחרי הפגישה, ו-ORIA מחזירה סיכום מסודר בסגנון שלכם. לא עוד כתיבה ידנית בסוף יום עייף.', delay: 0 },
+    { href: '/features/second-brain', icon: <IconBrain />, iconClass: 'icon-purple', date: 'ינואר 2026', tags: [['tag-core', 'ליבה']], title: 'המוח השני - הכנה לפגישה תוך 30 שניות', text: 'ORIA זוכרת מה נאמר לפני 3 פגישות, מזהה דפוסים חוזרים, ומציגה לכם תקציר חכם לפני כל מפגש. מגיעים ממוקדים.', delay: 100 },
+    { href: '/features/reports', icon: <IconBarChart />, iconClass: 'icon-coral', date: 'פברואר 2026', tags: [['tag-manage', 'ניהול'], ['tag-new', 'חדש']], title: 'דוחות פיננסיים - שאלו בעברית, קבלו אקסל', text: 'שאלו "כמה הרווחתי בינואר?" ו-ORIA תיצור דוח עם גרפים וטבלאות. כל הנתונים ניתנים לייצוא לאקסל בלחיצה אחת.', delay: 200 },
+    { href: '/features/security-2fa', icon: <IconShieldLock />, iconClass: 'icon-green', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה']], title: 'אימות דו-שלבי - כניסה מאובטחת לקליניקה שלכם', text: 'קוד חד-פעמי מהנייד בכל כניסה. גם אם מישהו גנב את הסיסמה - המידע של המטופלים שלכם מוגן. ISO 27001, תיקון 13.', delay: 300 },
   ];
 
   return (
@@ -82,7 +86,7 @@ export default function FeaturesPage() {
           <div style={{ position: 'relative', zIndex: 2 }}>
             <p className="section-eyebrow" style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>מה בנינו לכם</p>
             <h1>הפיצ'רים של <span className="highlight">ORIA</span></h1>
-            <p>כאן תמצאו את כל הכלים שאנחנו בונים — איך הם עובדים, למה הם חשובים, ומה הם חוסכים לכם.</p>
+            <p>כאן תמצאו את כל הכלים שאנחנו בונים - איך הם עובדים, למה הם חשובים, ומה הם חוסכים לכם.</p>
           </div>
         </section>
 
@@ -110,7 +114,7 @@ export default function FeaturesPage() {
         <section className="features-cta">
           <div className="container">
             <h2>הצטרפו לרשימת ההמתנה וקבלו חודש ראשון חינם</h2>
-            <p>המקומות לפיילוט נסגרו — אבל כשהאפליקציה יוצאת לציבור, חברי רשימת ההמתנה יקבלו חודש ראשון חינם.</p>
+            <p>המקומות לפיילוט נסגרו - אבל כשהאפליקציה יוצאת לציבור, חברי רשימת ההמתנה יקבלו חודש ראשון חינם.</p>
             <Link href="/#pricing" className="btn btn-primary btn-large">הצטרפו לרשימת ההמתנה</Link>
           </div>
         </section>
