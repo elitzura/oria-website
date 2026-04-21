@@ -3742,3 +3742,272 @@ section {
         padding: 1.75rem;
     }
 }
+
+/* ── Landing page: Feature tile icon ── */
+.lp-feature-tile-icon {
+    display: block;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+/* ── Landing page: Accordion FAQ ── */
+.lp-accordion-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.lp-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.lp-accordion-item {
+    background: #fff;
+    border: 1px solid rgba(98,93,229,0.12);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.lp-accordion-item-open {
+    box-shadow: var(--shadow-primary-sm);
+    border-color: rgba(98,93,229,0.25);
+}
+
+.lp-accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: right;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    transition: color 0.15s;
+}
+
+.lp-accordion-item-open .lp-accordion-trigger {
+    color: var(--primary);
+}
+
+.lp-accordion-icon {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--primary);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    line-height: 1;
+}
+
+.lp-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;
+}
+
+.lp-accordion-item-open .lp-accordion-body {
+    max-height: 200px;
+    padding: 0 1.5rem 1.25rem;
+}
+
+.lp-accordion-body p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+/* ── Landing page: Onboarding section ── */
+.lp-onboarding-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 2.5rem;
+}
+
+.lp-onboarding-step {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+}
+
+.lp-onboarding-step-reverse {
+    grid-template-columns: auto 1fr;
+}
+
+.lp-onboarding-step-reverse .lp-onboarding-step-label {
+    order: 2;
+}
+
+.lp-onboarding-step-reverse .lp-onboarding-screenshot {
+    order: 1;
+}
+
+.lp-onboarding-step-label {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.lp-onboarding-num {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.5;
+    flex-shrink: 0;
+    min-width: 4.5rem;
+}
+
+.lp-onboarding-step-label h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0 0 0.6rem;
+}
+
+.lp-onboarding-step-label p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+.lp-onboarding-step-label strong {
+    color: var(--primary);
+}
+
+.lp-onboarding-screenshot {
+    flex-shrink: 0;
+}
+
+.lp-screenshot-img {
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-primary);
+    border: 1px solid rgba(98,93,229,0.1);
+    max-width: 260px;
+    height: auto;
+    display: block;
+}
+
+/* ── Landing page: Mobile section ── */
+.lp-mobile-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+}
+
+.lp-mobile-copy {
+    max-width: 560px;
+}
+
+.lp-mobile-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.lp-mobile-feature-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.lp-mobile-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.lp-mobile-feature-item strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.2rem;
+}
+
+.lp-mobile-feature-item p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+.lp-mobile-visual {
+    flex-shrink: 0;
+}
+
+.lp-mobile-phone-frame {
+    width: 240px;
+    background: linear-gradient(145deg, #625DE5, #48B7FF);
+    border-radius: 36px;
+    padding: 12px;
+    box-shadow: 0 24px 64px rgba(98,93,229,0.35), 0 8px 24px rgba(98,93,229,0.2);
+}
+
+.lp-mobile-phone-screen {
+    background: #f0f2ff;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.lp-phone-screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 28px;
+}
+
+/* ── Responsive: onboarding + mobile ── */
+@media (max-width: 860px) {
+    .lp-onboarding-step,
+    .lp-onboarding-step-reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .lp-onboarding-step-reverse .lp-onboarding-step-label {
+        order: 1;
+    }
+
+    .lp-onboarding-step-reverse .lp-onboarding-screenshot {
+        order: 2;
+    }
+
+    .lp-onboarding-screenshot {
+        display: flex;
+        justify-content: center;
+    }
+
+    .lp-mobile-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .lp-mobile-visual {
+        display: flex;
+        justify-content: center;
+    }
+
+    .lp-mobile-phone-frame {
+        width: 200px;
+    }
+}
