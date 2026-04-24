@@ -210,15 +210,16 @@ export default function LandingPage() {
             </div>
 
             <div className="lp-hero-panel">
-              <div className="lp-panel-card lp-panel-card-primary">
-                <p className="lp-panel-label">מה ORIA עושה בפועל</p>
-                <h2>מחזירה סדר, שליטה ורצף — בלי להוסיף עוד מערכת כבדה לחיים שלכם.</h2>
-                <p>
-                  יומן, תיעוד, תזכורות, תשלומים ומעקב — במקום אחד. פחות רדיפה
-                  אחרי פרטים, יותר תחושה שיש מי שמחזיק יחד אתכם את הקליניקה.
-                </p>
+              <div className="lp-hero-img-wrap">
+                <Image
+                  src="/screenshots/dashboard-mockup.png"
+                  alt="לוח בקרה של ORIA AI — ניהול קליניקה"
+                  width={580}
+                  height={400}
+                  className="lp-hero-dashboard-img"
+                  priority
+                />
               </div>
-
               <div className="lp-panel-stack">
                 <div className="lp-panel-card">
                   <p className="lp-panel-label">ההבטחה שלנו</p>
@@ -235,26 +236,43 @@ export default function LandingPage() {
 
         {/* ─── 2. PAIN POINTS — numbered list ─── */}
         <section className="lp-section lp-section-soft">
-          <div className="container">
-            <div className="section-header lp-section-header">
-              <p className="section-eyebrow">האם זה מרגיש לכם מוכר?</p>
-              <h2>אתם לא עייפים מהטיפול. <span className="highlight">אתם עייפים ממה שבא אחריו.</span></h2>
-              <p className="section-subtitle">
-                רוב המטפלים לא מחפשים "מערכת". הם מחפשים הקלה אמיתית, תחושת ביטחון, ופחות
-                פחד לפספס משהו חשוב בתוך היום העמוס.
-              </p>
+          <div className="container lp-pain-grid">
+            <div>
+              <div className="section-header lp-section-header" style={{ textAlign: 'right', marginRight: 0 }}>
+                <p className="section-eyebrow">האם זה מרגיש לכם מוכר?</p>
+                <h2>אתם לא עייפים מהטיפול. <span className="highlight">אתם עייפים ממה שבא אחריו.</span></h2>
+                <p className="section-subtitle">
+                  רוב המטפלים לא מחפשים "מערכת". הם מחפשים הקלה אמיתית, תחושת ביטחון, ופחות
+                  פחד לפספס משהו חשוב בתוך היום העמוס.
+                </p>
+              </div>
+
+              <div className="lp-pain-list">
+                {painPoints.map((item, index) => (
+                  <div key={item.title} className="lp-pain-item">
+                    <span className="lp-pain-num">0{index + 1}</span>
+                    <div className="lp-pain-body">
+                      <h3>{item.title}</h3>
+                      <p>{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="lp-pain-list">
-              {painPoints.map((item, index) => (
-                <div key={item.title} className="lp-pain-item">
-                  <span className="lp-pain-num">0{index + 1}</span>
-                  <div className="lp-pain-body">
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
+            <div className="lp-pain-photo-col">
+              <div className="lp-pain-photo-wrap">
+                <Image
+                  src="/screenshots/therapist-at-work.png"
+                  alt="מטפלת עובדת בשקט עם ORIA AI"
+                  width={420}
+                  height={480}
+                  className="lp-pain-photo"
+                />
+                <div className="lp-pain-photo-badge">
+                  <span>״ORIA מחזיקה את הסדר — אני מחזיקה את הקשר״</span>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
@@ -478,16 +496,14 @@ export default function LandingPage() {
               </div>
 
               <div className="lp-mobile-visual">
-                <div className="lp-mobile-phone-frame">
-                  <div className="lp-mobile-phone-screen">
-                    <Image
-                      src="/screenshots/login.png"
-                      alt="ORIA AI על פלאפון"
-                      width={280}
-                      height={400}
-                      className="lp-phone-screenshot"
-                    />
-                  </div>
+                <div className="lp-mobile-img-wrap">
+                  <Image
+                    src="/screenshots/mobile-app.png"
+                    alt="ORIA AI על פלאפון — ניהול תורים"
+                    width={300}
+                    height={300}
+                    className="lp-mobile-mockup-img"
+                  />
                 </div>
               </div>
             </div>

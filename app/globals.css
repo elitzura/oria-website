@@ -3743,6 +3743,93 @@ section {
     }
 }
 
+/* ── Landing page: Hero dashboard image ── */
+.lp-hero-img-wrap {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-primary), 0 24px 64px rgba(0,0,0,0.1);
+    border: 1px solid rgba(98,93,229,0.12);
+    background: var(--light);
+}
+
+.lp-hero-dashboard-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── Landing page: Pain section with photo ── */
+.lp-pain-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: start;
+}
+
+.lp-pain-photo-col {
+    flex-shrink: 0;
+    position: sticky;
+    top: 6rem;
+}
+
+.lp-pain-photo-wrap {
+    position: relative;
+}
+
+.lp-pain-photo {
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    display: block;
+    max-width: 340px;
+    height: auto;
+    object-fit: cover;
+}
+
+.lp-pain-photo-badge {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    background: #fff;
+    border: 1px solid rgba(98,93,229,0.15);
+    border-radius: var(--radius-xl);
+    padding: 0.8rem 1rem;
+    box-shadow: var(--shadow-md);
+    max-width: 240px;
+}
+
+.lp-pain-photo-badge span {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--dark);
+    font-style: italic;
+    display: block;
+}
+
+/* ── Landing page: Mobile image mockup ── */
+.lp-mobile-img-wrap {
+    flex-shrink: 0;
+}
+
+.lp-mobile-mockup-img {
+    width: 280px;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 60px rgba(98,93,229,0.2), 0 8px 24px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 1024px) {
+    .lp-pain-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-pain-photo-col {
+        position: static;
+        display: flex;
+        justify-content: center;
+    }
+}
+
 /* ── Landing page: Feature tile icon ── */
 .lp-feature-tile-icon {
     display: block;
