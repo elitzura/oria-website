@@ -193,7 +193,7 @@ export default function MobileFeaturePage() {
               <div className="how-step-body">
                 <h3>נכנסים מהדפדפן של הפלאפון</h3>
                 <p>אין מה להוריד. נכנסים לאפליקציה בכל דפדפן מודרני ומתחברים - הממשק מזהה מסך קטן ומתאים את עצמו אוטומטית.</p>
-                <a href="https://clinic.therawiseai.com" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '.35rem', marginTop: '.6rem', fontSize: '.85rem', fontWeight: 700, color: 'var(--primary)', background: 'rgba(98,93,229,.08)', border: '1px solid rgba(98,93,229,.2)', borderRadius: 'var(--radius-full)', padding: '.35rem .85rem', textDecoration: 'none' }}>פתחו את ORIA עכשיו ←</a>
+                <a href="https://app.oriamind.ai" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '.35rem', marginTop: '.6rem', fontSize: '.85rem', fontWeight: 700, color: 'var(--primary)', background: 'rgba(98,93,229,.08)', border: '1px solid rgba(98,93,229,.2)', borderRadius: 'var(--radius-full)', padding: '.35rem .85rem', textDecoration: 'none' }}>פתחו את ORIA עכשיו ←</a>
               </div>
             </div>
             <div className="how-step">
@@ -234,7 +234,7 @@ export default function MobileFeaturePage() {
           <div className="cta-inline">
             <h3>מוכנים לנהל מכל מקום?</h3>
             <p>פתחו את ORIA עכשיו בפלאפון - ראו בעצמכם כמה פשוט זה.</p>
-            <a href="https://clinic.therawiseai.com" className="btn btn-primary">פתחו עכשיו בפלאפון ←</a>
+            <a href="https://app.oriamind.ai" className="btn btn-primary">פתחו עכשיו בפלאפון ←</a>
           </div>
 
           {/* Feature nav */}

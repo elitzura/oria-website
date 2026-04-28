@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 export default function PaymentResultPage() {
   useEffect(() => {
-    window.location.replace('https://clinic.therawiseai.com');
+    window.location.replace('https://app.oriamind.ai');
   }, []);
 
   return (
