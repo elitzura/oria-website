@@ -26,7 +26,7 @@ export default function StaticPageLayout({ children, activeNav }) {
           <ul className={`nav-links${mobileMenuOpen ? ' active' : ''}`}>
             <li><Link href="/#solution" style={activeNav === 'solution' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>הפתרון</Link></li>
             <li><Link href="/features" style={activeNav === 'features' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>מה חדש</Link></li>
-            <li><Link href="/#pricing">מחירים</Link></li>
+            <li><Link href="/pricing" style={activeNav === 'pricing' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>מחירים</Link></li>
             <li><Link href="/security" style={activeNav === 'security' ? { color: 'var(--primary)', fontWeight: 600 } : {}}>אבטחה</Link></li>
             <li><Link href="/pricing" className="btn btn-outline">התחילו עכשיו</Link></li>
           </ul>

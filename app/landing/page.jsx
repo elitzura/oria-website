@@ -610,7 +610,61 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* ─── 12. FINAL CTA ─── */}
+        {/* ─── 12. EARLY BIRD HOOK ─── */}
+        <section className="lp-section lp-section-soft" id="pricing">
+          <div className="container">
+            <div style={{
+              background: 'linear-gradient(135deg, #171938 0%, #2b2870 100%)',
+              borderRadius: '20px',
+              padding: 'clamp(2rem,4vw,3rem) clamp(1.5rem,4vw,3.5rem)',
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '1.5rem',
+              position: 'relative',
+              overflow: 'hidden',
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg,#625DE5,#48B7FF)' }} />
+              <div style={{ flex: 1, minWidth: '240px' }}>
+                <span style={{
+                  background: 'linear-gradient(90deg,#f59e0b,#f97316)',
+                  color: '#fff',
+                  fontSize: '0.7rem',
+                  fontWeight: 800,
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                  padding: '0.25rem 0.75rem',
+                  borderRadius: '20px',
+                  display: 'inline-block',
+                  marginBottom: '0.75rem',
+                }}>🐦 Early Bird — 100 מקומות בלבד</span>
+                <h2 style={{ color: '#fff', fontSize: 'clamp(1.4rem,3vw,2rem)', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.25 }}>
+                  MIND PREMIUM ב-<span style={{ color: '#48B7FF' }}>₪99</span> בלבד
+                </h2>
+                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', marginBottom: 0, lineHeight: 1.5 }}>
+                  מחיר השקה ל-100 המצטרפים הראשונים.{' '}
+                  <span style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'line-through' }}>₪289/חודש</span>
+                  {' '}<span style={{ background: 'linear-gradient(90deg,#625DE5,#48B7FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700 }}>חוסכים ₪190/חודש</span>
+                </p>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'flex-start' }}>
+                <Link href="/pricing" className="btn btn-white btn-large">
+                  לצפייה בכל המסלולים ←
+                </Link>
+                <a href="https://app.oriamind.ai" style={{
+                  color: 'rgba(255,255,255,0.65)',
+                  fontSize: '0.82rem',
+                  textAlign: 'center',
+                  textDecoration: 'underline',
+                  cursor: 'pointer',
+                }}>או להתחיל חינם</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 13. FINAL CTA ─── */}
         <section className="lp-section lp-final-cta">
           <div className="container lp-final-shell">
             <p className="section-eyebrow">הצעד הבא</p>
