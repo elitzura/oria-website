@@ -259,13 +259,13 @@ strong {
 }
 
 .logo-img {
-    height: 40px;
+    height: 48px;
     width: auto;
     transition: var(--transition);
 }
 
 .navbar.scrolled .logo-img {
-    height: 36px;
+    height: 44px;
 }
 
 .nav-links {
@@ -1553,7 +1553,7 @@ section {
 }
 
 .footer-brand .logo-img {
-    height: 44px;
+    height: 72px;
     width: auto;
     filter: brightness(0) invert(1);
 }
