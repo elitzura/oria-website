@@ -98,6 +98,11 @@ export default function SecurityPage() {
         .contact-cta h3{color:#171938;font-size:1.5rem;margin-bottom:1rem}
         .contact-cta p{color:#4a4a6a;margin-bottom:2rem}
         .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(98,93,229,.3),transparent);margin:40px 0}
+        .monitoring-banner{background:linear-gradient(135deg,#171938 0%,#2a2d5a 100%);border-radius:16px;padding:24px 30px;display:flex;align-items:center;gap:20px;border:1px solid rgba(98,93,229,.2);margin:1.5rem 0 2rem}
+        .monitoring-pulse-wrap{position:relative;width:20px;height:20px;flex-shrink:0}
+        .monitoring-pulse-dot{width:12px;height:12px;background:#22c55e;border-radius:50%;position:absolute;top:4px;left:4px}
+        .monitoring-pulse-wrap::after{content:'';position:absolute;top:0;left:0;width:20px;height:20px;border-radius:50%;background:rgba(34,197,94,.3);animation:pulse-ring 1.5s ease-out infinite}
+        @keyframes pulse-ring{0%{transform:scale(1);opacity:1}100%{transform:scale(2.5);opacity:0}}
         @media(max-width:768px){.security-hero h1{font-size:2rem}.security-hero .subtitle{font-size:1.1rem;padding:0 20px}.security-section h2{font-size:1.5rem}.provider-card{min-width:220px}}
       `}</style>
 
@@ -138,8 +143,8 @@ export default function SecurityPage() {
               { title: 'הצפנה מלאה (End-to-End)', text: 'כל התקשורת בין המחשב שלך לשרתים שלנו מוצפנת בתקנים המחמירים ביותר (HTTPS/TLS).' },
               { title: 'מגן סייבר אקטיבי', text: 'אנחנו משתמשים בשירותי Cloudflare כדי לזהות ולחסום התקפות סייבר ובוטים זדוניים עוד לפני שהם מגיעים למערכת.' },
               { title: 'כניסה מאובטחת עם Google', text: 'ניתן להתחבר ל-ORIA באמצעות חשבון הגוגל שלך, וליהנות ממנגנוני הזיהוי והאבטחה המתקדמים בעולם של גוגל.' },
-              { title: 'אימות דו-שלבי (2FA) ✓', text: <span>שכבת הגנה נוספת — קוד חד-פעמי מהנייד בכל כניסה. <Link href="/features/security-2fa" style={{ color: '#625DE5', fontWeight: 600 }}>קראו עוד ←</Link></span> },
-              { title: 'Audit Log — תיעוד גישות אוטומטי ✓', text: <span>כל גישה לכל תיק מתועדת: מי נכנס, מתי, מאיזה מכשיר, מה שונה. <Link href="/features/audit-logs" style={{ color: '#625DE5', fontWeight: 600 }}>קראו עוד ←</Link></span> },
+              { title: 'אימות דו-שלבי (2FA) ✓', text: <span>שכבת הגנה נוספת - קוד חד-פעמי מהנייד בכל כניסה. <Link href="/features/security-2fa" style={{ color: '#625DE5', fontWeight: 600 }}>קראו עוד ←</Link></span> },
+              { title: 'Audit Log - תיעוד גישות אוטומטי ✓', text: <span>כל גישה לכל תיק מתועדת: מי נכנס, מתי, מאיזה מכשיר, מה שונה. <Link href="/features/audit-logs" style={{ color: '#625DE5', fontWeight: 600 }}>קראו עוד ←</Link></span> },
             ].map((c, i) => (
               <div className="security-card" key={i}><h4>{c.title}</h4><p>{c.text}</p></div>
             ))}
@@ -176,6 +181,34 @@ export default function SecurityPage() {
                 </div>
               );
             })()}
+          </div>
+
+          <div className="divider"></div>
+
+          <div className="security-section">
+            <h2>
+              <span className="icon sec-icon">
+                <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </span>
+              ניטור פעיל - אנחנו יודעים לפני שאתם
+            </h2>
+
+            <div className="monitoring-banner">
+              <div className="monitoring-pulse-wrap">
+                <div className="monitoring-pulse-dot"></div>
+              </div>
+              <div>
+                <strong style={{ color: 'white', fontSize: '1.05rem', display: 'block', marginBottom: '.3rem' }}>המערכת מנוטרת עכשיו</strong>
+                <p style={{ color: 'rgba(255,255,255,0.8)', margin: 0, fontSize: '.95rem', lineHeight: 1.7 }}>כל שגיאה מגיעה לצוות שלנו בשניות - גם בשעות הלילה, גם בסופי שבוע. אתם עובדים, אנחנו שומרים.</p>
+              </div>
+            </div>
+
+            {[
+              { title: 'מזהים לפני שאתם מרגישים', text: 'במקום לחכות שתדווחו, אנחנו מקבלים התראה אוטומטית ברגע שמשהו לא עובד כמצופה.' },
+              { title: 'כל בעיה מתועדת ומטופלת', text: 'תיעוד מלא של כל אירוע - מה קרה, איפה, ומה גרם לו. התיקון מגיע מהר, ואותה בעיה לא חוזרת.' },
+            ].map((c, i) => (
+              <div className="security-card" key={i}><h4>{c.title}</h4><p>{c.text}</p></div>
+            ))}
           </div>
 
         </section>
