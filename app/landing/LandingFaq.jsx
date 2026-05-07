@@ -22,7 +22,10 @@ export default function LandingFaq({ items }) {
             </span>
           </button>
           <div className="lp-accordion-body">
-            <p>{item.a}</p>
+            <p>
+              {item.a}
+              {item.link && <> <a href={item.link.href} className="lp-faq-link">{item.link.text} ←</a></>}
+            </p>
           </div>
         </div>
       ))}

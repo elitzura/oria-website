@@ -26,7 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="he" dir="rtl" className={`${heebo.variable} ${montserrat.variable}`}>
+    <html lang="he" dir="rtl" className={`${heebo.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <head>
         {/* Google Tag Manager */}
         <script
@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Enable Accessibility Plugin */}
         <script src="https://cdn.enable.co.il/licenses/enable-L54971lrgj6mpyvj-0426-81703/init.js"></script>
       </head>
-      <body className="loading">
+      <body className="loading" suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

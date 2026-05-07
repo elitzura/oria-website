@@ -3832,10 +3832,26 @@ section {
 
 /* ── Landing page: Feature tile icon ── */
 .lp-feature-tile-icon {
-    display: block;
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-    line-height: 1;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 16px rgba(98, 93, 229, 0.25);
+    flex-shrink: 0;
+}
+
+.lp-feature-tile-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 /* ── Landing page: Accordion FAQ ── */
@@ -3902,7 +3918,7 @@ section {
 }
 
 .lp-accordion-item-open .lp-accordion-body {
-    max-height: 200px;
+    max-height: 300px;
     padding: 0 1.5rem 1.25rem;
 }
 
@@ -3911,6 +3927,17 @@ section {
     line-height: 1.7;
     color: var(--gray-600);
     margin: 0;
+}
+
+.lp-faq-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.lp-faq-link:hover {
+    text-decoration: underline;
 }
 
 /* ── Landing page: Onboarding section ── */
@@ -4017,10 +4044,25 @@ section {
 }
 
 .lp-mobile-icon {
-    font-size: 1.5rem;
-    line-height: 1;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(98, 93, 229, 0.2);
     flex-shrink: 0;
-    margin-top: 0.1rem;
+}
+
+.lp-mobile-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .lp-mobile-feature-item strong {

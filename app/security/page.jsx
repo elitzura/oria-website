@@ -5,7 +5,16 @@ import StaticPageLayout from '../../components/StaticPageLayout';
 
 export default function SecurityPage() {
   const [showFormModal, setShowFormModal] = useState(false);
+  const [activeProvider, setActiveProvider] = useState(0);
   const iframeRef = useRef(null);
+  const PROVIDERS_COUNT = 4;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveProvider(prev => (prev + 1) % PROVIDERS_COUNT);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     document.body.classList.remove('loading');
@@ -19,7 +28,7 @@ export default function SecurityPage() {
         }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.security-section,.security-card,.provider-card,.tip-card').forEach(el => {
+    document.querySelectorAll('.security-section,.security-card,.tip-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -67,13 +76,17 @@ export default function SecurityPage() {
         .highlight-box{background:linear-gradient(135deg,#625DE5 0%,#48B7FF 100%);color:white;padding:25px 30px;border-radius:12px;margin:2rem 0}
         .highlight-box strong{display:block;font-size:1.1rem;margin-bottom:.5rem}
         .highlight-box p{color:rgba(255,255,255,.95);margin:0}
-        .providers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:2rem 0}
-        .provider-card{background:#F2F2FC;border-radius:12px;padding:25px;text-align:center;transition:transform .3s,box-shadow .3s}
-        .provider-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(98,93,229,.15)}
-        .provider-card .provider-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;box-shadow:0 4px 16px rgba(98,93,229,.25)}
-        .provider-card .provider-icon svg{width:26px;height:26px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-        .provider-card h4{color:#171938;margin-bottom:.5rem}
-        .provider-card p{font-size:.95rem;margin:0}
+        .providers-slideshow{margin:2rem 0}
+        @keyframes providerFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+        .provider-slide{background:linear-gradient(135deg,#F2F2FC 0%,#fff 100%);border-radius:20px;padding:48px 40px;text-align:center;border:1px solid rgba(98,93,229,.1);box-shadow:0 4px 24px rgba(0,0,0,.06);animation:providerFadeIn 0.5s ease forwards}
+        .provider-slide .provider-icon{width:68px;height:68px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;box-shadow:0 6px 20px rgba(98,93,229,.3)}
+        .provider-slide .provider-icon svg{width:32px;height:32px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+        .provider-slide h4{color:#171938;font-size:1.4rem;margin-bottom:.4rem}
+        .provider-slide .provider-sub{font-size:1rem;font-weight:700;color:#625DE5;margin-bottom:.8rem}
+        .provider-slide .provider-text{font-size:1.05rem;color:#4a4a6a;line-height:1.8;margin:0;max-width:680px;margin-inline:auto}
+        .providers-dots{display:flex;justify-content:center;gap:10px;margin-top:1.8rem}
+        .provider-dot{width:10px;height:10px;border-radius:50%;background:rgba(98,93,229,.2);border:none;cursor:pointer;padding:0;transition:background .3s,transform .3s}
+        .provider-dot.active{background:#625DE5;transform:scale(1.35)}
         .tips-section{background:linear-gradient(135deg,#171938 0%,#2a2d5a 100%);padding:60px 0;margin-top:60px}
         .tips-section h2{color:white;text-align:center;margin-bottom:2rem}
         .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:900px;margin:0 auto;padding:0 20px}
@@ -85,7 +98,7 @@ export default function SecurityPage() {
         .contact-cta h3{color:#171938;font-size:1.5rem;margin-bottom:1rem}
         .contact-cta p{color:#4a4a6a;margin-bottom:2rem}
         .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(98,93,229,.3),transparent);margin:40px 0}
-        @media(max-width:768px){.security-hero h1{font-size:2rem}.security-hero .subtitle{font-size:1.1rem;padding:0 20px}.security-section h2{font-size:1.5rem}.providers-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){.security-hero h1{font-size:2rem}.security-hero .subtitle{font-size:1.1rem;padding:0 20px}.security-section h2{font-size:1.5rem}.provider-card{min-width:220px}}
       `}</style>
 
       <StaticPageLayout activeNav="security">
@@ -137,32 +150,32 @@ export default function SecurityPage() {
           <div className="security-section">
             <h2><span className="icon sec-icon"><svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="28" height="28"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span> איפה המידע נשמר? תשתיות הענן המובילות בעולם</h2>
             <p>המידע שלך מוגן באמצעות טכנולוגיות הענן המתקדמות ביותר, תוך הפרדה חכמה בין סוגי הנתונים:</p>
-            <div className="providers-grid">
-              <div className="provider-card">
-                <div className="provider-icon">
-                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            {(() => {
+              const providers = [
+                { icon: <><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></>, title: 'בסיס הנתונים', sub: 'Neon & AWS', text: 'המידע הטקסטואלי מנוהל על גבי תשתית Neon (PostgreSQL) המאובטחת, המופעלת על שרתי AWS באירופה.' },
+                { icon: <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>, title: 'אחסון קבצים', sub: 'Google Cloud Platform', text: 'הקבצים נשמרים על שרתי גוגל – אותה תשתית המשרתת את Gmail ו-Drive.' },
+                { icon: <><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></>, title: 'שרתי האפליקציה', sub: 'Railway', text: 'תשתיות השרתים שלנו עומדות בתקני SOC 2 Type II ו-SOC 3, המבטיחים בקרה קפדנית על ניהול המידע.' },
+                { icon: <><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></>, title: 'תאימות לחוק הישראלי', sub: 'חוק הגנת הפרטיות', text: 'כלל הנתונים מאוחסנים ומנוהלים בהתאם לדרישות חוק הגנת הפרטיות הישראלי ותיקון 13 לחוק.' },
+              ];
+              const c = providers[activeProvider];
+              return (
+                <div className="providers-slideshow">
+                  <div className="provider-slide" key={activeProvider}>
+                    <div className="provider-icon">
+                      <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{c.icon}</svg>
+                    </div>
+                    <h4>{c.title}</h4>
+                    <p className="provider-sub">{c.sub}</p>
+                    <p className="provider-text">{c.text}</p>
+                  </div>
+                  <div className="providers-dots">
+                    {providers.map((_, i) => (
+                      <button key={i} className={`provider-dot${activeProvider === i ? ' active' : ''}`} onClick={() => setActiveProvider(i)} />
+                    ))}
+                  </div>
                 </div>
-                <h4>בסיס הנתונים</h4>
-                <p><strong>Neon & AWS</strong></p>
-                <p>המידע הטקסטואלי מנוהל על גבי תשתית Neon (PostgreSQL) המאובטחת, המופעלת על שרתי AWS באירופה.</p>
-              </div>
-              <div className="provider-card">
-                <div className="provider-icon">
-                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                </div>
-                <h4>אחסון קבצים</h4>
-                <p><strong>Google Cloud Platform</strong></p>
-                <p>הקבצים נשמרים על שרתי גוגל – אותה תשתית המשרתת את Gmail ו-Drive.</p>
-              </div>
-              <div className="provider-card">
-                <div className="provider-icon">
-                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                </div>
-                <h4>תאימות לחוק הישראלי</h4>
-                <p><strong>חוק הגנת הפרטיות</strong></p>
-                <p>כלל הנתונים מאוחסנים ומנוהלים בהתאם לדרישות חוק הגנת הפרטיות הישראלי ותיקון 13 לחוק.</p>
-              </div>
-            </div>
+              );
+            })()}
           </div>
 
         </section>
@@ -196,7 +209,7 @@ export default function SecurityPage() {
       <div className={`form-modal${showFormModal ? ' active' : ''}`} onClick={(e) => e.target === e.currentTarget && closeModal()}>
         <div className="form-modal-content">
           <button className="form-modal-close" onClick={closeModal}>&times;</button>
-          <iframe ref={iframeRef} src="" frameBorder="0" allowFullScreen />
+          <iframe ref={iframeRef} src={null} frameBorder="0" allowFullScreen />
         </div>
       </div>
     </>
