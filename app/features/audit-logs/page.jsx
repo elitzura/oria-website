@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import FeaturePageLayout from '../../../components/FeaturePageLayout';
 
-export const metadata = { title: 'Audit Log — מי פתח את התיק? | ORIA AI' };
+export const metadata = { title: 'Audit Log - מי פתח את התיק? | ORIA AI' };
 
 export default function AuditLogsPage() {
   return (
@@ -72,11 +72,11 @@ export default function AuditLogsPage() {
               <span className="fh-tag fh-tag-security">אבטחה</span>
               <span className="fh-tag fh-tag-gray">פברואר 2026</span>
             </div>
-            <h1>Audit Log —<br /><em>מי פתח את התיק הזה?</em></h1>
-            <p className="lead">כל גישה לכל תיק מתועדת אוטומטית. מי נכנס, מתי, מאיזה מכשיר, מה שונה. ההגנה המשפטית שלכם מוכנה — בלי שתצטרכו לחשוב עליה.</p>
+            <h1>Audit Log -<br /><em>מי פתח את התיק הזה?</em></h1>
+            <p className="lead">כל גישה לכל תיק מתועדת אוטומטית. מי נכנס, מתי, מאיזה מכשיר, מה שונה. כדי שתמיד תדעו בדיוק מה קורה עם המידע שלכם - ותוכלו לסגור את היום בשקט.</p>
             <div className="stat-row">
               <div className="stat-item"><div className="stat-num">100%</div><div className="stat-label">תיעוד גישות אוטומטי</div></div>
-              <div className="stat-item"><div className="stat-num">תיקון</div><div className="stat-label">13 — רגולציה ישראלית</div></div>
+              <div className="stat-item"><div className="stat-num">תיקון</div><div className="stat-label">13 - רגולציה ישראלית</div></div>
               <div className="stat-item"><div className="stat-num">ISO</div><div className="stat-label">27001 מאושר</div></div>
             </div>
           </div>
@@ -84,26 +84,26 @@ export default function AuditLogsPage() {
 
         <article className="feature-body">
           <p className="section-label">למה זה חשוב</p>
-          <h2 className="feature-section-title">השאלה שמטפלים שואלים בשקט</h2>
-          <p className="body-text">"אם מטופל יתלונן שמסרתי את המידע שלו — איך אני מוכיח שלא עשיתי את זה?"</p>
-          <p className="body-text">זו לא שאלה פרנואידית. זו שאלה של אחריות מקצועית אמיתית. ועד היום, לרוב המטפלים לא הייתה תשובה. עם Audit Log ב-ORIA AI — יש תשובה. לא "תאמינו לי". <strong>תיעוד.</strong></p>
+          <h2 className="feature-section-title">הדאגה השקטה שמלווה כל מטפל</h2>
+          <p className="body-text">"האם מישהו שאסור לו ניגש למידע של המטופלים שלי? ואיך אני בכלל אדע?"</p>
+          <p className="body-text">רוב המטפלים לא יודעים לענות על השאלה הזו. לא כי הם לא זהירים - אלא כי אין להם כלי לדעת. Audit Log ב-ORIA AI נותן תשובה ברורה, בכל רגע, לכל שאלה על מה שקרה עם המידע שלכם.</p>
 
           <div className="feature-quote">
-            <p>"ועדת תלונות, בית דין אתי, עורך דין של מטופל — כולם יכולים לשאול: 'הראו לי מי ניגש לתיק.' עם Audit Logs אתם מראים תיעוד מלא. בלעדיהם — עונים 'תאמינו לי.'"</p>
-            <cite>— אביעד אליצור, מייסד ORIA AI</cite>
+            <p>"כשאין תיעוד, אי-הוודאות יושבת ברקע. היא לא רועשת - אבל היא שם. Audit Log לא נועד לרגעי משבר. הוא נועד כדי שלא תחיו עם הדאגה הזו כלל."</p>
+            <cite>- אביעד אליצור, מייסד ORIA AI</cite>
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>החוק מחייב</p>
-          <h2 className="feature-section-title">לא בחירה — חובה משפטית</h2>
-          <p className="body-text">תיקון 13 לחוק הגנת הפרטיות (בתוקף 2025) מחיל חובות כבדות על כל מי שמחזיק מאגר מידע רגיש. מידע פסיכולוגי ונפשי מוגדר <strong>מפורשות</strong> כמידע רגיש בחוק.</p>
+          <h2 className="feature-section-title">לא בחירה - חובה רגולטורית</h2>
+          <p className="body-text">תיקון 13 לחוק הגנת הפרטיות (בתוקף 2025) מחיל חובות על כל מי שמחזיק מאגר מידע רגיש. מידע פסיכולוגי ונפשי מוגדר <strong>מפורשות</strong> כמידע רגיש בחוק.</p>
 
           <div className="law-box">
             <h4>מה מחייב החוק?</h4>
             <ul>
-              <li>תיעוד גישה — רישום מי גישה למידע, מתי, ומאיזה מכשיר</li>
-              <li>ניטור חריגות — יכולת לזהות גישה חשודה או לא מורשית</li>
-              <li>חוק זכויות החולה — מטופל יכול לדרוש לדעת מי ניגש לתיק שלו</li>
-              <li>תיעוד שיתוף מידע — "לאן הועבר המידע" חובה משפטית לתעד</li>
+              <li>תיעוד גישה - רישום מי גישה למידע, מתי, ומאיזה מכשיר</li>
+              <li>ניטור חריגות - יכולת לזהות גישה חשודה או לא מורשית</li>
+              <li>חוק זכויות החולה - מטופל יכול לדרוש לדעת מי ניגש לתיק שלו</li>
+              <li>תיעוד שיתוף מידע - "לאן הועבר המידע" חובה משפטית לתעד</li>
             </ul>
           </div>
 
@@ -113,22 +113,20 @@ export default function AuditLogsPage() {
           <div className="log-mock">
             <div className="log-mock-header">
               <div className="log-dot red"></div><div className="log-dot yellow"></div><div className="log-dot green"></div>
-              <span className="log-mock-title">audit-log · תיק 1047 — יעל כ.</span>
+              <span className="log-mock-title">audit-log · תיק 1047 - יעל כ.</span>
             </div>
             <div className="log-row"><span className="log-time">09:14:22</span><span className="log-user">ד"ר מיכל ל.</span><span className="log-action">פתחה תיק לצפייה</span><span className="log-device">iPhone 15 Pro</span><span className="log-badge badge-view">VIEW</span></div>
             <div className="log-row"><span className="log-time">09:28:07</span><span className="log-user">ד"ר מיכל ל.</span><span className="log-action">הוסיפה סיכום פגישה #18</span><span className="log-device">iPhone 15 Pro</span><span className="log-badge badge-edit">EDIT</span></div>
             <div className="log-row"><span className="log-time">11:03:45</span><span className="log-user">ד"ר מיכל ל.</span><span className="log-action">צפתה בציר זמן טיפולי</span><span className="log-device">MacBook Pro</span><span className="log-badge badge-view">VIEW</span></div>
-            <div className="log-row" style={{ background: 'rgba(229,144,122,0.06)' }}><span className="log-time">14:52:19</span><span className="log-user" style={{ color: '#E5907A' }}>— לא ידוע —</span><span className="log-action" style={{ color: '#E5907A' }}>ניסיון כניסה נכשל (IP חיצוני)</span><span className="log-device">דפדפן לא מוכר</span><span className="log-badge badge-export">ALERT</span></div>
+            <div className="log-row" style={{ background: 'rgba(229,144,122,0.06)' }}><span className="log-time">14:52:19</span><span className="log-user" style={{ color: '#E5907A' }}>- לא ידוע -</span><span className="log-action" style={{ color: '#E5907A' }}>ניסיון כניסה נכשל (IP חיצוני)</span><span className="log-device">דפדפן לא מוכר</span><span className="log-badge badge-export">ALERT</span></div>
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>מה זה נותן לכם</p>
-          <h2 className="feature-section-title">שלוש שכבות של שקט נפשי</h2>
+          <h2 className="feature-section-title">שקט נפשי שחוזר לחדר</h2>
           <div className="log-items">
             {[
-              { icon: '⚖️', bg: 'icon-purple-bg', title: 'הגנה משפטית מלאה', text: 'ועדת תלונות, בית דין אתי, תביעה — לכל שאלה יש תיעוד מדויק. לא ניחושים. עובדות.' },
-              { icon: '💬', bg: 'icon-blue-bg', title: 'שקיפות מול המטופל', text: '"מי יכול לראות מה שאמרתי?" — עכשיו יש תשובה שאפשר לגבות בעובדות ולבנות אמון אמיתי.' },
-              { icon: '🏢', bg: 'icon-coral-bg', title: 'שליטה למנהלי מרכזים', text: 'לוודא שכל מטפל ניגש רק לתיקים בסמכותו, לזהות גישה חריגה, לייצר דוח לכל ביקורת רגולטורית.' },
-              { icon: '🧘', bg: 'icon-green-bg', title: 'שקט נפשי שחוזר לחדר', text: 'האנרגיה שהלכה לדאגה ברקע — חוזרת לחדר הטיפולים. כשהכל מתועד, אין מה לדאוג.' },
+              { icon: '🧘', bg: 'icon-green-bg', title: 'הדאגה ברקע נעלמת', text: 'כשאתם יודעים שכל גישה מתועדת - הספק השקט שמלווה אתכם ביומיום פשוט נעלם. אפשר להיכנס לפגישה נוכחים.' },
+              { icon: '🔍', bg: 'icon-purple-bg', title: 'שליטה מלאה על המידע שלכם', text: 'רואים בדיוק מה קרה: מתי נפתח תיק, מאיזה מכשיר, מה שונה. אין ארגזים שחורים - הכל גלוי לכם.' },
             ].map((item, i) => (
               <div className="log-item" key={i}>
                 <div className={`log-item-icon ${item.bg}`}>{item.icon}</div>
@@ -139,9 +137,9 @@ export default function AuditLogsPage() {
           </div>
 
           <div className="cta-inline">
-            <h3>רוצים קליניקה עם הגנה משפטית מלאה?</h3>
-            <p>הצטרפו לרשימת ההמתנה — כשהאפליקציה יוצאת, תקבלו חודש ראשון חינם.</p>
-            <Link href="/#pricing" className="btn btn-primary">הצטרפו לרשימת ההמתנה</Link>
+            <h3>רוצים לנהל קליניקה בלי הדאגה ברקע?</h3>
+            <p>Audit Log פועל אוטומטית מהיום הראשון.</p>
+            <Link href="/pricing" className="btn btn-primary">לצפייה במסלולים</Link>
           </div>
 
           <div className="feature-nav">
