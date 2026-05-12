@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import FeaturePageLayout from '../../../components/FeaturePageLayout';
 
-export const metadata = { title: 'אימות דו-שלבי — כניסה מאובטחת | ORIA AI' };
+export const metadata = { title: 'אימות דו-שלבי - כניסה מאובטחת | ORIA AI' };
 
 export default function Security2faPage() {
   return (
@@ -64,28 +64,28 @@ export default function Security2faPage() {
               <span className="fh-tag fh-tag-security-g">אבטחה</span>
               <span className="fh-tag fh-tag-gray">פברואר 2026</span>
             </div>
-            <h1>אימות דו-שלבי —<br /><em>המידע שלכם מוגן</em></h1>
-            <p className="lead">קוד חד-פעמי מהנייד בכל כניסה. גם אם מישהו גנב את הסיסמה — המידע של המטופלים שלכם נשאר מאחורי שכבת הגנה נוספת.</p>
+            <h1>אימות דו-שלבי -<br /><em>המידע שלכם מוגן</em></h1>
+            <p className="lead">קוד חד-פעמי מהנייד בכל כניסה. גם אם מישהו גנב את הסיסמה - המידע של המטופלים שלכם נשאר מאחורי שכבת הגנה נוספת.</p>
             <div className="stat-row">
               <div className="stat-item"><div className="stat-num">30″</div><div className="stat-label">תוקף הקוד</div></div>
               <div className="stat-item"><div className="stat-num">ISO</div><div className="stat-label">27001 מאושר</div></div>
-              <div className="stat-item"><div className="stat-num">תיקון</div><div className="stat-label">13 — רגולציה ישראלית</div></div>
+              <div className="stat-item"><div className="stat-num">תיקון</div><div className="stat-label">13 - רגולציה ישראלית</div></div>
             </div>
           </div>
         </section>
 
         <article className="feature-body">
           <p className="section-label">למה זה חשוב</p>
-          <h2 className="feature-section-title">סיסמה לבדה — לא מספיק. לא ב-2026.</h2>
-          <p className="body-text">המידע שבקליניקה שלכם הוא מהרגיש ביותר שיש. שמות, סיפורים אישיים, אבחנות. אם מישהו גנב את הסיסמה — אימות דו-שלבי מוודא שבלי הנייד שלכם, אף אחד לא נכנס.</p>
+          <h2 className="feature-section-title">סיסמה לבדה - לא מספיק. לא ב-2026.</h2>
+          <p className="body-text">המידע שבקליניקה שלכם הוא מהרגיש ביותר שיש. שמות, סיפורים אישיים, אבחנות. אם מישהו גנב את הסיסמה - אימות דו-שלבי מוודא שבלי הנייד שלכם, אף אחד לא נכנס.</p>
           <div className="feature-quote">
-            <p>"כשהבנתי שגם אם מישהו גנב את הסיסמה שלי — הוא לא יכול להיכנס בלי הנייד שלי — זה נתן לי שקט אמיתי."</p>
-            <cite>— דניאל, מטפל CBT, משתתף פיילוט</cite>
+            <p>"כשהבנתי שגם אם מישהו גנב את הסיסמה שלי - הוא לא יכול להיכנס בלי הנייד שלי - זה נתן לי שקט אמיתי."</p>
+            <cite>- דניאל, מטפל CBT, משתתף פיילוט</cite>
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>איך זה נראה</p>
           <h2 className="feature-section-title">קוד שמתחלף כל 30 שניות</h2>
-          <p className="body-text">מתקינים את Google Authenticator (חינמי) על הנייד — ומקבלים קוד בן 6 ספרות שמתחלף כל 30 שניות. בכל כניסה ל-ORIA מזינים את הקוד, ונכנסים.</p>
+          <p className="body-text">מתקינים את Google Authenticator (חינמי) על הנייד - ומקבלים קוד בן 6 ספרות שמתחלף כל 30 שניות. בכל כניסה ל-ORIA מזינים את הקוד, ונכנסים.</p>
 
           <div className="phone-mock-wrapper">
             <div className="phone-mock">
@@ -93,7 +93,7 @@ export default function Security2faPage() {
                 <div className="phone-app-icon">🔐</div>
                 <div className="phone-app-name">Google Authenticator</div>
               </div>
-              <div style={{ fontSize: '.7rem', color: 'rgba(255,255,255,.4)', marginBottom: '.5rem', textAlign: 'center' }}>ORIA AI — הקליניקה שלכם</div>
+              <div style={{ fontSize: '.7rem', color: 'rgba(255,255,255,.4)', marginBottom: '.5rem', textAlign: 'center' }}>ORIA AI - הקליניקה שלכם</div>
               <div className="otp-display">847 293</div>
               <div className="otp-timer-bar"><div className="otp-timer-fill"></div></div>
               <div className="otp-expires">מתחלף בעוד 18 שניות</div>
@@ -105,8 +105,8 @@ export default function Security2faPage() {
           <div className="security-layers">
             {[
               { cls: 'green', icon: '🔐', title: 'אימות דו-שלבי (2FA)', text: 'קוד חד-פעמי מהנייד. מתחלף כל 30 שניות. עם 10 קודי גיבוי למקרה חירום.' },
-              { cls: 'blue', icon: '🔒', title: 'הצפנה מקצה לקצה', text: 'כל המידע מוצפן בכל רגע — גם בזמן העברה וגם באחסון. אף אחד מחוץ לקליניקה לא יכול לקרוא אותו.' },
-              { cls: 'purple', icon: '🛡️', title: 'ISO 27001 — תקן אבטחת מידע בינלאומי', text: 'ORIA פועלת בהתאם לעקרונות תקן אבטחת המידע הבינלאומי, בליווי חברת אבטחה מתמחה.' },
+              { cls: 'blue', icon: '🔒', title: 'הצפנה מקצה לקצה', text: 'כל המידע מוצפן בכל רגע - גם בזמן העברה וגם באחסון. אף אחד מחוץ לקליניקה לא יכול לקרוא אותו.' },
+              { cls: 'purple', icon: '🛡️', title: 'ISO 27001 - תקן אבטחת מידע בינלאומי', text: 'ORIA פועלת בהתאם לעקרונות תקן אבטחת המידע הבינלאומי, בליווי חברת אבטחה מתמחה.' },
               { cls: 'orange', icon: '📋', title: 'תיקון 13 לחוק הגנת הפרטיות', text: 'עמידה מלאה ברגולציה הישראלית. המידע שלכם נשמר בישראל ובשרתי AMAZON ו-GOOGLE המאושרים.' },
             ].map((l, i) => (
               <div className="security-layer" key={i}>
@@ -118,12 +118,12 @@ export default function Security2faPage() {
           </div>
 
           <p className="body-text" style={{ marginTop: '1rem' }}>
-            <strong>חשוב:</strong> האודיו של ה-Brain Dump נמחק מיד לאחר התמלול. ORIA לא מאמנת מודלים על הנתונים שלכם, ולא משתפת מידע עם צדדים שלישיים. כל תוצר שה-AI מפיק הוא טיוטה בלבד — ודורש את האישור שלכם לפני השמירה.
+            <strong>חשוב:</strong> האודיו של ה-Brain Dump נמחק מיד לאחר התמלול. ORIA לא מאמנת מודלים על הנתונים שלכם, ולא משתפת מידע עם צדדים שלישיים. כל תוצר שה-AI מפיק הוא טיוטה בלבד - ודורש את האישור שלכם לפני השמירה.
           </p>
 
           <div className="cta-inline">
             <h3>רוצים קליניקה מאובטחת מהיום הראשון?</h3>
-            <p>הצטרפו לפיילוט — אבטחת המידע מוכנה ומוגדרת. אתם רק צריכים להיכנס.</p>
+            <p>הצטרפו לפיילוט - אבטחת המידע מוכנה ומוגדרת. אתם רק צריכים להיכנס.</p>
             <Link href="/#pricing" className="btn btn-primary">הצטרפו לפיילוט</Link>
           </div>
 

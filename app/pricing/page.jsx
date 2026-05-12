@@ -2,7 +2,7 @@ import Link from 'next/link';
 import StaticPageLayout from '../../components/StaticPageLayout';
 
 export const metadata = {
-  title: 'מחירים — ORIA AI',
+  title: 'מחירים - ORIA AI',
   description: 'בחרו את המסלול המתאים לכם. מתחילים חינם, משדרגים כשרוצים.',
 };
 
@@ -134,7 +134,7 @@ export default function PricingPage() {
               <div className="plan-icon"><IconFreemium /></div>
               <div className="pricing-header">
                 <h3 style={{ fontSize: '1.3rem' }}>FREEMIUM</h3>
-                <p className="pricing-desc">להרגיש את ORIA לפני שמחליטים — בלי לשלם שקל</p>
+                <p className="pricing-desc">להרגיש את ORIA לפני שמחליטים - בלי לשלם שקל</p>
               </div>
               <div className="pricing-price">
                 <span className="amount" style={{ fontSize: '2rem', letterSpacing: '-1px' }}>חינם</span>
@@ -142,13 +142,13 @@ export default function PricingPage() {
               </div>
               <div className="freemium-limit">
                 <span className="bonus-icon">🔓</span>
-                <span>כל הפיצ'רים של PREMIUM — מוגבל ל-3 מטופלים פעילים. שדרוג בקליק בכל רגע.</span>
+                <span>כל הפיצ'רים של PREMIUM - מוגבל ל-3 מטופלים פעילים. שדרוג בקליק בכל רגע.</span>
               </div>
               <ul className="pricing-features">
                 <li><span className="check">✓</span> יומן פגישות דיגיטלי</li>
                 <li><span className="check">✓</span> ניהול תשלומים וגבייה</li>
                 <li><span className="check">✓</span> תזכורות בוואטסאפ ובמייל</li>
-                <li><span className="check">✓</span> סוכני AI — סיכום פגישות וניתוח תובנות</li>
+                <li><span className="check">✓</span> סוכני AI - סיכום פגישות וניתוח תובנות</li>
                 <li><span className="check">✓</span> עד 3 מטופלים פעילים</li>
               </ul>
               <a href="https://app.oriamind.ai" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>התחילו חינם</a>
@@ -160,7 +160,7 @@ export default function PricingPage() {
               <div className="plan-icon"><IconPremium /></div>
               <div className="pricing-header">
                 <h3 style={{ fontSize: '1.3rem' }}>MIND PREMIUM</h3>
-                <p className="pricing-desc">ניהול קליניקה מלא — AI, וואטסאפ, דוחות ותמיכה אישית</p>
+                <p className="pricing-desc">ניהול קליניקה מלא - AI, וואטסאפ, דוחות ותמיכה אישית</p>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.2rem', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#bbb', textDecoration: 'line-through', letterSpacing: '-0.5px' }}>₪289</span>
@@ -176,7 +176,7 @@ export default function PricingPage() {
               <ul className="pricing-features">
                 <li><span className="check">✓</span> מטופלים ללא הגבלה</li>
                 <li><span className="check">✓</span> ניהול תשלומים וגבייה</li>
-                <li><span className="check">✓</span> סוכני AI מרובים — ניהול קליניקה מלא</li>
+                <li><span className="check">✓</span> סוכני AI מרובים - ניהול קליניקה מלא</li>
                 <li><span className="check">✓</span> תזכורות ועדכונים בוואטסאפ למטופלים</li>
                 <li><span className="check">✓</span> ניתוח תובנות ודפוסים קליניים</li>
                 <li><span className="check">✓</span> דוחות התקדמות אוטומטיים</li>
@@ -210,10 +210,10 @@ export default function PricingPage() {
           </div>
 
           <div className="pricing-trust">
-            <span>FREEMIUM חינם לתמיד — ללא כרטיס אשראי</span>
+            <span>FREEMIUM חינם לתמיד - ללא כרטיס אשראי</span>
             <span>ביטול מיידי בכל עת דרך האפליקציה</span>
-            <span>תמיכה בעברית — צוות ישראלי</span>
-            <span>מחיר השקה — יעלה בקרוב</span>
+            <span>תמיכה בעברית - צוות ישראלי</span>
+            <span>מחיר השקה - יעלה בקרוב</span>
           </div>
         </div>
       </section>

@@ -360,7 +360,7 @@ export default function LandingPage() {
               {testimonials.map((t) => (
                 <article key={t.name} className="lp-testimonial-card">
                   <p className="lp-testimonial-text">״{t.quote}״</p>
-                  <p className="lp-testimonial-author">— {t.name}, {t.role}</p>
+                  <p className="lp-testimonial-author">- {t.name}, {t.role}</p>
                 </article>
               ))}
             </div>
@@ -638,7 +638,7 @@ export default function LandingPage() {
                   borderRadius: '20px',
                   display: 'inline-block',
                   marginBottom: '0.75rem',
-                }}>🐦 Early Bird — 100 מקומות בלבד</span>
+                }}>🐦 Early Bird - 100 מקומות בלבד</span>
                 <h2 style={{ color: '#fff', fontSize: 'clamp(1.4rem,3vw,2rem)', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.25 }}>
                   MIND PREMIUM ב-<span style={{ color: '#48B7FF' }}>₪99</span> בלבד
                 </h2>

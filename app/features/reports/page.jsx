@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import FeaturePageLayout from '../../../components/FeaturePageLayout';
 
-export const metadata = { title: 'דוחות פיננסיים — שאלו בעברית, קבלו אקסל | ORIA AI' };
+export const metadata = { title: 'דוחות פיננסיים - שאלו בעברית, קבלו אקסל | ORIA AI' };
 
 export default function ReportsPage() {
   return (
@@ -65,10 +65,10 @@ export default function ReportsPage() {
             <Link href="/features" className="feature-back">חזרה לכל הפיצ'רים</Link>
             <div className="feature-hero-tags">
               <span className="fh-tag fh-tag-coral">ניהול</span>
-              <span className="fh-tag fh-tag-green">חדש — פברואר 2026</span>
+              <span className="fh-tag fh-tag-green">חדש - פברואר 2026</span>
             </div>
-            <h1>דוחות פיננסיים —<br /><em>שאלו בעברית, קבלו אקסל</em></h1>
-            <p className="lead">שאלו "כמה הרווחתי בינואר?" ו-ORIA תיצור דוח מסודר עם גרפים וטבלאות — ותייצא לאקסל בלחיצה אחת.</p>
+            <h1>דוחות פיננסיים -<br /><em>שאלו בעברית, קבלו אקסל</em></h1>
+            <p className="lead">שאלו "כמה הרווחתי בינואר?" ו-ORIA תיצור דוח מסודר עם גרפים וטבלאות - ותייצא לאקסל בלחיצה אחת.</p>
             <div className="stat-row">
               <div className="stat-item"><div className="stat-num">1</div><div className="stat-label">לחיצה לייצוא אקסל</div></div>
               <div className="stat-item"><div className="stat-num">0</div><div className="stat-label">ידע בחשבונאות נדרש</div></div>
@@ -79,20 +79,20 @@ export default function ReportsPage() {
 
         <article className="feature-body">
           <p className="section-label">הבעיה</p>
-          <h2 className="feature-section-title">בסוף החודש — ניירת. בתחילת השנה — עוד יותר ניירת.</h2>
-          <p className="body-text">מי שילם? מי חייב? כמה הרווחתי השנה? הנתונים קיימים — אבל לאסוף אותם, לסדר, לחשב ולייצא לרואה חשבון? זה שעות. שעות שאפשר לתת לאנשים.</p>
+          <h2 className="feature-section-title">בסוף החודש - ניירת. בתחילת השנה - עוד יותר ניירת.</h2>
+          <p className="body-text">מי שילם? מי חייב? כמה הרווחתי השנה? הנתונים קיימים - אבל לאסוף אותם, לסדר, לחשב ולייצא לרואה חשבון? זה שעות. שעות שאפשר לתת לאנשים.</p>
           <div className="feature-quote">
-            <p>"אני מוציאה בסוף כל חודש שעתיים על סיכומי תשלומים. זה המשמרת השנייה שלי — ואני לא נשלמת בשבילה."</p>
-            <cite>— רחל, עובדת סוציאלית קלינית</cite>
+            <p>"אני מוציאה בסוף כל חודש שעתיים על סיכומי תשלומים. זה המשמרת השנייה שלי - ואני לא נשלמת בשבילה."</p>
+            <cite>- רחל, עובדת סוציאלית קלינית</cite>
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>שאלו בעברית</p>
           <h2 className="feature-section-title">ORIA מבינה שאלות פיננסיות בשפה שלכם</h2>
-          <p className="body-text">לא צריך דשבורדים מסובכים. פשוט שואלים — ו-ORIA מחזירה תשובה עם נתונים.</p>
+          <p className="body-text">לא צריך דשבורדים מסובכים. פשוט שואלים - ו-ORIA מחזירה תשובה עם נתונים.</p>
 
           <div className="qa-card">
             {[
-              { q: 'כמה הרווחתי בינואר לעומת דצמבר?', a: <span><strong>ינואר:</strong> ₪14,200 (32 פגישות) | <strong>דצמבר:</strong> ₪11,800 (26 פגישות)<br />עלייה של 20.3% — בעיקר בגלל 4 מטופלים חדשים. <a style={{ color: '#fde8c8' }}>ייצא לאקסל ↓</a></span> },
+              { q: 'כמה הרווחתי בינואר לעומת דצמבר?', a: <span><strong>ינואר:</strong> ₪14,200 (32 פגישות) | <strong>דצמבר:</strong> ₪11,800 (26 פגישות)<br />עלייה של 20.3% - בעיקר בגלל 4 מטופלים חדשים. <a style={{ color: '#fde8c8' }}>ייצא לאקסל ↓</a></span> },
               { q: 'מי לא שילם יותר מחודשיים?', a: <span>נמצאו <strong>3 מטופלים</strong> עם חוב מעל 60 יום: ד' (₪900), מ' (₪600), ר' (₪1,200). <a style={{ color: '#fde8c8' }}>ייצא דוח חובות ↓</a></span> },
             ].map((item, i) => (
               <div className="qa-row" key={i}>
@@ -111,15 +111,15 @@ export default function ReportsPage() {
           </div>
 
           <div className="excel-mock">
-            <div className="excel-header-bar"><span className="icon">📊</span><span>דוח הכנסות — ינואר 2026.xlsx</span></div>
+            <div className="excel-header-bar"><span className="icon">📊</span><span>דוח הכנסות - ינואר 2026.xlsx</span></div>
             <div style={{ overflowX: 'auto' }}>
               <table className="excel-table">
                 <thead><tr><th>מטופל</th><th>פגישות</th><th>שולם</th><th>חוב</th><th>סוג</th></tr></thead>
                 <tbody>
                   <tr><td>ד'</td><td>4</td><td className="amount">₪1,600</td><td className="unpaid">₪400</td><td>פרטי</td></tr>
-                  <tr><td>מ'</td><td>3</td><td className="amount">₪1,200</td><td>—</td><td>קופת חולים</td></tr>
+                  <tr><td>מ'</td><td>3</td><td className="amount">₪1,200</td><td>-</td><td>קופת חולים</td></tr>
                   <tr><td>ר'</td><td>5</td><td className="amount">₪2,000</td><td className="unpaid">₪500</td><td>פרטי</td></tr>
-                  <tr><td>א'</td><td>4</td><td className="amount">₪1,600</td><td>—</td><td>פרטי</td></tr>
+                  <tr><td>א'</td><td>4</td><td className="amount">₪1,600</td><td>-</td><td>פרטי</td></tr>
                   <tr><td colSpan="2"><strong>סה"כ</strong></td><td className="amount"><strong>₪6,400</strong></td><td className="unpaid"><strong>₪900</strong></td><td></td></tr>
                 </tbody>
               </table>
@@ -128,7 +128,7 @@ export default function ReportsPage() {
 
           <div className="cta-inline">
             <h3>רוצים שהניירת הפיננסית תיגמר לבד?</h3>
-            <p>הצטרפו לפיילוט — ORIA תתחיל לעקוב ולארגן את הנתונים הפיננסיים שלכם מהיום הראשון.</p>
+            <p>הצטרפו לפיילוט - ORIA תתחיל לעקוב ולארגן את הנתונים הפיננסיים שלכם מהיום הראשון.</p>
             <Link href="/#pricing" className="btn btn-primary">הצטרפו לפיילוט</Link>
           </div>
 

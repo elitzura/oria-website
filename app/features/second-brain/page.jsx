@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import FeaturePageLayout from '../../../components/FeaturePageLayout';
 
-export const metadata = { title: 'המוח השני — הכנה לפגישה ב-30 שניות | ORIA AI' };
+export const metadata = { title: 'המוח השני - הכנה לפגישה ב-30 שניות | ORIA AI' };
 
 export default function SecondBrainPage() {
   return (
@@ -68,8 +68,8 @@ export default function SecondBrainPage() {
               <span className="fh-tag fh-tag-purple">ליבה</span>
               <span className="fh-tag fh-tag-gray">ינואר 2026</span>
             </div>
-            <h1>המוח השני —<br />הכנה לפגישה <em>תוך 30 שניות</em></h1>
-            <p className="lead">ORIA זוכרת מה קרה לפני 3 פגישות, מזהה דפוסים חוזרים, ומציגה לכם תקציר חכם לפני כל מפגש. מגיעים ממוקדים — בלי לנבור בדפים.</p>
+            <h1>המוח השני -<br />הכנה לפגישה <em>תוך 30 שניות</em></h1>
+            <p className="lead">ORIA זוכרת מה קרה לפני 3 פגישות, מזהה דפוסים חוזרים, ומציגה לכם תקציר חכם לפני כל מפגש. מגיעים ממוקדים - בלי לנבור בדפים.</p>
             <div className="stat-row">
               <div className="stat-item"><div className="stat-num">30″</div><div className="stat-label">הכנה לפגישה</div></div>
               <div className="stat-item"><div className="stat-num">100%</div><div className="stat-label">זיכרון רצף טיפולי</div></div>
@@ -81,24 +81,24 @@ export default function SecondBrainPage() {
         <article className="feature-body">
           <p className="section-label">הבעיה</p>
           <h2 className="feature-section-title">אתם מחזיקים עשרות מטופלים בראש. זה לא ייתכן.</h2>
-          <p className="body-text">לכל מטופל יש עולם שלם — דינמיקות, דפוסים, מה שנאמר לפני חודש, מה שהובטח לעקוב. כשהמידע מפוזר בין מחברות, קבצים וזיכרון, המאמץ לשחזר את הרצף גוזל אנרגיה שאמורה ללכת לטיפול.</p>
+          <p className="body-text">לכל מטופל יש עולם שלם - דינמיקות, דפוסים, מה שנאמר לפני חודש, מה שהובטח לעקוב. כשהמידע מפוזר בין מחברות, קבצים וזיכרון, המאמץ לשחזר את הרצף גוזל אנרגיה שאמורה ללכת לטיפול.</p>
           <div className="feature-quote">
             <p>"אני רוצה להגיע לכל פגישה בחדות, אבל ארגון הידע בין לבין גוזל ממני המון כוח."</p>
-            <cite>— מיכל, פסיכולוגית קלינית, משתתפת פיילוט</cite>
+            <cite>- מיכל, פסיכולוגית קלינית, משתתפת פיילוט</cite>
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>מה ORIA עושה</p>
           <h2 className="feature-section-title">ציר זמן חכם שמכין אתכם לכל פגישה</h2>
-          <p className="body-text">ORIA בונה מתוך הסיכומים שלכם ציר זמן חי לכל מטופל. לפני כל פגישה — תקציר חכם מוכן לכם:</p>
+          <p className="body-text">ORIA בונה מתוך הסיכומים שלכם ציר זמן חי לכל מטופל. לפני כל פגישה - תקציר חכם מוכן לכם:</p>
 
           <div className="timeline-card">
             <div className="timeline-card-header">
               <div className="patient-avatar">ד׳</div>
-              <div><div className="patient-name">ד' — פגישה #8</div><div className="patient-meta">היום, 10:00 ⋅ סיכום מ-ORIA</div></div>
+              <div><div className="patient-name">ד' - פגישה #8</div><div className="patient-meta">היום, 10:00 ⋅ סיכום מ-ORIA</div></div>
             </div>
             <div className="timeline-item">
               <div className="timeline-date">פגישה 7</div>
-              <div className="timeline-text"><strong>תמת נטישה</strong> — עלתה בפעם השלישית. המטופל קישר לדמות האמא. נשאר פתוח לחקירת הקשר עם האב.<br /><span className="timeline-highlight">דפוס חוזר</span></div>
+              <div className="timeline-text"><strong>תמת נטישה</strong> - עלתה בפעם השלישית. המטופל קישר לדמות האמא. נשאר פתוח לחקירת הקשר עם האב.<br /><span className="timeline-highlight">דפוס חוזר</span></div>
             </div>
             <div className="timeline-item">
               <div className="timeline-date">פגישה 6</div>
@@ -106,14 +106,14 @@ export default function SecondBrainPage() {
             </div>
             <div className="timeline-item">
               <div className="timeline-date">לפגישה הזו</div>
-              <div className="timeline-text"><strong>⚡ לבדוק:</strong> קשר עם האב — המטופל ביקש לחזור לנושא. האם הרמת החרדה ירדה מאז פגישה 6?<br /><span className="timeline-highlight">מוצע לעקוב</span></div>
+              <div className="timeline-text"><strong>⚡ לבדוק:</strong> קשר עם האב - המטופל ביקש לחזור לנושא. האם הרמת החרדה ירדה מאז פגישה 6?<br /><span className="timeline-highlight">מוצע לעקוב</span></div>
             </div>
           </div>
 
           <p className="section-label">מה בדיוק תקבלו</p>
-          <h2 className="feature-section-title">לפני כל פגישה — תקציר מוכן</h2>
+          <h2 className="feature-section-title">לפני כל פגישה - תקציר מוכן</h2>
           <div className="prep-box">
-            <div className="prep-box-title">תקציר הכנה לפגישה — ORIA</div>
+            <div className="prep-box-title">תקציר הכנה לפגישה - ORIA</div>
             <div className="prep-item">איפה עצרתם בפגישה האחרונה</div>
             <div className="prep-item">אילו נושאים דורשים מעקב</div>
             <div className="prep-item">דפוסים חוזרים שזוהו לאורך הטיפול</div>
@@ -123,8 +123,8 @@ export default function SecondBrainPage() {
 
           <div className="how-steps" style={{ marginTop: '1.5rem' }}>
             {[
-              { n: 1, title: '5 דקות לפגישה — פותחים את ORIA', text: 'בוחרים את המטופל מהיומן ומקבלים את התקציר החכם מוכן. שום חיפוש, שום נבירה.' },
-              { n: 2, title: 'ORIA מצליבה עם כל הפגישות הקודמות', text: 'היא מזהה דפוסים, מה השתנה, מה חוזר, ומה אמרתם שתעקבו — ומביאה לכם תמונה מלאה.' },
+              { n: 1, title: '5 דקות לפגישה - פותחים את ORIA', text: 'בוחרים את המטופל מהיומן ומקבלים את התקציר החכם מוכן. שום חיפוש, שום נבירה.' },
+              { n: 2, title: 'ORIA מצליבה עם כל הפגישות הקודמות', text: 'היא מזהה דפוסים, מה השתנה, מה חוזר, ומה אמרתם שתעקבו - ומביאה לכם תמונה מלאה.' },
               { n: 3, title: 'נכנסים לפגישה ממוקדים ונוכחים', text: 'אין מה לזכור. אין מה לחפש. הראש פנוי לאדם שמולכם.' },
             ].map((s) => (
               <div className="how-step" key={s.n}>
@@ -136,7 +136,7 @@ export default function SecondBrainPage() {
 
           <div className="cta-inline">
             <h3>רוצים שהמוח השני יעבוד בשבילכם?</h3>
-            <p>הצטרפו לפיילוט — ו-ORIA תתחיל לבנות את הזיכרון הקליני שלכם מהפגישה הראשונה.</p>
+            <p>הצטרפו לפיילוט - ו-ORIA תתחיל לבנות את הזיכרון הקליני שלכם מהפגישה הראשונה.</p>
             <Link href="/#pricing" className="btn btn-primary">הצטרפו לפיילוט</Link>
           </div>
 

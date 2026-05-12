@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import FeaturePageLayout from '../../../components/FeaturePageLayout';
 
-export const metadata = { title: 'Brain Dump — סיכום קליני ב-30 שניות | ORIA AI' };
+export const metadata = { title: 'Brain Dump - סיכום קליני ב-30 שניות | ORIA AI' };
 
 export default function BrainDumpPage() {
   return (
@@ -65,10 +65,10 @@ export default function BrainDumpPage() {
             <Link href="/features" className="feature-back">חזרה לכל הפיצ'רים</Link>
             <div className="feature-hero-tags">
               <span className="fh-tag fh-tag-blue">ליבה</span>
-              <span className="fh-tag fh-tag-green">חדש — פברואר 2026</span>
+              <span className="fh-tag fh-tag-green">חדש - פברואר 2026</span>
             </div>
-            <h1>Brain Dump —<br />סיכום קליני <em>ב-30 שניות</em></h1>
-            <p className="lead">מקליטים דקה-שתיים אחרי הפגישה, מספרים בחופשיות מה קרה — ו-ORIA מחזירה סיכום קליני מסודר, בסגנון שלכם.</p>
+            <h1>Brain Dump -<br />סיכום קליני <em>ב-30 שניות</em></h1>
+            <p className="lead">מקליטים דקה-שתיים אחרי הפגישה, מספרים בחופשיות מה קרה - ו-ORIA מחזירה סיכום קליני מסודר, בסגנון שלכם.</p>
             <div className="stat-row">
               <div className="stat-item"><div className="stat-num">30″</div><div className="stat-label">עד לסיכום מוכן</div></div>
               <div className="stat-item"><div className="stat-num">0</div><div className="stat-label">כתיבה ידנית</div></div>
@@ -80,19 +80,19 @@ export default function BrainDumpPage() {
         <article className="feature-body">
           <p className="section-label">הבעיה</p>
           <h2 className="feature-section-title">הסיכום הוא הדבר האחרון שמגיע לכם אחרי פגישה קשה</h2>
-          <p className="body-text">מסיימים טיפול רגשית מנוקז — ועוד לפני שהמטופל עוזב את החדר, כבר מתחילים לחשוב על הסיכום. איך לנסח? מה היה חשוב? מה הבטחתם לעקוב? ואז הסיכום נדחה לסוף היום, כשהזיכרון כבר מטושטש.</p>
+          <p className="body-text">מסיימים טיפול רגשית מנוקז - ועוד לפני שהמטופל עוזב את החדר, כבר מתחילים לחשוב על הסיכום. איך לנסח? מה היה חשוב? מה הבטחתם לעקוב? ואז הסיכום נדחה לסוף היום, כשהזיכרון כבר מטושטש.</p>
           <div className="feature-quote">
             <p>"במקום לסיים את היום, אני שוב מול המחשב בלילה. זה הרבה יותר מעייף ממה שזה אמור להיות."</p>
-            <cite>— אורלי, קואצ'רית, משתתפת פיילוט</cite>
+            <cite>- אורלי, קואצ'רית, משתתפת פיילוט</cite>
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>איך זה עובד</p>
           <h2 className="feature-section-title">שלושה שלבים. לא יותר.</h2>
           <div className="how-steps">
             {[
-              { n: 1, title: 'מקליטים בחופשיות', text: 'מיד אחרי הפגישה — מדברים בחופשיות לתוך האפליקציה. דקה-שתיים של ראשי פרקים, תחושות, מה שקרה. לא צריך לחשוב על ניסוח.' },
-              { n: 2, title: 'ORIA מעבדת', text: 'תוך שניות, ORIA מתמללת, מארגנת ומנסחת סיכום קליני מסודר — כולל נושאים מרכזיים, רגשות שעלו, יעדים לפגישה הבאה, ומה דורש מעקב.' },
-              { n: 3, title: 'אתם מאשרים ושומרים', text: 'הסיכום מגיע אליכם כטיוטה לעריכה. אתם בעלי ה-OK הסופי — שום דבר לא נשמר בלי האישור שלכם. עורכים אם צריך, ושומרים.' },
+              { n: 1, title: 'מקליטים בחופשיות', text: 'מיד אחרי הפגישה - מדברים בחופשיות לתוך האפליקציה. דקה-שתיים של ראשי פרקים, תחושות, מה שקרה. לא צריך לחשוב על ניסוח.' },
+              { n: 2, title: 'ORIA מעבדת', text: 'תוך שניות, ORIA מתמללת, מארגנת ומנסחת סיכום קליני מסודר - כולל נושאים מרכזיים, רגשות שעלו, יעדים לפגישה הבאה, ומה דורש מעקב.' },
+              { n: 3, title: 'אתם מאשרים ושומרים', text: 'הסיכום מגיע אליכם כטיוטה לעריכה. אתם בעלי ה-OK הסופי - שום דבר לא נשמר בלי האישור שלכם. עורכים אם צריך, ושומרים.' },
             ].map((s) => (
               <div className="how-step" key={s.n}>
                 <div className="step-num-circle">{s.n}</div>
@@ -104,28 +104,28 @@ export default function BrainDumpPage() {
           <div className="demo-card">
             <div className="demo-header">
               <div className="demo-dot r"></div><div className="demo-dot y"></div><div className="demo-dot g"></div>
-              <span className="demo-title-bar">ORIA AI — סיכום פגישה</span>
+              <span className="demo-title-bar">ORIA AI - סיכום פגישה</span>
             </div>
             <p className="demo-label user">אתם</p>
-            <div className="demo-user-msg">🎙️ [הקלטה — 1:47 דקות]<br />"היה מפגש קשה היום עם ד'. הגיע מבולבל, דיבר הרבה על האמא. עלתה שוב תמה של נטישה. נשאר עם שאלת-מחקר לגבי קשר עם האב..."</div>
+            <div className="demo-user-msg">🎙️ [הקלטה - 1:47 דקות]<br />"היה מפגש קשה היום עם ד'. הגיע מבולבל, דיבר הרבה על האמא. עלתה שוב תמה של נטישה. נשאר עם שאלת-מחקר לגבי קשר עם האב..."</div>
             <p className="demo-label oria" style={{ marginTop: '1rem' }}>ORIA</p>
             <div className="demo-oria-msg">
-              <strong>📋 סיכום פגישה — ד' | 18.2.2026</strong><br /><br />
+              <strong>📋 סיכום פגישה - ד' | 18.2.2026</strong><br /><br />
               <strong>נושאים מרכזיים:</strong> תמת נטישה (חוזרת מפגישה 3), דינמיקה עם דמות אמהית, בלבול רגשי.<br /><br />
-              <strong>נקודות מעקב:</strong> לחקור בפגישה הבאה את הקשר עם דמות האב — המטופל הביע סקרנות.<br /><br />
+              <strong>נקודות מעקב:</strong> לחקור בפגישה הבאה את הקשר עם דמות האב - המטופל הביע סקרנות.<br /><br />
               <strong>מצב רגשי בסיום:</strong> מצב רגשי חלקי, נסגר חלקית. מומלץ בדיקת מצב בתחילת הפגישה הבאה.<br /><br />
               <div className="demo-typing"><span></span><span></span><span></span></div>
             </div>
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>למה זה חשוב</p>
-          <h2 className="feature-section-title">הסיכום לא נכתב בסוף היום — הוא מוכן תוך שניות</h2>
-          <p className="body-text">כשהסיכום נדחה לסוף היום, נאבדים פרטים. הזיכרון מטשטש, העייפות מצטברת, והכתיבה הופכת להישרדות. Brain Dump מאפשר לכם לתעד ברגע הכי טרי — כשהכל עדיין חי — ולהשאיר את הניסוח ל-ORIA.</p>
+          <h2 className="feature-section-title">הסיכום לא נכתב בסוף היום - הוא מוכן תוך שניות</h2>
+          <p className="body-text">כשהסיכום נדחה לסוף היום, נאבדים פרטים. הזיכרון מטשטש, העייפות מצטברת, והכתיבה הופכת להישרדות. Brain Dump מאפשר לכם לתעד ברגע הכי טרי - כשהכל עדיין חי - ולהשאיר את הניסוח ל-ORIA.</p>
           <p className="body-text">האודיו נמחק מיד לאחר התמלול. רק הטקסט המוצפן נשמר. ORIA לא מאמנת מודלים על הנתונים שלכם ולא משתפת אותם עם צד שלישי.</p>
 
           <div className="cta-inline">
             <h3>רוצים לנסות את Brain Dump?</h3>
-            <p>הצטרפו לפיילוט וקבלו גישה לכל הפיצ'רים — כולל ליווי אישי של אביעד בהטמעה.</p>
+            <p>הצטרפו לפיילוט וקבלו גישה לכל הפיצ'רים - כולל ליווי אישי של אביעד בהטמעה.</p>
             <Link href="/#pricing" className="btn btn-primary">הצטרפו לפיילוט</Link>
           </div>
 

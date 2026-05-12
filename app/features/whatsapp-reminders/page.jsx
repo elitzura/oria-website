@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import FeaturePageLayout from '../../../components/FeaturePageLayout';
 
-export const metadata = { title: 'תזכורות חכמות — וואצאפ, אימייל ואישור הגעה | ORIA AI' };
+export const metadata = { title: 'תזכורות חכמות - וואצאפ, אימייל ואישור הגעה | ORIA AI' };
 
 export default function WhatsAppRemindersPage() {
   return (
@@ -72,10 +72,10 @@ export default function WhatsAppRemindersPage() {
             <Link href="/features" className="feature-back">חזרה לכל הפיצ'רים</Link>
             <div className="feature-hero-tags">
               <span className="fh-tag fh-tag-green">ניהול קליניקה</span>
-              <span className="fh-tag fh-tag-new">חדש — מרץ 2026</span>
+              <span className="fh-tag fh-tag-new">חדש - מרץ 2026</span>
             </div>
-            <h1>תזכורות חכמות —<br /><em>וואצאפ, אימייל, ואישור הגעה</em> בלחיצה אחת</h1>
-            <p className="lead">ORIA שולחת תזכורות אוטומטיות לפגישה — בוואצאפ, באימייל, או בשניהם — ומטופלים מאשרים הגעה ישירות מהצ'אט. אתם לא צריכים לגעת בזה.</p>
+            <h1>תזכורות חכמות -<br /><em>וואצאפ, אימייל, ואישור הגעה</em> בלחיצה אחת</h1>
+            <p className="lead">ORIA שולחת תזכורות אוטומטיות לפגישה - בוואצאפ, באימייל, או בשניהם - ומטופלים מאשרים הגעה ישירות מהצ'אט. אתם לא צריכים לגעת בזה.</p>
             <div className="stat-row">
               <div className="stat-item"><div className="stat-num">0</div><div className="stat-label">שיחות תיאום ידניות</div></div>
               <div className="stat-item"><div className="stat-num">1</div><div className="stat-label">קליק לתזכורת ידנית</div></div>
@@ -87,21 +87,21 @@ export default function WhatsAppRemindersPage() {
         <article className="feature-body">
           <p className="section-label">הבעיה</p>
           <h2 className="feature-section-title">כמה פעמים שלחתם תזכורת ידנית למטופל השבוע?</h2>
-          <p className="body-text">הברזה של שעה אחרונה. טלפון שלא נענה. הודעת וואצאפ ששלחתם בידיים בין פגישה לפגישה. אלה לא "דברים שעושים" — אלה זמן שנגזל מהמשימה האמיתית שלכם.</p>
-          <p className="body-text">הבעיה לא רק הזמן. היא גם הראש: "שלחתי? נשלח? האם הם מגיעים?" — שאלות שמנקזות ריכוז שהיה יכול להישאר בתוך החדר.</p>
+          <p className="body-text">הברזה של שעה אחרונה. טלפון שלא נענה. הודעת וואצאפ ששלחתם בידיים בין פגישה לפגישה. אלה לא "דברים שעושים" - אלה זמן שנגזל מהמשימה האמיתית שלכם.</p>
+          <p className="body-text">הבעיה לא רק הזמן. היא גם הראש: "שלחתי? נשלח? האם הם מגיעים?" - שאלות שמנקזות ריכוז שהיה יכול להישאר בתוך החדר.</p>
 
           <div className="feature-quote">
             <p>"אני מבלה כל בוקר 20 דקות על שליחת תזכורות. זה לא הסיבה שלמדתי פסיכולוגיה."</p>
-            <cite>— מיכל, פסיכולוגית קלינית</cite>
+            <cite>- מיכל, פסיכולוגית קלינית</cite>
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>איך זה עובד</p>
           <h2 className="feature-section-title">אוטומטי, חכם, ומאשר הגעה.</h2>
           <div className="how-steps">
             {[
-              { n: 1, title: 'ORIA שולחת תזכורת אוטומטית', text: 'יום-יומיים לפני כל פגישה, ORIA שולחת הודעת תזכורת לבחירתכם — בוואצאפ, באימייל, או בשניהם. כלום לא מצריך ממכם פעולה.' },
-              { n: 2, title: 'המטופל מאשר ישירות מהצ\'אט', text: 'ההודעה כוללת שני כפתורים: "מאשר.ת הגעה" ו"לא אוכל להגיע". לחיצה אחת מהמטופל — הסטטוס מתעדכן אוטומטית אצלכם במערכת.' },
-              { n: 3, title: 'תזכורת ידנית? קליק ימני', text: 'לא תמיד רוצים לחכות לאוטומציה. לוחצים קליק ימני על כל פגישה ביומן ובוחרים "שלח תזכורת עכשיו" — ישירות לוואצאפ של המטופל.' },
+              { n: 1, title: 'ORIA שולחת תזכורת אוטומטית', text: 'יום-יומיים לפני כל פגישה, ORIA שולחת הודעת תזכורת לבחירתכם - בוואצאפ, באימייל, או בשניהם. כלום לא מצריך ממכם פעולה.' },
+              { n: 2, title: 'המטופל מאשר ישירות מהצ\'אט', text: 'ההודעה כוללת שני כפתורים: "מאשר.ת הגעה" ו"לא אוכל להגיע". לחיצה אחת מהמטופל - הסטטוס מתעדכן אוטומטית אצלכם במערכת.' },
+              { n: 3, title: 'תזכורת ידנית? קליק ימני', text: 'לא תמיד רוצים לחכות לאוטומציה. לוחצים קליק ימני על כל פגישה ביומן ובוחרים "שלח תזכורת עכשיו" - ישירות לוואצאפ של המטופל.' },
               { n: 4, title: 'מעקב מסירה בזמן אמת', text: 'רואים בדיוק מה קרה לכל הודעה: נשלח, נמסר, נצפה. אין יותר "אולי הם לא ראו".' },
             ].map((s) => (
               <div className="how-step" key={s.n}>
@@ -112,13 +112,13 @@ export default function WhatsAppRemindersPage() {
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>ככה זה נראה</p>
-          <h2 className="feature-section-title">המטופל מקבל הודעה — ועונה בלחיצה אחת</h2>
+          <h2 className="feature-section-title">המטופל מקבל הודעה - ועונה בלחיצה אחת</h2>
 
           <div className="wa-mockup">
             <div className="wa-header">
               <div className="wa-avatar">🏥</div>
               <div>
-                <div className="wa-contact-name">ORIA AI — הקליניקה שלי</div>
+                <div className="wa-contact-name">ORIA AI - הקליניקה שלי</div>
                 <div className="wa-contact-sub">תזכורת פגישה</div>
               </div>
             </div>
@@ -143,19 +143,19 @@ export default function WhatsAppRemindersPage() {
           </div>
 
           <p className="section-label" style={{ marginTop: '2.5rem' }}>מה כלול</p>
-          <h2 className="feature-section-title">הכל כבר שם — בלי הגדרות מסובכות</h2>
+          <h2 className="feature-section-title">הכל כבר שם - בלי הגדרות מסובכות</h2>
           <ul className="checklist">
-            <li>תזכורות אוטומטיות בוואצאפ ו/או אימייל — מתזמנות לפי יומן הפגישות שלכם</li>
+            <li>תזכורות אוטומטיות בוואצאפ ו/או אימייל - מתזמנות לפי יומן הפגישות שלכם</li>
             <li>תבניות WhatsApp מאושרות עם כפתורי "מאשר.ת הגעה" / "לא אוכל להגיע"</li>
-            <li>עדכון סטטוס אוטומטי כשהמטופל עונה — אתם רואים הכל בזמן אמת</li>
+            <li>עדכון סטטוס אוטומטי כשהמטופל עונה - אתם רואים הכל בזמן אמת</li>
             <li>מעקב מסירה: נשלח, נמסר, נצפה</li>
-            <li>תזכורת ידנית בלחיצה אחת מהיומן — קליק ימני על כל פגישה</li>
+            <li>תזכורת ידנית בלחיצה אחת מהיומן - קליק ימני על כל פגישה</li>
             <li>בחירת ערוץ לכל מטופל: וואצאפ, אימייל, או שניהם</li>
           </ul>
 
           <div className="cta-inline">
             <h3>רוצים שהתזכורות ירוצו לבד?</h3>
-            <p>הצטרפו לרשימת ההמתנה וקבלו גישה לכל הפיצ'רים כשהאפליקציה יוצאת — כולל תזכורות חכמות בוואצאפ.</p>
+            <p>הצטרפו לרשימת ההמתנה וקבלו גישה לכל הפיצ'רים כשהאפליקציה יוצאת - כולל תזכורות חכמות בוואצאפ.</p>
             <Link href="/#pricing" className="btn btn-primary">הצטרפו לרשימת ההמתנה</Link>
           </div>
 
