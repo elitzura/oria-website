@@ -233,6 +233,7 @@ export default function LandingPage() {
                   height={387}
                   className="lp-hero-dashboard-img"
                   priority
+                  sizes="(max-width: 768px) 100vw, 580px"
                 />
               </div>
               <div className="lp-panel-stack">
