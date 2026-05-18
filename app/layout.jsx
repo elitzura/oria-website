@@ -48,6 +48,12 @@ export default function RootLayout({ children }) {
         </noscript>
         {children}
         <ClientShell />
+        {/* Enable Accessibility Plugin — deferred to avoid render-blocking */}
+        <Script
+          id="enable-a11y"
+          src="https://cdn.enable.co.il/licenses/enable-L54971lrgj6mpyvj-0426-81703/init.js"
+          strategy="afterInteractive"
+        />
         {/* GTM deferred until after page is interactive — avoids render-blocking */}
         <Script
           id="gtm-loader"
