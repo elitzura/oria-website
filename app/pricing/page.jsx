@@ -133,7 +133,7 @@ export default function PricingPage() {
             <div className="pricing-card">
               <div className="plan-icon"><IconFreemium /></div>
               <div className="pricing-header">
-                <h3 style={{ fontSize: '1.3rem' }}>FREEMIUM</h3>
+                <h2 style={{ fontSize: '1.3rem' }}>FREEMIUM</h2>
                 <p className="pricing-desc">להרגיש את ORIA לפני שמחליטים - בלי לשלם שקל</p>
               </div>
               <div className="pricing-price">
@@ -159,7 +159,7 @@ export default function PricingPage() {
               <div className="popular-badge">הכי פופולרי</div>
               <div className="plan-icon"><IconPremium /></div>
               <div className="pricing-header">
-                <h3 style={{ fontSize: '1.3rem' }}>MIND PREMIUM</h3>
+                <h2 style={{ fontSize: '1.3rem' }}>MIND PREMIUM</h2>
                 <p className="pricing-desc">ניהול קליניקה מלא - AI, וואטסאפ, דוחות ותמיכה אישית</p>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.2rem', flexWrap: 'wrap' }}>
@@ -189,7 +189,7 @@ export default function PricingPage() {
             <div className="pricing-card clinic-card">
               <div className="plan-icon"><IconClinic /></div>
               <div className="pricing-header">
-                <h3 style={{ fontSize: '1.3rem' }}>קליניקות ומרכזים</h3>
+                <h2 style={{ fontSize: '1.3rem' }}>קליניקות ומרכזים</h2>
                 <p className="pricing-desc">פתרון מותאם אישית למרכזים עם מטפלים מרובים</p>
               </div>
               <div className="pricing-price">

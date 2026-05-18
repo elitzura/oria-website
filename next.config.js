@@ -24,9 +24,8 @@ const nextConfig = {
       },
     ];
   },
-  // Allow images from the public folder without optimization config
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
   },
 };
 

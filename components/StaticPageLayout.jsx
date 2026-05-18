@@ -52,7 +52,7 @@ export default function StaticPageLayout({ children, activeNav }) {
             </div>
             <div className="footer-links">
               <div className="footer-col">
-                <h4>המוצר</h4>
+                <h3>המוצר</h3>
                 <ul>
                   <li><Link href="/#solution">תכונות</Link></li>
                   <li><Link href="/features">מה חדש</Link></li>
@@ -60,7 +60,7 @@ export default function StaticPageLayout({ children, activeNav }) {
                 </ul>
               </div>
               <div className="footer-col">
-                <h4>החברה</h4>
+                <h3>החברה</h3>
                 <ul>
                   <li><Link href="/about">אודות</Link></li>
                   <li><a href="https://wa.me/972524824210" target="_blank" rel="noreferrer">צור קשר</a></li>
@@ -68,7 +68,7 @@ export default function StaticPageLayout({ children, activeNav }) {
                 </ul>
               </div>
               <div className="footer-col">
-                <h4>משפטי</h4>
+                <h3>משפטי</h3>
                 <ul>
                   <li><Link href="/privacy">מדיניות פרטיות</Link></li>
                   <li><Link href="/security">אבטחת מידע</Link></li>

@@ -283,6 +283,7 @@ export default function LandingPage() {
                   width={420}
                   height={630}
                   className="lp-pain-photo"
+                  sizes="(max-width: 768px) 100vw, 420px"
                 />
                 <div className="lp-pain-photo-badge">
                   <span>״ORIA מחזיקה את הסדר - אני מחזיקה את הקשר״</span>
@@ -328,6 +329,8 @@ export default function LandingPage() {
                 width={1536}
                 height={1024}
                 className="lp-compare-visual-img"
+                sizes="(max-width: 768px) 100vw, 1200px"
+                loading="lazy"
               />
               <a href="https://app.oriamind.ai" className="btn btn-primary btn-large lp-compare-visual-cta">
                 גם אני רוצה לסגור ב-17:30 ←
@@ -396,6 +399,8 @@ export default function LandingPage() {
                 width={1536}
                 height={1024}
                 className="lp-workflow-img"
+                sizes="(max-width: 768px) 100vw, 1200px"
+                loading="lazy"
               />
             </div>
           </div>
@@ -432,6 +437,8 @@ export default function LandingPage() {
                     width={360}
                     height={520}
                     className="lp-screenshot-img"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -455,6 +462,8 @@ export default function LandingPage() {
                     width={360}
                     height={520}
                     className="lp-screenshot-img"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -531,6 +540,8 @@ export default function LandingPage() {
                     width={300}
                     height={450}
                     className="lp-mobile-mockup-img"
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    loading="lazy"
                   />
                 </div>
               </div>

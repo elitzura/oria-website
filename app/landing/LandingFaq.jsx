@@ -15,13 +15,14 @@ export default function LandingFaq({ items }) {
             className="lp-accordion-trigger"
             onClick={() => setOpen(open === i ? null : i)}
             aria-expanded={open === i}
+            aria-controls={`faq-panel-${i}`}
           >
             <span>{item.q}</span>
             <span className="lp-accordion-icon" aria-hidden="true">
               {open === i ? '−' : '+'}
             </span>
           </button>
-          <div className="lp-accordion-body">
+          <div id={`faq-panel-${i}`} className="lp-accordion-body" role="region" aria-label={item.q}>
             <p>
               {item.a}
               {item.link && <> <a href={item.link.href} className="lp-faq-link">{item.link.text} ←</a></>}

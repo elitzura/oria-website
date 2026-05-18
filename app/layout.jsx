@@ -44,8 +44,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MK6TWF7X');`,
           }}
         />
-        {/* Enable Accessibility Plugin */}
-        <script src="https://cdn.enable.co.il/licenses/enable-L54971lrgj6mpyvj-0426-81703/init.js"></script>
       </head>
       <body className="loading" suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}

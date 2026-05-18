@@ -746,7 +746,7 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--coral);
+    color: #c04a10; /* darkened coral for WCAG AA contrast on light backgrounds */
     margin-bottom: 20px;
     position: relative;
     padding-right: 50px;
@@ -1569,7 +1569,7 @@ section {
     gap: 40px;
 }
 
-.footer-col h4 {
+.footer-col h3 {
     color: var(--white);
     font-size: 0.9rem;
     font-weight: 600;
@@ -2838,6 +2838,10 @@ section {
 .lp-section-header-dark p,
 .lp-section-header-dark .section-subtitle {
     color: #f7f7fb;
+}
+
+.lp-dark-section .section-eyebrow {
+    color: var(--coral);
 }
 
 .lp-hero {
