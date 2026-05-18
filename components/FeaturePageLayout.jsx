@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 export default function FeaturePageLayout({ children }) {
   useEffect(() => {
-    document.body.classList.remove('loading');
     const handleScroll = () => document.querySelector('.navbar')?.classList.toggle('scrolled', window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     const menuBtn = document.querySelector('.mobile-menu-btn');

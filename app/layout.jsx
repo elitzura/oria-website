@@ -5,16 +5,18 @@ import { Heebo, Montserrat } from 'next/font/google';
 
 const heebo = Heebo({
   subsets: ['hebrew'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-heebo',
+  preload: true,
 });
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
+  weight: ['700'],
   display: 'swap',
   variable: '--font-montserrat',
+  preload: true,
 });
 
 
@@ -36,7 +38,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="loading" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

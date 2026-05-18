@@ -7,7 +7,6 @@ export default function StaticPageLayout({ children, activeNav }) {
   const [navbarScrolled, setNavbarScrolled] = useState(true); // always scrolled on inner pages
 
   useEffect(() => {
-    document.body.classList.remove('loading');
     const handleScroll = () => setNavbarScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
