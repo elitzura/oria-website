@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import StaticPageLayout from '../../components/StaticPageLayout';
 import LandingFaq from './LandingFaq';
+import CountdownBanner from './CountdownBanner';
 
 const painPoints = [
   {
@@ -249,6 +250,9 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
+        {/* ─── EARLY BIRD COUNTDOWN ─── */}
+        <CountdownBanner />
 
         {/* ─── 2. PAIN POINTS - numbered list ─── */}
         <section className="lp-section lp-section-soft">
@@ -640,7 +644,7 @@ export default function LandingPage() {
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg,#625DE5,#48B7FF)' }} />
               <div style={{ flex: 1, minWidth: '240px' }}>
                 <span style={{
-                  background: 'linear-gradient(90deg,#f59e0b,#f97316)',
+                  background: 'linear-gradient(90deg,#625DE5,#48B7FF)',
                   color: '#fff',
                   fontSize: '0.7rem',
                   fontWeight: 800,
@@ -650,27 +654,30 @@ export default function LandingPage() {
                   borderRadius: '20px',
                   display: 'inline-block',
                   marginBottom: '0.75rem',
-                }}>🐦 Early Bird - 100 מקומות בלבד</span>
+                }}>🔥 מחיר השקה - 100 מקומות בלבד</span>
                 <h2 style={{ color: '#fff', fontSize: 'clamp(1.4rem,3vw,2rem)', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.25 }}>
-                  MIND PREMIUM ב-<span style={{ color: '#48B7FF' }}>₪99</span> בלבד
+                  MIND PREMIUM ב-<span style={{ color: '#48B7FF' }}>₪99</span> בלבד<sup style={{ fontSize: '0.6em', verticalAlign: 'super' }}>*</sup>
                 </h2>
-                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', marginBottom: 0, lineHeight: 1.5 }}>
+                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1rem', marginBottom: '0.5rem', lineHeight: 1.5 }}>
                   מחיר השקה ל-100 המצטרפים הראשונים.{' '}
                   <span style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'line-through' }}>₪289/חודש</span>
                   {' '}<span style={{ background: 'linear-gradient(90deg,#625DE5,#48B7FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700 }}>חוסכים ₪190/חודש</span>
                 </p>
+                <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', marginBottom: 0, lineHeight: 1.4 }}>
+                  * המחיר קבוע בהתחייבות שנתית
+                </p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'flex-start' }}>
-                <Link href="/pricing" className="btn btn-white btn-large">
-                  לצפייה בכל המסלולים ←
-                </Link>
-                <a href="https://app.oriamind.ai" style={{
+                <a href="https://app.oriamind.ai" className="btn btn-white btn-large">
+                  להתחיל חינם ←
+                </a>
+                <Link href="/pricing" style={{
                   color: 'rgba(255,255,255,0.65)',
                   fontSize: '0.82rem',
                   textAlign: 'center',
                   textDecoration: 'underline',
                   cursor: 'pointer',
-                }}>או להתחיל חינם</a>
+                }}>לצפייה בכל המסלולים</Link>
               </div>
             </div>
           </div>
