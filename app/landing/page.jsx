@@ -227,15 +227,17 @@ export default function LandingPage() {
 
             <div className="lp-hero-panel">
               <div className="lp-hero-img-wrap">
+                <div className="lp-app-chrome" />
                 <Image
-                  src="/screenshots/dashboard-mockup.png"
+                  src="/screenshots/app-dashboard.png"
                   alt="לוח בקרה של ORIA AI - ניהול קליניקה"
-                  width={580}
-                  height={387}
+                  width={1018}
+                  height={900}
                   className="lp-hero-dashboard-img"
                   priority
                   sizes="(max-width: 768px) 100vw, 580px"
                 />
+                <div className="lp-app-overlay" />
               </div>
               <div className="lp-panel-stack">
                 <div className="lp-panel-card">
@@ -397,21 +399,93 @@ export default function LandingPage() {
               ))}
             </div>
 
-            <div className="lp-workflow-visual">
-              <Image
-                src="/screenshots/workflow-preview.png"
-                alt="ORIA AI - ניהול קליניקה על מחשב וטלפון"
-                width={1536}
-                height={1024}
-                className="lp-workflow-img"
-                sizes="(max-width: 768px) 100vw, 1200px"
-                loading="lazy"
-              />
-            </div>
           </div>
         </section>
 
-        {/* ─── 5.5 ONBOARDING - how to get started ─── */}
+        {/* ─── 5.5 APP SHOWCASE ─── */}
+        <section className="lp-section lp-section-soft">
+          <div className="container">
+            <div className="section-header lp-section-header">
+              <p className="section-eyebrow">האפליקציה בפעולה</p>
+              <h2>ככה נראית <span className="highlight">ORIA בפעולה</span></h2>
+              <p className="section-subtitle">
+                צילומי מסך ישירות מהאפליקציה — יומן, גבייה וכרטיס מטופל במקום אחד.
+              </p>
+            </div>
+
+            <div className="lp-showcase-grid">
+              <div className="lp-showcase-frame lp-showcase-frame-left">
+                <div className="lp-showcase-chrome">
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-url">app.oriamind.ai/calendar</span>
+                </div>
+                <div className="lp-showcase-screen">
+                  <Image
+                    src="/screenshots/app-calendar.jpg"
+                    alt="יומן - ORIA AI"
+                    width={1368}
+                    height={1000}
+                    className="lp-showcase-img"
+                    sizes="(max-width: 768px) 90vw, 380px"
+                    loading="lazy"
+                  />
+                  <div className="lp-app-overlay" />
+                </div>
+                <p className="lp-showcase-caption">יומן חכם - פגישות, סטטוסים וסינכרון Google</p>
+              </div>
+
+              <div className="lp-showcase-frame lp-showcase-frame-center">
+                <div className="lp-showcase-chrome">
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-url">app.oriamind.ai/billing</span>
+                </div>
+                <div className="lp-showcase-screen">
+                  <Image
+                    src="/screenshots/app-billing.png"
+                    alt="גבייה ותשלומים - ORIA AI"
+                    width={1013}
+                    height={900}
+                    className="lp-showcase-img"
+                    sizes="(max-width: 768px) 90vw, 380px"
+                    loading="lazy"
+                  />
+                  <div className="lp-app-overlay" />
+                </div>
+                <p className="lp-showcase-caption">גבייה ותשלומים - מעקב פשוט ומסודר</p>
+              </div>
+
+              <div className="lp-showcase-frame lp-showcase-frame-right">
+                <div className="lp-showcase-chrome">
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-dot" />
+                  <span className="lp-chrome-url">app.oriamind.ai/patients</span>
+                </div>
+                <div className="lp-showcase-screen">
+                  <Image
+                    src="/screenshots/app-session.png"
+                    alt="כרטיס מטופל וסיכום מפגש AI - ORIA AI"
+                    width={1031}
+                    height={1543}
+                    className="lp-showcase-img"
+                    sizes="(max-width: 768px) 90vw, 380px"
+                    loading="lazy"
+                  />
+                  <div className="lp-app-overlay" />
+                </div>
+                <p className="lp-showcase-caption">כרטיס מטופל - סיכום מפגש AI בלחיצה אחת</p>
+              </div>
+            </div>
+            <p className="lp-showcase-swipe-hint">← גללו לצפייה בכל המסכים →</p>
+
+          </div>
+        </section>
+
+        {/* ─── 5.7 ONBOARDING - how to get started ─── */}
         <section className="lp-section lp-section-soft" id="lp-onboarding">
           <div className="container">
             <div className="section-header lp-section-header">
@@ -437,10 +511,10 @@ export default function LandingPage() {
                 </div>
                 <div className="lp-onboarding-screenshot">
                   <Image
-                    src="/screenshots/signup.png"
+                    src="/screenshots/app-signup.png"
                     alt="מסך הרשמה ל-ORIA AI"
-                    width={360}
-                    height={520}
+                    width={845}
+                    height={1839}
                     className="lp-screenshot-img"
                     sizes="(max-width: 768px) 100vw, 360px"
                     loading="lazy"
@@ -462,10 +536,10 @@ export default function LandingPage() {
                 </div>
                 <div className="lp-onboarding-screenshot">
                   <Image
-                    src="/screenshots/login.png"
+                    src="/screenshots/app-login.png"
                     alt="מסך כניסה ל-ORIA AI"
-                    width={360}
-                    height={520}
+                    width={843}
+                    height={1621}
                     className="lp-screenshot-img"
                     sizes="(max-width: 768px) 100vw, 360px"
                     loading="lazy"
@@ -540,10 +614,10 @@ export default function LandingPage() {
               <div className="lp-mobile-visual">
                 <div className="lp-mobile-img-wrap">
                   <Image
-                    src="/screenshots/mobile-app.png"
-                    alt="ORIA AI על פלאפון - ניהול תורים"
-                    width={300}
-                    height={450}
+                    src="/screenshots/app-mobile.png"
+                    alt="ORIA AI על פלאפון - ניהול קליניקה"
+                    width={606}
+                    height={1254}
                     className="lp-mobile-mockup-img"
                     sizes="(max-width: 768px) 100vw, 300px"
                     loading="lazy"

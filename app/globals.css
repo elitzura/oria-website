@@ -4350,3 +4350,303 @@ section {
         width: 200px;
     }
 }
+
+/* ═══════════════════════════════════════════════
+   REAL SCREENSHOT TREATMENTS
+   - Browser chrome frame
+   - Perspective tilt (design protection)
+   - Brand color overlay
+   - Edge vignette
+═══════════════════════════════════════════════ */
+
+/* Shared chrome bar (used in hero, workflow, showcase) */
+.lp-app-chrome {
+    height: 36px;
+    background: #eef0f8;
+    border-bottom: 1px solid rgba(98, 93, 229, 0.10);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+/* Three traffic-light dots via pseudo-element on the hero chrome */
+.lp-hero-img-wrap .lp-app-chrome::before,
+.lp-workflow-visual .lp-app-chrome::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff6058;
+    box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f;
+}
+
+/* Shared brand-color overlay (sits on top of screenshot, non-interactive) */
+.lp-app-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.07) 0%,
+        rgba(72, 183, 255, 0.04) 60%,
+        rgba(229, 144, 122, 0.04) 100%
+    );
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Hero image wrap: add perspective tilt + clipping */
+.lp-hero-img-wrap {
+    position: relative;
+    transform: perspective(1100px) rotateY(-4deg) rotateX(2deg);
+    transform-origin: center center;
+    transition: transform 0.4s ease;
+    overflow: hidden;
+}
+.lp-hero-img-wrap:hover {
+    transform: perspective(1100px) rotateY(-1deg) rotateX(0deg) scale(1.01);
+}
+
+/* Show only the top portion (metrics + chart) */
+.lp-hero-dashboard-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Edge vignette on hero */
+.lp-hero-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.07);
+    pointer-events: none;
+}
+
+/* Workflow visual: position relative so overlay works */
+.lp-workflow-visual {
+    position: relative;
+    overflow: hidden;
+}
+.lp-workflow-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── App Showcase section ── */
+.lp-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    align-items: start;
+}
+
+.lp-showcase-frame {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    background: #fff;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.lp-showcase-frame-left  { transform: perspective(900px) rotateY(5deg)  rotateX(1deg); }
+.lp-showcase-frame-center { transform: perspective(900px) rotateY(0deg) rotateX(0deg) translateY(-12px); box-shadow: var(--shadow-primary); }
+.lp-showcase-frame-right { transform: perspective(900px) rotateY(-5deg) rotateX(1deg); }
+
+.lp-showcase-frame:hover {
+    transform: perspective(900px) rotateY(0deg) rotateX(0deg) scale(1.02);
+    box-shadow: var(--shadow-primary);
+}
+
+.lp-showcase-chrome {
+    height: 36px;
+    background: #eef0f8;
+    border-bottom: 1px solid rgba(98, 93, 229, 0.10);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 6px;
+}
+
+.lp-chrome-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.lp-chrome-dot:nth-child(1) { background: #ff6058; }
+.lp-chrome-dot:nth-child(2) { background: #ffbd2e; }
+.lp-chrome-dot:nth-child(3) { background: #27c93f; }
+
+.lp-chrome-url {
+    flex: 1;
+    margin-right: 8px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 20px;
+    height: 20px;
+    padding: 0 10px;
+    font-size: 0.68rem;
+    color: var(--gray-500);
+    display: flex;
+    align-items: center;
+    direction: ltr;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.lp-showcase-screen {
+    position: relative;
+    overflow: hidden;
+}
+.lp-showcase-screen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.07);
+    pointer-events: none;
+}
+
+.lp-showcase-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.lp-showcase-caption {
+    padding: 0.85rem 1rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    background: #fff;
+    border-top: 1px solid var(--gray-100);
+    direction: rtl;
+}
+
+/* Swipe hint — hidden on desktop */
+.lp-showcase-swipe-hint {
+    display: none;
+}
+
+/* Mobile: horizontal scroll carousel */
+@media (max-width: 900px) {
+    .lp-showcase-grid {
+        display: flex;
+        grid-template-columns: unset;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding: 0.5rem 1.5rem 1.5rem;
+        margin: 2rem -1.5rem 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        align-items: start;
+    }
+    .lp-showcase-grid::-webkit-scrollbar {
+        display: none;
+    }
+    .lp-showcase-frame {
+        flex: 0 0 82vw;
+        max-width: 360px;
+        scroll-snap-align: center;
+    }
+    .lp-showcase-frame-left,
+    .lp-showcase-frame-center,
+    .lp-showcase-frame-right {
+        transform: none;
+    }
+    .lp-showcase-swipe-hint {
+        display: block;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--gray-400);
+        margin-top: 0.75rem;
+        direction: ltr;
+        letter-spacing: 0.03em;
+    }
+}
+
+/* ── Tablet mockup: session summary ── */
+.lp-tablet-wrap {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.lp-tablet-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.lp-tablet-frame {
+    background: #d0d4e8;
+    border-radius: 28px;
+    padding: 14px 10px 20px;
+    box-shadow:
+        0 0 0 1px rgba(0,0,0,0.08),
+        var(--shadow-xl),
+        0 40px 80px rgba(59, 130, 246, 0.12);
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.lp-tablet-camera {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #a0a8c0;
+    flex-shrink: 0;
+}
+
+.lp-tablet-screen {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+.lp-tablet-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.lp-tablet-home-bar {
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    background: #a0a8c0;
+}
+
+.lp-tablet-caption {
+    max-width: 560px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--gray-600);
+}
+
+@media (max-width: 768px) {
+    .lp-tablet-frame {
+        max-width: 100%;
+    }
+}
