@@ -73,6 +73,7 @@ export default function StaticPageLayout({ children, activeNav }) {
                   <li><Link href="/security">אבטחת מידע</Link></li>
                   <li><Link href="/terms">תנאי שימוש</Link></li>
                   <li><Link href="/regulations">תקנון</Link></li>
+                  <li><button onClick={() => window.dispatchEvent(new CustomEvent('oria:open-cookie-consent'))} style={{background:'none',border:'none',padding:0,color:'inherit',font:'inherit',cursor:'pointer',textAlign:'right'}}>ניהול עוגיות</button></li>
                 </ul>
               </div>
             </div>

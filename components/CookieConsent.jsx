@@ -50,11 +50,28 @@ export default function CookieConsent() {
     } catch { setVisible(true); }
   }, []);
 
-  if (!visible) return null;
+  useEffect(() => {
+    const handler = () => {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const data = JSON.parse(stored);
+          setPrefs({ statistical: data.statistical ?? true, marketing: data.marketing ?? true });
+        }
+      } catch {}
+      setShowPrefs(true);
+      setExpanded(false);
+      setVisible(true);
+    };
+    window.addEventListener('oria:open-cookie-consent', handler);
+    return () => window.removeEventListener('oria:open-cookie-consent', handler);
+  }, []);
 
   const acceptAll = () => saveConsent(true, true, setVisible);
   const rejectNonEssential = () => saveConsent(false, false, setVisible);
   const savePreferences = () => saveConsent(prefs.statistical, prefs.marketing, setVisible);
+
+  if (!visible) return null;
 
   return (
     <>
