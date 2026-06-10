@@ -53,9 +53,9 @@ export default function StaticPageLayout({ children, activeNav }) {
               <div className="footer-col">
                 <h3>המוצר</h3>
                 <ul>
-                  <li><Link href="/#solution">תכונות</Link></li>
                   <li><Link href="/features">מה חדש</Link></li>
-                  <li><Link href="/#pricing">מחירים</Link></li>
+                  <li><Link href="/pricing">מחירים</Link></li>
+                  <li><Link href="/security">אבטחת מידע</Link></li>
                 </ul>
               </div>
               <div className="footer-col">
@@ -70,9 +70,7 @@ export default function StaticPageLayout({ children, activeNav }) {
                 <h3>משפטי</h3>
                 <ul>
                   <li><Link href="/privacy">מדיניות פרטיות</Link></li>
-                  <li><Link href="/security">אבטחת מידע</Link></li>
-                  <li><Link href="/terms">תנאי שימוש</Link></li>
-                  <li><Link href="/regulations">תקנון</Link></li>
+                  <li><Link href="/terms">תקנון ותנאי שימוש</Link></li>
                   <li><button onClick={() => window.dispatchEvent(new CustomEvent('oria:open-cookie-consent'))} style={{background:'none',border:'none',padding:0,color:'inherit',font:'inherit',cursor:'pointer',textAlign:'right'}}>ניהול עוגיות</button></li>
                 </ul>
               </div>
