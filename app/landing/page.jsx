@@ -211,7 +211,7 @@ export default function LandingPage() {
               </p>
 
               <div className="lp-hero-actions">
-                <a href="https://app.oriamind.ai" className="btn btn-primary btn-large">
+                <a href="https://app.oriamind.ai/register" className="btn btn-primary btn-large">
                   אני רוצה לנסות - חינם ←
                 </a>
                 <a href="#lp-onboarding" className="btn btn-outline">איך מתחילים?</a>
@@ -339,7 +339,7 @@ export default function LandingPage() {
                 sizes="(max-width: 768px) 100vw, 1200px"
                 loading="lazy"
               />
-              <a href="https://app.oriamind.ai" className="btn btn-primary btn-large lp-compare-visual-cta">
+              <a href="https://app.oriamind.ai/register" className="btn btn-primary btn-large lp-compare-visual-cta">
                 גם אני רוצה לסגור ב-17:30 ←
               </a>
             </div>
@@ -549,7 +549,7 @@ export default function LandingPage() {
             </div>
 
             <div className="lp-inline-actions" style={{ marginTop: '3rem' }}>
-              <a href="https://app.oriamind.ai" className="btn btn-primary btn-large">
+              <a href="https://app.oriamind.ai/register" className="btn btn-primary btn-large">
                 מתחילים עכשיו - חינם ←
               </a>
             </div>
@@ -560,7 +560,7 @@ export default function LandingPage() {
         <div className="lp-mid-cta-bar">
           <div className="container lp-mid-cta-inner">
             <p>FREEMIUM חינם לתמיד - מספיק להיכנס ולהרגיש את ההבדל.</p>
-            <a href="https://app.oriamind.ai" className="btn btn-primary">
+            <a href="https://app.oriamind.ai/register" className="btn btn-primary">
               אני רוצה לנסות ←
             </a>
           </div>
@@ -649,7 +649,7 @@ export default function LandingPage() {
             </div>
 
             <div className="lp-inline-actions" style={{ marginTop: '2.5rem' }}>
-              <a href="https://app.oriamind.ai" className="btn btn-primary">
+              <a href="https://app.oriamind.ai/register" className="btn btn-primary">
                 זה בשבילי - להתחיל בחינם ←
               </a>
             </div>
@@ -742,7 +742,7 @@ export default function LandingPage() {
                 </p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'flex-start' }}>
-                <a href="https://app.oriamind.ai" className="btn btn-white btn-large">
+                <a href="https://app.oriamind.ai/register" className="btn btn-white btn-large">
                   להתחיל חינם ←
                 </a>
                 <Link href="/pricing" style={{
@@ -767,7 +767,7 @@ export default function LandingPage() {
               <span className="brand-name"> ORIA</span> חינם לתמיד בגרסת FREEMIUM, ללא כרטיס אשראי וללא התחייבות.
             </p>
             <div className="lp-final-actions">
-              <a href="https://app.oriamind.ai" className="btn btn-white btn-large">
+              <a href="https://app.oriamind.ai/register" className="btn btn-white btn-large">
                 אני רוצה לנסות - זה חינם ←
               </a>
               <a
