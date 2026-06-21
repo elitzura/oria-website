@@ -4228,6 +4228,41 @@ section {
     display: block;
 }
 
+/* ── Landing page: Video embed ── */
+.lp-video-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.lp-video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-primary);
+    border: 1px solid rgba(98,93,229,0.15);
+}
+
+.lp-video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.lp-video-caption {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    text-align: center;
+    margin: 0;
+}
+
 /* ── Landing page: Mobile section ── */
 .lp-mobile-grid {
     display: grid;

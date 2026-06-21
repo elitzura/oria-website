@@ -548,6 +548,18 @@ export default function LandingPage() {
               </div>
             </div>
 
+            <div className="lp-video-wrap">
+              <div className="lp-video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/UpIzaor6gkI"
+                  title="איך להתקין ולהירשם ל-ORIA AI"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <p className="lp-video-caption">צפו: הרשמה ב-60 שניות</p>
+            </div>
+
             <div className="lp-inline-actions" style={{ marginTop: '3rem' }}>
               <a href="https://app.oriamind.ai/register" className="btn btn-primary btn-large">
                 מתחילים עכשיו - חינם ←
