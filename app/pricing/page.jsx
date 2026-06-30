@@ -210,7 +210,7 @@ export default function PricingPage() {
           </div>
 
           <div className="pricing-trust">
-            <span>FREEMIUM חינם לתמיד - ללא כרטיס אשראי</span>
+            <span>FREEMIUM חינם לתמיד - כל הפיצ'רים, עד 3 מטופלים</span>
             <span>ביטול מיידי בכל עת דרך האפליקציה</span>
             <span>תמיכה בעברית - צוות ישראלי</span>
             <span>מחיר השקה - יעלה בקרוב</span>

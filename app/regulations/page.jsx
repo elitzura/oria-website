@@ -66,7 +66,7 @@ export default function RegulationsPage() {
               <h2>6. תשלומים ומנויים</h2>
               <p>6.1 השירות מוצע במסלולים הבאים:</p>
               <ul>
-                <li><strong>FREEMIUM</strong> - חינם לתמיד, כולל תכונות בסיסיות ללא כלי AI</li>
+                <li><strong>FREEMIUM</strong> - חינם לתמיד, כולל כל פיצ'רי MIND PREMIUM עד 3 מטופלים פעילים בחודש</li>
                 <li><strong>MIND</strong> - מנוי חודשי בתשלום, כולל ניהול תשלומים ותזכורות וסוכן AI לסיכום פגישות</li>
                 <li><strong>MIND PREMIUM</strong> - מנוי חודשי בתשלום, כולל ניהול קליניקה מלא עם סוכני AI מרובים ותזכורות בוואטסאפ</li>
                 <li><strong>קליניקות ומרכזים</strong> - מחיר בהתאמה אישית, ליצירת קשר</li>

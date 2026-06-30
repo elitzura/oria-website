@@ -218,7 +218,7 @@ export default function LandingPage() {
               </div>
 
               <div className="lp-signal-row">
-                <span>FREEMIUM חינם לתמיד</span>
+                <span>FREEMIUM - עד 3 מטופלים פעילים, חינם לתמיד</span>
                 <span>ללא כרטיס אשראי</span>
                 <span>ממשק פשוט בעברית</span>
                 <span>ביטול בכל עת</span>
@@ -246,7 +246,7 @@ export default function LandingPage() {
                 </div>
                 <div className="lp-panel-card">
                   <p className="lp-panel-label">ללא סיכון</p>
-                  <p>FREEMIUM חינם לתמיד. ביטול מסלול בתשלום בכל עת, מיידי.</p>
+                  <p>FREEMIUM - כל פיצ'רי PREMIUM עד 3 מטופלים פעילים, חינם לתמיד. ביטול מסלול בתשלום בכל עת, מיידי.</p>
                 </div>
               </div>
             </div>
@@ -409,7 +409,7 @@ export default function LandingPage() {
               <p className="section-eyebrow">האפליקציה בפעולה</p>
               <h2>ככה נראית <span className="highlight">ORIA בפעולה</span></h2>
               <p className="section-subtitle">
-                צילומי מסך ישירות מהאפליקציה — יומן, גבייה וכרטיס מטופל במקום אחד.
+                צילומי מסך ישירות מהאפליקציה - יומן, גבייה וכרטיס מטופל במקום אחד.
               </p>
             </div>
 
@@ -571,7 +571,7 @@ export default function LandingPage() {
         {/* ─── 6. MID-PAGE CTA STRIP ─── */}
         <div className="lp-mid-cta-bar">
           <div className="container lp-mid-cta-inner">
-            <p>FREEMIUM חינם לתמיד - מספיק להיכנס ולהרגיש את ההבדל.</p>
+            <p>FREEMIUM חינם לתמיד - כל הפיצ'רים של PREMIUM, עד 3 מטופלים פעילים.</p>
             <a href="https://app.oriamind.ai/register" className="btn btn-primary">
               אני רוצה לנסות ←
             </a>
@@ -776,7 +776,7 @@ export default function LandingPage() {
             <h2>מוכנים לנהל את הקליניקה בחכמה?</h2>
             <p>
               הצטרפו למטפלים שבחרו לעבוד חכם יותר - ולחזור לסיבה שבחרו בטיפול מלכתחילה.
-              <span className="brand-name"> ORIA</span> חינם לתמיד בגרסת FREEMIUM, ללא כרטיס אשראי וללא התחייבות.
+              <span className="brand-name"> ORIA</span> חינם לתמיד בגרסת FREEMIUM - כל הפיצ'רים של PREMIUM, עד 3 מטופלים פעילים. ללא כרטיס אשראי וללא התחייבות.
             </p>
             <div className="lp-final-actions">
               <a href="https://app.oriamind.ai/register" className="btn btn-white btn-large">
@@ -791,7 +791,7 @@ export default function LandingPage() {
                 לדבר עם הצוות
               </a>
             </div>
-            <p className="lp-final-note">ללא סיכון - FREEMIUM חינם לתמיד · ביטול מסלול בתשלום מיידי בכל עת · תמיכה בעברית</p>
+            <p className="lp-final-note">ללא סיכון - FREEMIUM חינם לתמיד (עד 3 מטופלים, כל הפיצ'רים) · ביטול מסלול בתשלום מיידי בכל עת · תמיכה בעברית</p>
           </div>
         </section>
 
