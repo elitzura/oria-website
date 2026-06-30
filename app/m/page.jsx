@@ -942,7 +942,7 @@ export default function MobileLandingPage() {
           <h2 className="mlp-h2">
             ככה נראית <span className="mlp-blue">ORIA בפעולה</span>
           </h2>
-          <p className="mlp-section-sub">יומן, גבייה וכרטיס מטופל - במקום אחד.</p>
+          <p className="mlp-section-sub">יומן, תשלומים וכרטיס מטופל - במקום אחד.</p>
 
           <div className="mlp-screenshot-frame">
             <div className="mlp-screenshot-chrome">

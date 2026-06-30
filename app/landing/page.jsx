@@ -409,7 +409,7 @@ export default function LandingPage() {
               <p className="section-eyebrow">האפליקציה בפעולה</p>
               <h2>ככה נראית <span className="highlight">ORIA בפעולה</span></h2>
               <p className="section-subtitle">
-                צילומי מסך ישירות מהאפליקציה - יומן, גבייה וכרטיס מטופל במקום אחד.
+                צילומי מסך ישירות מהאפליקציה - יומן, תשלומים וכרטיס מטופל במקום אחד.
               </p>
             </div>
 
@@ -446,7 +446,7 @@ export default function LandingPage() {
                 <div className="lp-showcase-screen">
                   <Image
                     src="/screenshots/app-billing.png"
-                    alt="גבייה ותשלומים - ORIA AI"
+                    alt="מעקב תשלומים - ORIA AI"
                     width={1013}
                     height={900}
                     className="lp-showcase-img"
@@ -455,7 +455,7 @@ export default function LandingPage() {
                   />
                   <div className="lp-app-overlay" />
                 </div>
-                <p className="lp-showcase-caption">גבייה ותשלומים - מעקב פשוט ומסודר</p>
+                <p className="lp-showcase-caption">מעקב תשלומים ובקשות - פשוט ומסודר</p>
               </div>
 
               <div className="lp-showcase-frame lp-showcase-frame-right">

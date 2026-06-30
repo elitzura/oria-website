@@ -146,9 +146,9 @@ export default function PricingPage() {
               </div>
               <ul className="pricing-features">
                 <li><span className="check">✓</span> יומן פגישות דיגיטלי</li>
-                <li><span className="check">✓</span> ניהול תשלומים וגבייה</li>
+                <li><span className="check">✓</span> מעקב תשלומים ובקשות תשלום</li>
                 <li><span className="check">✓</span> תזכורות בוואטסאפ ובמייל</li>
-                <li><span className="check">✓</span> סוכני AI - סיכום פגישות וניתוח תובנות</li>
+                <li><span className="check">✓</span> סוכן AI - סיכום פגישות ומעקב טיפולי</li>
                 <li><span className="check">✓</span> עד 3 מטופלים פעילים</li>
               </ul>
               <a href="https://app.oriamind.ai/register" className="btn btn-outline btn-block" style={{ textAlign: 'center' }}>התחילו חינם</a>
@@ -175,11 +175,9 @@ export default function PricingPage() {
               </div>
               <ul className="pricing-features">
                 <li><span className="check">✓</span> מטופלים ללא הגבלה</li>
-                <li><span className="check">✓</span> ניהול תשלומים וגבייה</li>
-                <li><span className="check">✓</span> סוכני AI מרובים - ניהול קליניקה מלא</li>
+                <li><span className="check">✓</span> מעקב תשלומים ובקשות תשלום</li>
+                <li><span className="check">✓</span> AI שעוקב ומכיר כל פרט בטיפול</li>
                 <li><span className="check">✓</span> תזכורות ועדכונים בוואטסאפ למטופלים</li>
-                <li><span className="check">✓</span> ניתוח תובנות ודפוסים קליניים</li>
-                <li><span className="check">✓</span> דוחות התקדמות אוטומטיים</li>
                 <li><span className="check">✓</span> תמיכה בצ'אט ובטלפון</li>
               </ul>
               <a href="https://app.oriamind.ai/register" className="btn btn-primary btn-block" style={{ textAlign: 'center' }}>רכישה ←</a>
