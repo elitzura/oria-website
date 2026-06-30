@@ -76,7 +76,7 @@ export default function CookieConsent() {
   return (
     <>
       <style>{`
-        #oria-cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:1px solid #e8e8f5;box-shadow:0 -4px 24px rgba(98,93,229,.08);padding:16px 24px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;direction:rtl;font-family:"Heebo","Arial Hebrew",Arial,sans-serif;font-size:14px;color:#171938;animation:slideUpBar .35s ease;flex-wrap:wrap}
+        #oria-cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:1px solid #e8e8f5;box-shadow:0 -4px 24px rgba(98,93,229,.08);padding:16px 24px 16px 44px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;direction:rtl;font-family:"Heebo","Arial Hebrew",Arial,sans-serif;font-size:14px;color:#171938;animation:slideUpBar .35s ease;flex-wrap:wrap}
         #oria-cookie-bar p{margin:0;line-height:1.6;flex:1;color:#444;min-width:0}
         .oria-cookie-readmore{background:none;border:none;color:#3B82F6;font-size:14px;font-family:inherit;cursor:pointer;padding:0;text-decoration:underline;display:inline}
         .oria-cookie-readmore:hover{color:#2563eb}
@@ -102,11 +102,25 @@ export default function CookieConsent() {
         .oria-toggle input:checked + .oria-toggle-slider:before{transform:translateX(-20px)}
         .oria-toggle input:disabled + .oria-toggle-slider{opacity:.55;cursor:not-allowed}
         .oria-cookie-save-prefs{margin-top:4px;align-self:flex-start}
+        .oria-cookie-close{position:absolute;top:10px;left:12px;background:none;border:none;cursor:pointer;color:#999;font-size:18px;line-height:1;padding:4px 6px;border-radius:4px;transition:color .15s,background .15s}
+        .oria-cookie-close:hover{color:#333;background:#f3f4f6}
         @keyframes slideUpBar{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
-        @media(max-width:600px){#oria-cookie-bar{flex-direction:column;align-items:flex-start;gap:12px}.oria-cookie-actions{width:100%}}
+        @media(max-width:767px){
+          #oria-cookie-bar{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 40px 12px 12px}
+          #oria-cookie-bar p{font-size:12.5px;line-height:1.5}
+          .oria-cookie-actions{width:100%;gap:8px}
+          .oria-cookie-btn{padding:8px 12px;font-size:13px;flex:1;text-align:center}
+          .oria-cookie-btn-ghost{flex:0 0 auto;font-size:12px;padding:8px 2px}
+          .oria-cookie-close{top:8px;left:8px}
+        }
       `}</style>
 
       <div id="oria-cookie-bar" role="region" aria-label="הסכמה לעוגיות">
+        <button
+          className="oria-cookie-close"
+          onClick={() => setVisible(false)}
+          aria-label="סגור"
+        >✕</button>
         <p>
           האתר עושה שימוש בקבצי COOKIES חיוניים ושאינם חיוניים (סטטיסטיים ושיווקיים).{' '}
           {!expanded && (
