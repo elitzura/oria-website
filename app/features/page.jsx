@@ -32,8 +32,12 @@ export default function FeaturesPage() {
   const IconShieldLock = () => (
     <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect x="9" y="11" width="6" height="5" rx="1"/><path d="M12 11V9a2 2 0 1 1 4 0"/></svg>
   );
+  const IconFileText = () => (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+  );
 
   const entries = [
+    { href: '/features/forms', icon: <IconFileText />, iconClass: 'icon-coral', date: 'יולי 2026', tags: [['tag-new', 'חדש'], ['tag-manage', 'ניהול']], title: 'טפסים דיגיטליים - שולחים למטופל, עוקבים בתיק', text: 'בונים שאלון או טופס מעקב תוך דקה, שולחים למטופל בלחיצה אחת, והתשובות נכנסות ישר לתיק - עם מגמה לאורך זמן שמראה שיפור בטיפול.', delay: 0 },
     { href: '/features/mobile', icon: <IconMobile />, iconClass: 'icon-blue', date: 'אפריל 2026', tags: [['tag-new', 'חדש'], ['tag-core', 'ליבה']], title: 'ORIA בפלאפון - ניהול הקליניקה מכל מקום', text: 'לא תמיד ליד המחשב? ORIA עובדת בדפדפן על כל מכשיר - פלאפון, טאבלט או מחשב. Brain Dump קולי, יומן, תיקי מטופלים ותזכורות - הכל נגיש מהנייד, ללא הורדת אפליקציה.', delay: 0 },
     { href: '/features/whatsapp-reminders', icon: <IconMessage />, iconClass: 'icon-green', date: 'מרץ 2026', tags: [['tag-new', 'חדש'], ['tag-manage', 'ניהול']], title: 'תזכורות חכמות - וואצאפ, אימייל ואישור הגעה', text: 'ORIA שולחת תזכורות אוטומטיות לפגישה בוואצאפ ובאימייל, עם כפתורי אישור הגעה אמיתיים. המטופל לוחץ - הסטטוס מתעדכן. אתם לא צריכים לגעת בזה.', delay: 0 },
     { href: '/features/audit-logs', icon: <IconClipboard />, iconClass: 'icon-purple', date: 'פברואר 2026', tags: [['tag-security', 'אבטחה'], ['tag-new', 'חדש']], title: 'Audit Log - מי פתח את התיק הזה?', text: 'כל גישה לכל תיק מתועדת אוטומטית: מי נכנס, מתי, מאיזה מכשיר, מה שונה. חובה חוקית לפי תיקון 13 - ועכשיו מוכנה עבורכם ברקע.', delay: 0 },
@@ -113,9 +117,9 @@ export default function FeaturesPage() {
 
         <section className="features-cta">
           <div className="container">
-            <h2>הצטרפו לרשימת ההמתנה וקבלו חודש ראשון חינם</h2>
+            <h2>התחילו עכשיו וקבלו חודש ראשון חינם</h2>
             <p>המקומות לפיילוט נסגרו - אבל כשהאפליקציה יוצאת לציבור, חברי רשימת ההמתנה יקבלו חודש ראשון חינם.</p>
-            <Link href="/#pricing" className="btn btn-primary btn-large">הצטרפו לרשימת ההמתנה</Link>
+            <Link href="https://app.oriamind.ai/register" className="btn btn-primary btn-large">התחילו עכשיו</Link>
           </div>
         </section>
       </FeaturePageLayout>

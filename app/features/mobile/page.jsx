@@ -239,9 +239,9 @@ export default function MobileFeaturePage() {
 
           {/* Feature nav */}
           <div className="feature-nav">
-            <Link href="/features/whatsapp-reminders">
+            <Link href="/features/forms">
               <span className="nav-dir">הפיצ'ר הקודם</span>
-              <span className="nav-title">תזכורות חכמות ←</span>
+              <span className="nav-title">טפסים דיגיטליים ←</span>
             </Link>
             <Link href="/features/brain-dump" style={{ textAlign: 'left' }}>
               <span className="nav-dir">הפיצ'ר הבא</span>

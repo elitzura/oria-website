@@ -155,8 +155,8 @@ export default function WhatsAppRemindersPage() {
 
           <div className="cta-inline">
             <h3>רוצים שהתזכורות ירוצו לבד?</h3>
-            <p>הצטרפו לרשימת ההמתנה וקבלו גישה לכל הפיצ'רים כשהאפליקציה יוצאת - כולל תזכורות חכמות בוואצאפ.</p>
-            <Link href="/#pricing" className="btn btn-primary">הצטרפו לרשימת ההמתנה</Link>
+            <p>התחילו עכשיו וקבלו גישה לכל הפיצ'רים - כולל תזכורות חכמות בוואצאפ.</p>
+            <Link href="https://app.oriamind.ai/register" className="btn btn-primary">התחילו עכשיו</Link>
           </div>
 
           <div className="feature-nav">
